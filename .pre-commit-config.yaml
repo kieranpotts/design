@@ -16,7 +16,18 @@
 default_install_hook_types: [pre-commit, commit-msg]
 
 repos:
-  - repo: https://github.com/kieranpotts/pre-commit-hooks
-    rev: v0.1.0
+
+  # Defined locally, rather than consumed from the shared
+  # kieranpotts/pre-commit-hooks repository, so the set of allowed commit
+  # types can include a prefix specific to this repository.
+  #
+  # Keep the allowed types in sync with
+  # .github/workflows/validate-commit-messages.yaml.
+
+  - repo: local
     hooks:
       - id: validate-commit-message
+        name: Validate commit message format
+        entry: .hooks/validate_commit_message.py
+        language: script
+        stages: [commit-msg]
