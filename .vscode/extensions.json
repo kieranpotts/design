@@ -1,9 +1,6 @@
 {
   "recommendations": [
 
-    /* AsciiDoc — Provides language support for AsciiDoc. */
-    "asciidoctor.asciidoctor-vscode",
-
     /* EditorConfig — .editorconfig file support. */
     "editorconfig.editorconfig",
 
