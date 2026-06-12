@@ -1,0 +1,42 @@
+#
+# GitHub Discussions - form configuration.
+# https://docs.github.com/en/discussions/managing-discussions-for-your-community/creating-discussion-category-forms
+#
+# The forum for review feedback on a design change. Every design-change
+# pull request has an associated thread here, where all review feedback is
+# gathered — keeping the PR itself focused on the edit history of the
+# design artifacts.
+#
+
+title: "design: [type a brief description]"
+body:
+  - type: input
+    id: pr
+    attributes:
+      label: PR
+      description: Link to the design-change pull request.
+    validations:
+      required: false
+  - type: dropdown
+    id: views
+    attributes:
+      label: Views affected
+      description: Which architectural views does this change touch?
+      multiple: true
+      options:
+        - conceptual
+        - logical
+        - development
+        - process
+        - physical
+        - technical
+        - scenarios
+    validations:
+      required: false
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the architecture change under review.
+    validations:
+      required: false

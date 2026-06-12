@@ -1,0 +1,12 @@
+[
+  {
+    "name": "RECONCILE",
+    "description": "Corrects drift between the documentation and the production system.",
+    "color": "BB3300"
+  },
+  {
+    "name": "MAINTENANCE",
+    "description": "A routine housekeeping chore in this repository only.",
+    "color": "AA6600"
+  }
+]

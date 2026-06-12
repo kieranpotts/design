@@ -1,0 +1,36 @@
+#
+# Push the design-specific labels defined in .github/labels.json to this
+# repository whenever that file changes. These are the view-area and
+# maintenance labels used to filter design-change pull requests.
+#
+# Community-health labels common to all repositories are synced separately,
+# from kieranpotts/.github, by the `sync-labels` workflow.
+#
+# https://github.com/EndBug/label-sync
+#
+
+name: Push labels
+
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/labels.json']
+
+permissions:
+  issues: write
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/labels.json
+
+      - name: Push labels
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: .github/labels.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+          delete-other-labels: true
