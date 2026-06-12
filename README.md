@@ -1,4 +1,4 @@
-# Design Docs
+# 📐 Design Docs
 
 **A template for maintaining a system's architectural artifacts via version control.**
 
@@ -14,13 +14,13 @@ Like the SRS and RFC, this is living documentation. The artifacts on the `main` 
 
 This repository is one of four that form a coherent, version-controlled documentation ecosystem modeling the software development lifecycle. Each is the reference implementation of an opinionated workflow, and answers a different question about the system:
 
-- [**Software requirements specification (SRS)**](https://github.com/kieranpotts/specs): Records _what_ the system does, in business terms.
+- [**📋 Software requirements specification (SRS)**](https://github.com/kieranpotts/specs): Records _what_ the system does, in business terms.
 
-- [**Requests for comments (RFC)**](https://github.com/kieranpotts/rfc): Records _how_ significant technical decisions were made, and _why_.
+- [**💬 Requests for comments (RFC)**](https://github.com/kieranpotts/rfc): Records _how_ significant technical decisions were made, and _why_.
 
-- **Design docs**: Describe _what the system looks like_, its as-is architecture (this repository).
+- **📐 Design docs**: Describe _what the system looks like_, its as-is architecture (this repository).
 
-- [**Implementation plans**](https://github.com/kieranpotts/plans): Capture _when, and in what order_, the work gets done.
+- [**🗺️ Implementation plans**](https://github.com/kieranpotts/plans): Capture _when, and in what order_, the work gets done.
 
 The [**skills**](https://github.com/kieranpotts/skills) collection provides an agentic workflow that operates across all four.
 
