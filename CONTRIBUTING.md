@@ -45,7 +45,7 @@ Every design-change pull request has an associated discussion thread, where _all
 
 Open a [discussion](https://github.com/kieranpotts/design/discussions). You MAY open it early, to align on the shape of the change before editing artifacts, but it MUST exist by the time the pull request is opened.
 
-Link the discussion and the pull request to each other. The thread is closed once the change is merged.
+Link the discussion and the pull request to each other. The thread is closed when the PR is merged.
 
 (The GitHub issue tracker is _not_ used for design changes. It is reserved for repository maintenance only.)
 
@@ -93,7 +93,7 @@ Link the discussion and the pull request to each other. The thread is closed onc
 
 - The edits in a design-change PR MUST describe the intended final state of the architecture, NOT a changelog of how to get there.
 
-- Every design-change pull request MUST have an associated discussion thread, opened with the pull request and used for all review feedback. The thread is closed once the change is merged.
+- Every design-change pull request MUST have an associated discussion thread, opened with the pull request and used for all review feedback. The thread is closed when the PR is merged.
 
 - A pull request is opened as a draft while the artifacts are refined and the production change is rolled out. It is marked ready for review when the artifacts are ready, and merged only when the change is live.
 
