@@ -4,9 +4,9 @@
 
 This repository is the home of the design documentation for [Project Name]. It is the living, authoritative description of the system's architecture as it exists in production right now — the structures, the runtime behavior, the deployment topology, and the cross-cutting concerns — expressed through a coherent set of architectural views.
 
-Design documentation answers _what the system looks like_. It complements two sibling repositories:
+Design documentation describes what the system looks like, answering the question "how are the requirements implemented?" It complements two sibling repositories:
 
-- The [software requirements specification (SRS)](https://github.com/kieranpotts/specs) records _what_ the system does — its requirements, defined in business terms.
+- The [software requirements specification (SRS)](https://github.com/kieranpotts/specs) records _what_ the system does — its requirements, defined in business terms – while being implementation-agnostic.
 
 - The [requests for comments (RFC)](https://github.com/kieranpotts/rfc) archive records _how_ significant technical decisions were made, and _why_.
 
@@ -18,15 +18,15 @@ This repository has no accompanying decision log. The RFS archive already serves
 
 Like the SRS and RFC, this is living documentation. The artifacts on the `main` trunk MUST reflect the current state of the production system. A change to the architecture is merged into `main` _at the same time_ as the corresponding code and configuration are shipped to production, so the documentation never drifts from reality.
 
+## Contents
 
-A template for new code repositories.
+- [**Design**](./design/): The architectural artifacts, organized into views. Covers the logical structure, the development organization, the runtime processes, the physical deployment, and the scenarios that tie them together.
 
-## 📓 Documentation
+- [**Contributing**](./CONTRIBUTING.md): Step-by-step instructions for keeping the design documentation synchronized with the production system.
 
-- [**Requirements**](./docs/requirements.md)
-- [**Installation**](./docs/installation.md)
-- [**Usage**](./docs/usage.md)
-- [**Development**](./docs/development.md)
+- [**Agents**](./AGENTS.md) and [**Skills**](./.agents/skills/): Instructions for agentic tools to maintain the design documentation with a high degree of autonomy.
+
+- [**Documentation**](./docs/): General guidance on how to get the most out of architectural documentation — what to record, how to keep it honest, and how it relates to the SRS and RFC processes.
 
 -----
 
