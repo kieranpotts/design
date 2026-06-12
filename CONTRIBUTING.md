@@ -13,13 +13,13 @@ The design documentation is maintained by the technical teams. Anyone with write
 
 The [design artifacts](./design/) always reflect the current state of the production system's architecture, expressed through a coherent set of architectural views. This is a living document. The description on `main` and the real system stay in lock-step.
 
-The design docs are deliberately narrow in purpose. They are descriptive – stating what the architecture _is_ — and decision-free — they do not record _why_ the architecture is the way it is. Two sibling repositories cover these related concerns:
+The design docs are deliberately narrow in purpose. They are descriptive – stating what the architecture _is_ – and decision-free – they do not record _why_ the architecture is the way it is. Two sibling repositories cover these related concerns:
 
-- The [SRS](https://github.com/kieranpotts/specs) records the requirements — _what_ the system must do.
+- The [SRS](https://github.com/kieranpotts/specs) records the requirements – _what_ the system must do.
 
-- The [RFC](https://github.com/kieranpotts/rfc) archive records the significant technical decisions — _how_ a choice was made and _why_.
+- The [RFC](https://github.com/kieranpotts/rfc) archive records the significant technical decisions – _how_ a choice was made and _why_.
 
-A typical flow is SRS → RFC → Design Docs. A new requirement (specified in the SRS) requires an architecturally-significant design decision (such as a change to the technology stack, negotiated via an RFC) before the necessary changes can be implemented in code (the design docs capture the end result).
+A typical flow is SRS → RFC → design docs. A new requirement (specified in the SRS) requires an architecturally-significant design decision (such as a change to the technology stack, negotiated via an RFC) before the necessary changes can be implemented in code (the design docs capture the end result).
 
 ## The design-change workflow
 
@@ -33,7 +33,7 @@ A change to the architecture is introduced through a design-change pull request.
 
 ### Step 1: Make the decision first, if it is significant
 
-If the change embodies an architecturally significant decision — a new pattern, a deviation from the established stack, a structural shift with broad impact — that decision is made through the [RFC process](https://github.com/kieranpotts/rfc), _before_ the work is done.
+If the change embodies an architecturally significant decision – a new pattern, a deviation from the established stack, a structural shift with broad impact – that decision is made through the [RFC process](https://github.com/kieranpotts/rfc), _before_ the work is done.
 
 The design docs capture the resulting architecture. This is NOT where the decision is debated.
 
@@ -43,7 +43,7 @@ Routine design changes that follow already-established patterns need no RFC. If 
 
 1. Branch off `main` using the convention `design/<slug>`, where `<slug>` is a short, hyphen-delimited description of the change, eg. `design/extract-billing-service`.
 
-2. Edit the artifacts in the [`design/` directory](./design/). Modify all appropriate architectural views to describe the architecture as it will be once the change has shipped. Add, modify, or remove artifacts as needed to describe the desired end state. The edits MUST read as a description of the destination, not a list of steps to get there — the diff against `main` already shows what is changing.
+2. Edit the artifacts in the [`design/` directory](./design/). Modify all appropriate architectural views to describe the architecture as it will be once the change has shipped. Add, modify, or remove artifacts as needed to describe the desired end state. The edits MUST read as a description of the destination, not a list of steps to get there – the diff against `main` already shows what is changing.
 
 3. Where a significant decision drove the change, link the relevant artifact to its RFC, rather than restating the rationale.
 
@@ -61,7 +61,7 @@ Routine design changes that follow already-established patterns need no RFC. If 
 
 Every design-change pull request has an associated discussion thread, where _all_ review feedback is gathered. This keeps the pull request focused on the evolution of the design artifacts themselves.
 
-Open a [discussion](https://github.com/kieranpotts/design/discussions). It MUST exist by the time the pull request is marked ready for review; you MAY open it earlier — even before the pull request — to align on the shape of the change before editing artifacts.
+Open a [discussion](https://github.com/kieranpotts/design/discussions). It MUST exist by the time the pull request is marked ready for review; you MAY open it earlier – even before the pull request – to align on the shape of the change before editing artifacts.
 
 Link the discussion and the pull request to each other. The thread is closed when the PR is merged.
 
@@ -79,7 +79,7 @@ Link the discussion and the pull request to each other. The thread is closed whe
 
 2. Squash-merge the pull request, with a message of the form `design: <description>`. Delete the branch.
 
-3. Close the discussion thread — it has served its purpose.
+3. Close the discussion thread – it has served its purpose.
 
 ## Rules
 
