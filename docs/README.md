@@ -8,3 +8,4 @@ General guidance for getting the most out of architectural design documentation.
 
 - [**Development**](./development.md): Local repository setup, including pre-commit hooks.
 
+- [**Contributing**](../CONTRIBUTING.md): The mechanics of the design-change workflow.
