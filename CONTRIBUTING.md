@@ -35,7 +35,7 @@ A change to the architecture is introduced through a design-change pull request.
 
 If the change embodies an architecturally significant decision — a new pattern, a deviation from the established stack, a structural shift with broad impact — that decision is made through the [RFC process](https://github.com/kieranpotts/rfc), _before_ the work is done.
 
-Th design docs capture the resulting architecture. This is NOT where the decision is debated.
+The design docs capture the resulting architecture. This is NOT where the decision is debated.
 
 Routine design changes that follow already-established patterns need no RFC. If the change would impact multiple technical stakeholders and is worth building consensus on, it is worthy of an RFC.
 
