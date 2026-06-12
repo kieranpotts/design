@@ -39,17 +39,7 @@ The design docs capture the resulting architecture. This is NOT where the decisi
 
 Routine design changes that follow already-established patterns need no RFC. If the change would impact multiple technical stakeholders and is worth building consensus on, it is worthy of an RFC.
 
-### Step 2: Open a discussion thread (REQUIRED)
-
-Every design-change pull request has an associated discussion thread, where _all_ review feedback is gathered. This keeps the pull request focused on the evolution of the design artifacts themselves.
-
-Open a [discussion](https://github.com/kieranpotts/design/discussions). You MAY open it early, to align on the shape of the change before editing artifacts, but it MUST exist by the time the pull request is opened.
-
-Link the discussion and the pull request to each other. The thread is closed when the PR is merged.
-
-(The GitHub issue tracker is _not_ used for design changes. It is reserved for repository maintenance only.)
-
-### Step 3: Edit the artifacts to describe the end state
+### Step 2: Edit the artifacts to describe the end state
 
 1. Branch off `main` using the convention `design/<slug>`, where `<slug>` is a short, hyphen-delimited description of the change, eg. `design/extract-billing-service`.
 
@@ -59,13 +49,23 @@ Link the discussion and the pull request to each other. The thread is closed whe
 
 4. Ensure every artifact is referenced from its view's `README.md`.
 
-### Step 4: Open a pull request
+### Step 3: Open a pull request
 
 1. Commit your changes and open a pull request titled `design: <description>`, where `<description>` is a short prose title, written full lowercase, eg. `design: extract the billing service`.
 
-2. Fill out the top of the PR template and link the discussion thread.
+2. Open the PR as a draft while you refine it.
 
-3. Open the PR as a draft while you refine it.
+3. Fill out the top of the PR template. (You will link the discussion thread, opened in step 4, here and in the artifacts.)
+
+### Step 4: Open a discussion thread (REQUIRED)
+
+Every design-change pull request has an associated discussion thread, where _all_ review feedback is gathered. This keeps the pull request focused on the evolution of the design artifacts themselves.
+
+Open a [discussion](https://github.com/kieranpotts/design/discussions). It MUST exist by the time the pull request is marked ready for review; you MAY open it earlier — even before the pull request — to align on the shape of the change before editing artifacts.
+
+Link the discussion and the pull request to each other. The thread is closed when the PR is merged.
+
+(The GitHub issue tracker is _not_ used for design changes. It is reserved for repository maintenance only.)
 
 ### Step 5: Review and reconcile
 
