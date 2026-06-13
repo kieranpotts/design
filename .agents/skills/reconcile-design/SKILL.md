@@ -4,13 +4,13 @@ description: Detect and correct drift between the design documentation on main a
 license: CC0-1.0
 ---
 
-# Reconcile design change
+# `/reconcile-design`
 
 Use this skill to find and correct drift — places where the design documentation on `main` no longer matches the real production system, because a change shipped without the documentation being updated.
 
 The documentation's entire value rests on one promise: that `main` describes production. Drift breaks that promise. This skill restores it by comparing the artifacts against reality and scaffolding a design change to fix the gaps.
 
-Do NOT use this skill to document a _new_ change going through review — use [`draft-design`](../draft-design/SKILL.md). Do NOT use it to merge — use [`ship-design`](../ship-design/SKILL.md).
+Do NOT use this skill to document a _new_ change going through review — use [`/draft-design`](../draft-design/SKILL.md). Do NOT use it to merge — use [`/ship-design`](../ship-design/SKILL.md).
 
 ## What "drift" means here
 
@@ -44,7 +44,7 @@ Because the production change is _already_ live, the gate that normally blocks m
 
 4.  **Scaffold the correction.**
 
-    Hand off to the same scaffolding mechanics as [`draft-design`](../draft-design/SKILL.md): cut a `design/<slug>` branch from `main` (a slug like `reconcile-billing-topology`), edit the affected views to describe the _current_ production state, commit with a `design: <description>` message, open a draft pull request, and open a linked discussion thread.
+    Hand off to the same scaffolding mechanics as [`/draft-design`](../draft-design/SKILL.md): cut a `design/<slug>` branch from `main` (a slug like `reconcile-billing-topology`), edit the affected views to describe the _current_ production state, commit with a `design: <description>` message, open a draft pull request, and open a linked discussion thread.
 
 5.  **Note the absence of an RFC, where applicable.**
 
@@ -66,7 +66,7 @@ Because the production change is _already_ live, the gate that normally blocks m
 
 -   **Ship via the normal gate.**
 
-    A reconciliation change still lands through [`ship-design`](../ship-design/SKILL.md). Because the production change is already live, the gate is satisfied — but the change is still reviewed and merged through a pull request, not committed directly to `main`.
+    A reconciliation change still lands through [`/ship-design`](../ship-design/SKILL.md). Because the production change is already live, the gate is satisfied — but the change is still reviewed and merged through a pull request, not committed directly to `main`.
 
 ## Success criteria
 

@@ -1,4 +1,4 @@
-# Ship design change
+# `/ship-design`
 
 Lands a design change once the production change it describes is live.
 

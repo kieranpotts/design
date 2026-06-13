@@ -1,4 +1,4 @@
-# Reconcile design change
+# `/reconcile-design`
 
 Detects drift between the design documentation on `main` and the real production system, and scaffolds a change to correct it.
 

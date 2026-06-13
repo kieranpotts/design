@@ -4,11 +4,11 @@ description: Land a design change once the production change it describes is liv
 license: CC0-1.0
 ---
 
-# Ship design change
+# `/ship-design`
 
 Use this skill to land a design change — to merge it into `main` once the corresponding production change is live. This is the gate that protects the repository's core promise: **`main` describes production**.
 
-Do NOT use this skill to scaffold a change — use [`draft-design`](../draft-design/SKILL.md). Do NOT use it to correct drift — use [`reconcile-design`](../reconcile-design/SKILL.md).
+Do NOT use this skill to scaffold a change — use [`/draft-design`](../draft-design/SKILL.md). Do NOT use it to correct drift — use [`/reconcile-design`](../reconcile-design/SKILL.md).
 
 ## Gate: the production change MUST be live
 

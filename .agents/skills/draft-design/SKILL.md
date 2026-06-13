@@ -4,13 +4,13 @@ description: Scaffold a design change. Use this skill when the user wants to upd
 license: CC0-1.0
 ---
 
-# Draft design change
+# `/draft-design`
 
 Use this skill to scaffold a design change, ready for the author to edit the affected architectural views and take through review. This is the entry point to the design-change workflow.
 
 A design change edits the [design views](../../../design/) to describe the architecture as it will be once a production change has shipped. There is no lifecycle state machine.
 
-Do NOT use this skill to land a change — use [`ship-design`](../ship-design/SKILL.md) for that. Do NOT use it to correct documentation that has drifted from production — use [`reconcile-design`](../reconcile-design/SKILL.md) for that.
+Do NOT use this skill to land a change — use [`/ship-design`](../ship-design/SKILL.md) for that. Do NOT use it to correct documentation that has drifted from production — use [`/reconcile-design`](../reconcile-design/SKILL.md) for that.
 
 ## Before scaffolding
 
@@ -114,7 +114,7 @@ Do NOT use this skill to land a change — use [`ship-design`](../ship-design/SK
 
 -   **Open the PR as a draft.**
 
-    A new design change is not yet ready for review, and the production change it describes may not yet be live. It MUST be opened as a draft pull request, and MUST NOT be merged until [`ship-design`](../ship-design/SKILL.md) confirms the change is live in production.
+    A new design change is not yet ready for review, and the production change it describes may not yet be live. It MUST be opened as a draft pull request, and MUST NOT be merged until [`/ship-design`](../ship-design/SKILL.md) confirms the change is live in production.
 
 -   **Every design change has an associated discussion thread.**
 

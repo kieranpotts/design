@@ -1,4 +1,4 @@
-# Draft design change
+# `/draft-design`
 
 Scaffolds a design change, ready for the author to edit the affected architectural views.
 
@@ -34,4 +34,4 @@ Optionally, describe the change:
 
 - `/draft-design <Description>`: Provide details of the architecture change, from which the agent infers the slug and the affected views, and drafts the edits.
 
-Refine the artifacts yourself, gather feedback in the discussion thread, then use [`ship-design`](../ship-design/README.md) to land the change once it is live in production.
+Refine the artifacts yourself, gather feedback in the discussion thread, then use [`/ship-design`](../ship-design/README.md) to land the change once it is live in production.
