@@ -2,6 +2,8 @@
 name: reconcile-design
 description: Detect and correct drift between the design documentation on main and the real production system. Scaffolds a design change to bring the artifacts back in line with production. Use when the user says "the design docs are out of date", "reconcile the design docs", "check the docs against the code", or "the architecture has drifted".
 license: CC0-1.0
+metadata:
+  interactive: yes
 ---
 
 # `/reconcile-design`

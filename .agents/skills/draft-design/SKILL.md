@@ -2,6 +2,8 @@
 name: draft-design
 description: Scaffold a design change. Use this skill when the user wants to update the architectural documentation to reflect a change to the production system, or says "draft a design change", "new design change", "document this architecture change", or "update the design docs".
 license: CC0-1.0
+metadata:
+  interactive: yes
 ---
 
 # `/draft-design`

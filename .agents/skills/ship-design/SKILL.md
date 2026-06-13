@@ -2,6 +2,8 @@
 name: ship-design
 description: Land a design change once the production change it describes is live. Mark the PR ready, squash-merge it to main, and close the discussion thread. Use when the user says "ship this design change", "the change is live", "merge the design docs", or "land the design change".
 license: CC0-1.0
+metadata:
+  interactive: yes
 ---
 
 # `/ship-design`
