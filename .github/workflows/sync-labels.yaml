@@ -10,7 +10,7 @@
 # https://github.com/EndBug/label-sync
 #
 
-name: Sync labels
+name: Sync Labels
 
 on:
   workflow_dispatch:
@@ -29,4 +29,4 @@ jobs:
         uses: EndBug/label-sync@v2
         with:
           source-repo: kieranpotts/.github
-          delete-other-labels: true
+          delete-other-labels: false # IMPORTANT! Don't override repo-specific labels.

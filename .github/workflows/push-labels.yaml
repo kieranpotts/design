@@ -9,7 +9,7 @@
 # https://github.com/EndBug/label-sync
 #
 
-name: Push labels
+name: Push Labels
 
 on:
   workflow_dispatch:

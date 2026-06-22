@@ -8,7 +8,7 @@
 # revision types, plus a custom prefix.
 #
 
-name: Validate commit messages
+name: Validate Commit Messages
 
 on:
   push:
