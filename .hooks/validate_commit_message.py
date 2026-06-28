@@ -19,10 +19,10 @@ VALID_TYPES = [
     # Subset of standard commit types:
     "chore",
     "fix",
-    "format",
     "maintenance",
     "refactor",
     "revert",
+    "style",
 
     # Repository-specific commit types:
     "design",
