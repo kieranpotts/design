@@ -28,7 +28,7 @@ VALID_TYPES = [
     "design",
 ]
 
-PATTERN = rf"^({'|'.join(VALID_TYPES)}): [a-z].*"
+PATTERN = rf"^({'|'.join(VALID_TYPES)}): [a-z0-9].*"
 
 
 def validate_commit_message(message: str) -> bool:
