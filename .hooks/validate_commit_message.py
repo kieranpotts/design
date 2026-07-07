@@ -25,6 +25,7 @@ VALID_TYPES = [
     "style",
 
     # Repository-specific commit types:
+    "audit",
     "design",
 ]
 

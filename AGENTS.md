@@ -35,6 +35,8 @@ Unlike the SRS, there is no accompanying decision log – the RFC repository ser
 
   - `scenarios/`: The cross-cutting view – key end-to-end flows that tie the other six views together, illustrating how the architecture realizes important behaviors.
 
+- `audits/`: Standalone, point-in-time evaluations of the as-is architecture.
+
 - `docs/`: General guidelines for humans on maintaining architectural documentation.
 
 ## How design changes are introduced

@@ -30,6 +30,8 @@ This separation into dedicated repositories is intended for application software
 
 - [**Design**](./design/): The architectural artifacts, organized into views. Covers the logical structure, the development organization, the runtime processes, the physical deployment, and the scenarios that tie them together.
 
+- [**Audits**](./audits/): Standalone, point-in-time evaluations of the as-is architecture – prioritized findings on structural health (shallow abstractions, tangled dependencies, single-caller wrappers, and the like). Evaluation only, and distinct from the living design views.
+
 - [**Contributing**](./CONTRIBUTING.md): Step-by-step instructions for keeping the design documentation synchronized with the production system.
 
 - [**Agents**](./AGENTS.md) and [**Skills**](./.agents/skills/): Instructions for agentic tools to maintain the design documentation with a high degree of autonomy.
