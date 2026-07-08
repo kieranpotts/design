@@ -21,6 +21,10 @@ must satisfy, nor the rationale for the choices behind the design:
 - Significant technical decisions (_how_ a choice was made, and _why_)
   live in the [RFC](https://github.com/kieranpotts/rfc) archive.
 
+- Standalone, point-in-time evaluations of the as-built system – not the
+  intended architecture captured here – live in a separate
+  [`audits`](https://github.com/kieranpotts/audits) repository.
+
 Where a significant decision shaped the design, the artifact MUST link
 out to the RFC that records it, rather than restating the reasoning here.
 
@@ -72,9 +76,6 @@ serves that purpose.
     The cross-cutting view – key end-to-end flows that tie the other six
     views together, illustrating how the architecture realizes important
     behaviors.
-
-- **`audits/`**:
-  Standalone, point-in-time evaluations of the as-is architecture.
 
 - **`docs/`**:
   General guidelines for humans on maintaining architectural documentation.
