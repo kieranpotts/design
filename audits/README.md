@@ -4,7 +4,7 @@ This directory holds architecture audits — standalone, point-in-time evaluatio
 
 An audit reads the source code and reports on the system's structural health. It surfaces code smells and anti-patterns such as shallow abstractions, tangled dependencies, single-caller wrappers, leaky boundaries, repeated patterns, and the like.
 
-The reports are presented as a prioritized list of findings. They are evaluation only — they do not suggest alternative designs. And they evaluate the as-built architecture on its own terms, without cross-referencing the _intended_ architecture captured in the design docs, and with no prior knowledge of the trade-offs already considered.
+The reports are presented as a prioritized list of findings. They are evaluation only — a finding may point toward a fix, but it stops at a pointer and never works up an alternative design. And they evaluate the as-built architecture on its own terms, without cross-referencing the _intended_ architecture captured in the design docs, and with no prior knowledge of the trade-offs already considered.
 
 This means that drift from the documented design is not caught by an audit (use the [reconcile-design](../.agents/skills/reconcile-design/) skill for that). But on the plus side, unbiased audits are more likely to surface genuinely useful suggestions. They're a fresh pair of eyes.
 
