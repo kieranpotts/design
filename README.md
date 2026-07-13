@@ -1,42 +1,84 @@
 # 📐 Design Docs
 
-**A template for maintaining a system's architectural artifacts via version control.**
+**A template for maintaining a system's architectural artifacts via version
+control.**
 
-This repository is the home of the design documentation for [Project Name]. It is the living, authoritative description of the system's architecture as it exists in production right now – the structures, the runtime behavior, the deployment topology, and the cross-cutting concerns – expressed through a coherent set of architectural views.
+This repository is the home of the design documentation for [Project Name]. It
+is the living, authoritative description of the system's architecture as it
+exists in production right now – the structures, the runtime behavior, the
+deployment topology, and the cross-cutting concerns – expressed through a
+coherent set of architectural views.
 
-Design documentation describes what the system looks like, answering the question "how are the requirements implemented?" It records the _as-is_ architecture that resulted from implementing the product requirements and technical decisions. It is descriptive, not prescriptive. It captures the design that exists, not the requirements it must satisfy (those live in the SRS), nor the rationale for the choices behind it (that lives in the RFC archive).
+Design documentation describes what the system looks like, answering the
+question "how are the requirements implemented?" It records the _as-is_
+architecture that resulted from implementing the product requirements and
+technical decisions. It is descriptive, not prescriptive. It captures the design
+that exists, not the requirements it must satisfy (those live in the SRS), nor
+the rationale for the choices behind it (that lives in the RFC archive).
 
-This repository has no accompanying decision log. The RFC archive already serves this purpose. All architecturally-significant design decisions, and their rationale, are recorded there.
+This repository has no accompanying decision log. The RFC archive already serves
+this purpose. All architecturally-significant design decisions, and their
+rationale, are recorded there.
 
-Like the SRS and RFC, this is living documentation. The artifacts on the `main` trunk MUST reflect the current state of the production system. A change to the architecture is merged into `main` _at the same time_ as the corresponding code and configuration are shipped to production, so the documentation never drifts from reality.
+Like the SRS and RFC, this is living documentation. The artifacts on the `main`
+trunk MUST reflect the current state of the production system. A change to the
+architecture is merged into `main` _at the same time_ as the corresponding code
+and configuration are shipped to production, so the documentation never drifts
+from reality.
 
 ## Ecosystem
 
-This repository is one of five that form a coherent, version-controlled documentation ecosystem modeling the software development lifecycle. Each is the reference implementation of an opinionated workflow, and answers a different question about the system:
+This repository is one of six that form a coherent, version-controlled
+documentation ecosystem modeling the software development lifecycle. Each is the
+reference implementation of an opinionated workflow, and answers a different
+question about the system:
 
-- [**📋 Software Requirements Specification (SRS)**](https://github.com/kieranpotts/specs): Records _what_ the system does, in business terms.
+- [**📋 Software Requirements Specification
+  (SRS)**](https://github.com/kieranpotts/specs): Records _what_ the system
+  does, in business terms.
 
-- [**💬 Requests for Comments (RFC)**](https://github.com/kieranpotts/rfc): Records _how_ significant technical decisions were made, and _why_.
+- [**💬 Requests for Comments (RFC)**](https://github.com/kieranpotts/rfc):
+  Records _how_ significant technical decisions were made, and _why_.
 
-- **📐 Design Docs**: Describe _what the system looks like_, its as-is architecture (this repository).
+- **📐 Design Docs**: Describe _what the system looks like_, its as-is
+  architecture (this repository).
 
-- [**🗺️ Delivery Plans**](https://github.com/kieranpotts/plans): Capture _when, and in what order_, the work gets done.
+- [**🗺️ Delivery Plans**](https://github.com/kieranpotts/plans): Capture _when,
+  and in what order_, the work gets done.
 
-- [**🔍 Audits**](https://github.com/kieranpotts/audits): Evaluates the as-built system on its own terms – architecture and security findings, point-in-time.
+- [**🔍 Architecture Audits**](https://github.com/kieranpotts/audits): Evaluate the as-built
+  system on its own terms – architecture and security findings, point-in-time.
 
-The [**skills**](https://github.com/kieranpotts/skills) collection provides an agentic workflow that operates across all five.
+- [**⚠️ Risk Register**](https://github.com/kieranpotts/risks): Records the
+  security and privacy risks the system carries, and tracks their mitigation
+  over time.
 
-This separation into dedicated repositories is intended for application software that spans multiple code repositories, and potentially multiple teams, where the requirements, decisions, designs, plans, and audits are shared concerns that sit above any single codebase. For a standalone code repository – a small utility library, say – it is better to fold these artifacts and skills directly into that repository, rather than maintain them separately.
+The [**skills**](https://github.com/kieranpotts/skills) collection provides an
+agentic workflow that operates across all six.
+
+This separation into dedicated repositories is intended for application software
+that spans multiple code repositories, and potentially multiple teams, where the
+requirements, decisions, designs, plans, audits, and risks are shared concerns that sit
+above any single codebase. For a standalone code repository – a small utility
+library, say – it is better to fold these artifacts and skills directly into
+that repository, rather than maintain them separately.
 
 ## Contents
 
-- [**Design**](./design/): The architectural artifacts, organized into views. Covers the logical structure, the development organization, the runtime processes, the physical deployment, and the scenarios that tie them together.
+- [**Design**](./design/): The architectural artifacts, organized into views.
+  Covers the logical structure, the development organization, the runtime
+  processes, the physical deployment, and the scenarios that tie them together.
 
-- [**Contributing**](./CONTRIBUTING.md): Step-by-step instructions for keeping the design documentation synchronized with the production system.
+- [**Contributing**](./CONTRIBUTING.md): Step-by-step instructions for keeping
+  the design documentation synchronized with the production system.
 
-- [**Agents**](./AGENTS.md) and [**Skills**](./.agents/skills/): Instructions for agentic tools to maintain the design documentation with a high degree of autonomy.
+- [**Agents**](./AGENTS.md) and [**Skills**](./.agents/skills/): Instructions
+  for agentic tools to maintain the design documentation with a high degree of
+  autonomy.
 
-- [**Documentation**](./docs/): General guidance on how to get the most out of architectural documentation – what to record, how to keep it honest, and how it relates to the SRS and RFC processes.
+- [**Documentation**](./docs/): General guidance on how to get the most out of
+  architectural documentation – what to record, how to keep it honest, and how
+  it relates to the SRS and RFC processes.
 
 -----
 

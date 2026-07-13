@@ -1,6 +1,12 @@
 ---
 name: draft-design
-description: Scaffold a design change. Use this skill when the user wants to update the architectural documentation to reflect a change to the production system, or says "draft a design change", "new design change", "document this architecture change", or "update the design docs". Do not use this skill to ship a design change, or to correct documentation that has drifted from production.
+description: >-
+  Scaffold a design change. Use this skill when
+  the user wants to update the architectural documentation to reflect a change to
+  the production system, or says "draft a design change", "new design change",
+  "document this architecture change", or "update the design docs". Do not use
+  this skill to ship a design change, or to correct documentation that has drifted
+  from production.
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -8,33 +14,48 @@ metadata:
 
 # `/draft-design`
 
-A design change edits the [design views](../../../design/) to describe the architecture as it will be once a production change has shipped. There is no lifecycle state machine.
+A design change edits the [design views](../../../design/) to describe the
+architecture as it will be once a production change has shipped. There is no
+lifecycle state machine.
 
 ## Before scaffolding
 
 -   **Confirm the change belongs here.**
 
-    This repository documents what the architecture _looks like_. It does NOT record requirements (those live in the [SRS](https://github.com/kieranpotts/specs)) or the rationale for decisions (that lives in the [RFC](https://github.com/kieranpotts/rfc) archive).
+    This repository documents what the architecture _looks like_. It does NOT
+    record requirements (those live in the
+    [SRS](https://github.com/kieranpotts/specs)) or the rationale for decisions
+    (that lives in the [RFC](https://github.com/kieranpotts/rfc) archive).
 
     - A change to _what the system does_ → an SRS proposal, not a design change.
-    - An architecturally significant _decision_ → an RFC first; this repository then documents the result once it ships.
+    - An architecturally significant _decision_ → an RFC first; this repository
+      then documents the result once it ships.
     - A change to _what the architecture looks like_ → a design change here.
 
-    If the request is really a requirement change or an undecided significant decision, say so before scaffolding.
+    If the request is really a requirement change or an undecided significant
+    decision, say so before scaffolding.
 
 -   **Identify the significant decision behind the change, if any.**
 
-    If the change embodies an architecturally significant decision, that decision should be (or have been) made through the RFC process. Note the RFC so the affected artifact can link to it. Routine changes following established patterns need no RFC.
+    If the change embodies an architecturally significant decision, that
+    decision should be (or have been) made through the RFC process. Note the RFC
+    so the affected artifact can link to it. Routine changes following
+    established patterns need no RFC.
 
 ## Instructions
 
 1.  **Determine the change description and slug.**
 
-    Establish a short, hyphen-delimited slug, eg. `extract-billing-service`. Decide this from information the user provided. Prompt the user if they did not describe the change.
+    Establish a short, hyphen-delimited slug, eg. `extract-billing-service`.
+    Decide this from information the user provided. Prompt the user if they did
+    not describe the change.
 
 2.  **Determine the affected views.**
 
-    Work out which of the seven [design views](../../../design/) the change touches — `conceptual`, `logical`, `development`, `process`, `physical`, `technical`, `scenarios`. A change often touches more than one. Ask the user if it is unclear.
+    Work out which of the seven [design views](../../../design/) the change
+    touches — `conceptual`, `logical`, `development`, `process`, `physical`,
+    `technical`, `scenarios`. A change often touches more than one. Ask the user
+    if it is unclear.
 
 3.  **Create the branch.**
 
@@ -46,7 +67,12 @@ A design change edits the [design views](../../../design/) to describe the archi
 
 4.  **Edit the affected views — or leave clear markers for the author.**
 
-    If the user described the change in enough detail, edit the affected views' artifacts to describe the intended end state (present tense, descriptive, decision-free; link to the RFC for any significant decision). Otherwise, leave the author a clear starting point — note in each affected view what needs to change — and let them fill it in. Do not invent architecture you cannot substantiate.
+    If the user described the change in enough detail, edit the affected views'
+    artifacts to describe the intended end state (present tense, descriptive,
+    decision-free; link to the RFC for any significant decision). Otherwise,
+    leave the author a clear starting point — note in each affected view what
+    needs to change — and let them fill it in. Do not invent architecture you
+    cannot substantiate.
 
 5.  **Commit and open a draft pull request.**
 
@@ -59,7 +85,10 @@ A design change edits the [design views](../../../design/) to describe the archi
 
 6.  **Open a discussion thread.**
 
-    Every design-change pull request MUST have an associated discussion thread, where all review feedback is gathered. `gh` has no native discussion command, so use the GraphQL API. Look up the repository ID and the discussion category to use:
+    Every design-change pull request MUST have an associated discussion thread,
+    where all review feedback is gathered. `gh` has no native discussion
+    command, so use the GraphQL API. Look up the repository ID and the
+    discussion category to use:
 
     ```sh
     gh api graphql -f query='
@@ -84,7 +113,8 @@ A design change edits the [design views](../../../design/) to describe the archi
         -f body="Discussion thread for the **<short lowercase description>** design change (PR #<number>). Please leave all feedback here, not on the pull request."
     ```
 
-    Add the returned URL to the pull request description, so the two cross-reference each other:
+    Add the returned URL to the pull request description, so the two
+    cross-reference each other:
 
     ```sh
     gh pr edit <number> --body "$(gh pr view <number> --json body -q .body)
@@ -96,33 +126,43 @@ A design change edits the [design views](../../../design/) to describe the archi
 
 -   **Document architecture, not requirements or decisions.**
 
-    Keep the artifacts descriptive (what the architecture _is_) and decision-free (link to the RFC for the why). Redirect requirement changes to the SRS and undecided significant decisions to the RFC process.
+    Keep the artifacts descriptive (what the architecture _is_) and
+    decision-free (link to the RFC for the why). Redirect requirement changes to
+    the SRS and undecided significant decisions to the RFC process.
 
 -   **One design change per branch and pull request.**
 
-    Do not bundle unrelated architecture changes. If the user describes several independent changes, recommend scaffolding separate branches.
+    Do not bundle unrelated architecture changes. If the user describes several
+    independent changes, recommend scaffolding separate branches.
 
 -   **Branch from `main`, not from any other branch.**
 
-    Design changes are always cut from `main`. If local `main` is behind the remote, pull first.
+    Design changes are always cut from `main`. If local `main` is behind the
+    remote, pull first.
 
 -   **Describe the end state, not a changelog.**
 
-    Edits describe the architecture as it will be once shipped — not the migration steps. The diff against `main` already shows what is changing.
+    Edits describe the architecture as it will be once shipped — not the
+    migration steps. The diff against `main` already shows what is changing.
 
 -   **Open the PR as a draft.**
 
-    A new design change is not yet ready for review, and the production change it describes may not yet be live. It MUST be opened as a draft pull request, and MUST NOT be merged until [`/ship-design`](../ship-design/SKILL.md) confirms the change is live in production.
+    A new design change is not yet ready for review, and the production change
+    it describes may not yet be live. It MUST be opened as a draft pull request,
+    and MUST NOT be merged until [`/ship-design`](../ship-design/SKILL.md)
+    confirms the change is live in production.
 
 -   **Every design change has an associated discussion thread.**
 
-    Opened with the PR (even as a draft) and linked from it. All review feedback belongs in the discussion, not in the PR's own comments.
+    Opened with the PR (even as a draft) and linked from it. All review feedback
+    belongs in the discussion, not in the PR's own comments.
 
 ## Success criteria
 
 - Branch `design/<slug>` exists and is checked out.
 
-- The affected [views](../../../design/) are edited (or clearly marked for the author), describing the intended end state.
+- The affected [views](../../../design/) are edited (or clearly marked for the
+  author), describing the intended end state.
 
 - A draft pull request titled `design: <short lowercase description>` is open.
 
@@ -130,6 +170,8 @@ A design change edits the [design views](../../../design/) to describe the archi
 
 ## References
 
-- [`AGENTS.md`](../../../AGENTS.md): The full design-change workflow and conventions, written for agents.
+- [`AGENTS.md`](../../../AGENTS.md): The full design-change workflow and
+  conventions, written for agents.
 
-- [`design/README.md`](../../../design/README.md): The architectural views and what each one covers.
+- [`design/README.md`](../../../design/README.md): The architectural views and
+  what each one covers.

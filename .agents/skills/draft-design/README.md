@@ -1,6 +1,7 @@
 # `/draft-design`
 
-Scaffolds a design change, ready for the author to edit the affected architectural views.
+Scaffolds a design change, ready for the author to edit the affected
+architectural views.
 
 ## What it does
 
@@ -8,7 +9,8 @@ Scaffolds a design change, ready for the author to edit the affected architectur
 
 - Works out which [design views](../../../design/) the change touches.
 
-- Edits the affected views to describe the intended end state — or leaves clear markers for the author.
+- Edits the affected views to describe the intended end state — or leaves clear
+  markers for the author.
 
 - Commits and pushes the change.
 
@@ -30,8 +32,13 @@ Optionally, describe the change:
 
 ## Examples
 
-- `/draft-design`: The agent prompts you for details, then scaffolds the branch and a draft PR.
+- `/draft-design`: The agent prompts you for details, then scaffolds the branch
+  and a draft PR.
 
-- `/draft-design <Description>`: Provide details of the architecture change, from which the agent infers the slug and the affected views, and drafts the edits.
+- `/draft-design <Description>`: Provide details of the architecture change,
+  from which the agent infers the slug and the affected views, and drafts the
+  edits.
 
-Refine the artifacts yourself, gather feedback in the discussion thread, then use [`/ship-design`](../ship-design/README.md) to land the change once it is live in production.
+Refine the artifacts yourself, gather feedback in the discussion thread, then
+use [`/ship-design`](../ship-design/README.md) to land the change once it is
+live in production.
