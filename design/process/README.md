@@ -7,7 +7,7 @@ concurrency is handled.
 This view answers the questions "what is running?", "how is it threaded?", and
 "how do those processes talk and synchronize?"
 
-The process view describes _what_ executes_ and _how_ it behaves at runtime, but
+The process view describes _what_ executes and _how_ it behaves at runtime, but
 it does not describe _where_ those executables are run – see the
 [physical](../physical/) view for that. The same process structure could be
 deployed across very different topologies without changing.

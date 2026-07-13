@@ -25,6 +25,12 @@ satisfy, nor the rationale for the choices behind the design:
   intended architecture captured here – live in a separate
   [`audits`](https://github.com/kieranpotts/audits) repository.
 
+- When, and in what order, the work gets done lives in the
+  [`plans`](https://github.com/kieranpotts/plans) repository.
+
+- Security and privacy risks the system carries live in the
+  [`risks`](https://github.com/kieranpotts/risks) repository.
+
 Where a significant decision shaped the design, the artifact MUST link out to
 the RFC that records it, rather than restating the reasoning here.
 

@@ -1,6 +1,6 @@
 # Technical view
 
-The section documents the technology stack of the application layer — the
+This section documents the technology stack of the application layer — the
 programming languages, runtimes, and system software the production system is
 built from.
 

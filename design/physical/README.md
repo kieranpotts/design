@@ -1,6 +1,6 @@
 # Physical view
 
-The physical architectural vie describes the deployment topology – how the
+The physical architectural view describes the deployment topology – how the
 software maps onto infrastructure: hosts, networks, data stores, environments,
 and runtime placement.
 
@@ -14,7 +14,7 @@ It includes:
 
 - **Deployment topology.** The hosts, containers, clusters, or serverless
   platforms the software runs on, and which runtime units are placed where.
-  Deployment diagram (in text) are used for this modeling.
+  Deployment diagrams (in text) are used for this modeling.
 
 - **Environments.** The distinct environments (production, staging, etc.) and
   the significant ways their topologies differ.
