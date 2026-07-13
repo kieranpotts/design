@@ -1,7 +1,6 @@
 # 📐 Design Docs
 
-**A template for maintaining a system's architectural artifacts via version
-control.**
+**A template for maintaining a system's architectural artifacts via version control.**
 
 This repository is the home of the design documentation for [Project Name]. It
 is the living, authoritative description of the system's architecture as it
@@ -33,9 +32,8 @@ documentation ecosystem modeling the software development lifecycle. Each is the
 reference implementation of an opinionated workflow, and answers a different
 question about the system:
 
-- [**📋 Software Requirements Specification
-  (SRS)**](https://github.com/kieranpotts/specs): Records _what_ the system
-  does, in business terms.
+- [**📋 Software Requirements Specification (SRS)**](https://github.com/kieranpotts/specs):
+  Records _what_ the system does, in business terms.
 
 - [**💬 Requests for Comments (RFC)**](https://github.com/kieranpotts/rfc):
   Records _how_ significant technical decisions were made, and _why_.
@@ -43,15 +41,14 @@ question about the system:
 - **📐 Design Docs**: Describe _what the system looks like_, its as-is
   architecture (this repository).
 
-- [**🗺️ Delivery Plans**](https://github.com/kieranpotts/plans): Capture _when,
-  and in what order_, the work gets done.
+- [**🗺️ Delivery Plans**](https://github.com/kieranpotts/plans):
+  Capture _when, and in what order_, the work gets done.
 
-- [**🔍 Architecture Audits**](https://github.com/kieranpotts/audits): Evaluate the as-built
-  system on its own terms – architecture and security findings, point-in-time.
+- [**🔍 Architecture Audits**](https://github.com/kieranpotts/audits):
+  Evaluate the as-built system architecture.
 
 - [**⚠️ Risk Register**](https://github.com/kieranpotts/risks): Records the
-  security and privacy risks the system carries, and tracks their mitigation
-  over time.
+  security and privacy risks the system carries.
 
 The [**skills**](https://github.com/kieranpotts/skills) collection provides an
 agentic workflow that operates across all six.
