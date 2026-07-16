@@ -10,7 +10,7 @@ metadata:
   interactive: yes
 ---
 
-# `/ship-design`
+# Ship design
 
 Use this skill to land a design change — to merge it into `main` once the
 corresponding production change is live. This is the gate that protects the

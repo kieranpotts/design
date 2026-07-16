@@ -1,4 +1,4 @@
-# `/ship-design`
+# Ship design
 
 Lands a design change once the production change it describes is live.
 
@@ -18,15 +18,13 @@ Lands a design change once the production change it describes is live.
 
 ## How to invoke
 
-```
-/ship-design
-```
+Run from a `design/<slug>` branch:
 
-Run it from the `design/<slug>` branch, or describe which change to ship:
+> Ship design
 
-```
-/ship-design The billing-service extraction is live in production now
-```
+Or describe which design to ship:
+
+> The billing service extraction is now live in production.
 
 ## Examples
 

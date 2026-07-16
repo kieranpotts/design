@@ -1,4 +1,4 @@
-# `/draft-design`
+# Draft design
 
 Scaffolds a design change, ready for the author to edit the affected
 architectural views.
@@ -20,15 +20,10 @@ architectural views.
 
 ## How to invoke
 
-```
-/draft-design
-```
+> Draft design
 
-Optionally, describe the change:
-
-```
-/draft-design We will extract billing into its own service, consuming order events off the bus
-```
+> We will extract billing into its own service, consuming order events off
+> the bus. Draft changes to the design.
 
 ## Examples
 

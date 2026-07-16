@@ -11,7 +11,7 @@ metadata:
   interactive: yes
 ---
 
-# `/reconcile-design`
+# Reconcile design
 
 Use this skill to find and correct drift — places where the design documentation
 on `main` no longer matches the real production system, because a change shipped

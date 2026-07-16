@@ -1,4 +1,4 @@
-# `/reconcile-design`
+# Reconcile design
 
 Detects drift between the design documentation on `main` and the real production
 system, and scaffolds a change to correct it.
@@ -19,15 +19,10 @@ system, and scaffolds a change to correct it.
 
 ## How to invoke
 
-```
-/reconcile-design
-```
+> Reconcile design
 
-Optionally, point it at what changed:
-
-```
-/reconcile-design The deployment moved to multi-region last month but the physical view still shows one region
-```
+> The deployment moved to multi-region last month, but the physical view
+> still shows one region.
 
 ## Examples
 
