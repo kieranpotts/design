@@ -64,7 +64,9 @@ that repository, rather than maintain them separately.
 
 - [**Design**](./design/): The architectural artifacts, organized into views.
   Covers the logical structure, the development organization, the runtime
-  processes, the physical deployment, and the scenarios that tie them together.
+  processes, the physical deployment, the crosscutting concepts, and the
+  scenarios that tie them together. Includes a
+  [glossary](./design/glossary.md) of architecture-specific terms.
 
 - [**Contributing**](./CONTRIBUTING.md): Step-by-step instructions for keeping
   the design documentation synchronized with the production system.

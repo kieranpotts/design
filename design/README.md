@@ -28,10 +28,16 @@ question.
 
 The architectural views used in these design docs are extended from the [4+1
 architectural view
-model](https://en.wikipedia.org/wiki/4%2B1_architectural_view_model). The seven
-views are arranged as an abstraction ladder – the most abstract views first,
-with subsequent views incrementally becoming more concrete. A reader can stop at
-whatever altitude answers their question.
+model](https://en.wikipedia.org/wiki/4%2B1_architectural_view_model), and draw
+on other well-established documentation models: [C4](https://c4model.com/) for
+the diagram notation, and [Arc42](https://arc42.org/) – in particular its
+treatment of crosscutting concepts and a shared glossary.
+
+Six of the eight views are arranged as an abstraction ladder – the most abstract
+first, with subsequent views incrementally becoming more concrete. A reader can
+stop at whatever altitude answers their question. The remaining two views –
+[scenarios](./scenarios/) and [concepts](./concepts/) – cut _across_ the ladder
+rather than sitting on a rung.
 
 The architectural views are:
 
@@ -55,3 +61,10 @@ The architectural views are:
 
 - [**Scenarios**](./scenarios/): How it all fits together – key end-to-end flows
   cross-cutting through the other views.
+
+- [**Concepts**](./concepts/): The crosscutting concerns – domain model,
+  security, persistence, error handling, observability – applied system-wide
+  across the other views.
+
+A [**glossary**](./glossary.md) defines the architecture- and technical-specific
+terms used across the views.

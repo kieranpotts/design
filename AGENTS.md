@@ -46,12 +46,12 @@ serves that purpose.
 ## Project structure
 
 - **`design/`**:
-  The architectural artifacts, organized into seven views that are extended from
-  the 4+1 architectural view model. The views form a ladder from most abstract
-  to most concrete, with `scenarios` cutting across all the views. Each view is
-  a directory with a `README.md` entry point. Supporting artifacts (diagrams,
-  schemas, exports) live inside the directories and MUST be referenced from the
-  `README.md`.
+  The architectural artifacts, organized into eight views that are extended from
+  the 4+1 architectural view model (and draw on C4 and Arc42). Six views form a
+  ladder from most abstract to most concrete. The other two – `scenarios` and
+  `concepts` – cut across all the views. Each view is a directory with a
+  `README.md` entry point. Supporting artifacts (diagrams, schemas, exports)
+  live inside the directories and MUST be referenced from the `README.md`.
 
   - **`conceptual/`**:
     The strategic, whole-system overview – major parts, system landscape, and
@@ -79,8 +79,17 @@ serves that purpose.
     is built from, named and versioned. This is the most concrete view.
 
   - **`scenarios/`**:
-    The cross-cutting view – key end-to-end flows that tie the other six views
+    The cross-cutting view – key end-to-end flows that tie the other views
     together, illustrating how the architecture realizes important behaviors.
+
+  - **`concepts/`**:
+    The other cross-cutting view – system-wide concerns such as the domain
+    model, security, persistence, error handling, and observability, described
+    once and applied across all the views.
+
+  - **`glossary.md`**:
+    The architecture- and technical-specific terms used across the views. Domain
+    and business terms live in the SRS.
 
 - **`docs/`**:
   General guidelines for humans on maintaining architectural documentation.
