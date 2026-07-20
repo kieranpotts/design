@@ -52,19 +52,19 @@ production and is being caught up.
     Walk the seven [design views](../../../design/) and check each against the
     corresponding source of truth:
 
-    - **Conceptual**: Do the documented major parts and system landscape still
+    - **Conceptual:** Do the documented major parts and system landscape still
       match the system as a whole?
-    - **Logical**: Do the documented components, responsibilities, and
+    - **Logical:** Do the documented components, responsibilities, and
       relationships still match the code's structure?
-    - **Development**: Do the documented modules, layers, and build artifacts
+    - **Development:** Do the documented modules, layers, and build artifacts
       match the actual repositories?
-    - **Process**: Do the documented runtime units, communication, and
+    - **Process:** Do the documented runtime units, communication, and
       concurrency match what actually runs?
-    - **Physical**: Does the documented deployment topology match the actual
+    - **Physical:** Does the documented deployment topology match the actual
       infrastructure?
-    - **Technical**: Do the documented languages, runtimes, and system software
+    - **Technical:** Do the documented languages, runtimes, and system software
       match the stack actually in production?
-    - **Scenarios**: Do the traced end-to-end flows still play out as
+    - **Scenarios:** Do the traced end-to-end flows still play out as
       documented?
 
     Record each discrepancy: what the documentation says, what production

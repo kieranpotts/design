@@ -7,18 +7,18 @@ automate the design-change workflow.
 The skills automate the recurring mechanics of keeping `main` synchronized with
 production. The available skills are:
 
-- **[`/draft-design`](./draft-design/)**: Scaffolds a design change. Cuts a
+- **[`/draft-design`](./draft-design/):** Scaffolds a design change. Cuts a
   `design/<slug>` branch from `main`, opens a draft pull request, and opens a
   linked discussion thread, ready for the author to edit the affected [design
   views](../../design/).
 
-- **[`/ship-design`](./ship-design/)**: Lands a design change. Confirms the
+- **[`/ship-design`](./ship-design/):** Lands a design change. Confirms the
   corresponding production change is live, marks the pull request ready,
   squash-merges it to `main` with a `design: <description>` message, and closes
   the discussion thread. This is the gate that protects the "`main` describes
   production" promise.
 
-- **[`/reconcile-design`](./reconcile-design/)**: Corrects drift. Compares the
+- **[`/reconcile-design`](./reconcile-design/):** Corrects drift. Compares the
   documentation on `main` against the real system (code, configuration,
   infrastructure), and scaffolds a design change to bring the artifacts back in
   line with production when something shipped without updating the docs.

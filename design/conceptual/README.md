@@ -33,9 +33,9 @@ useful view for non-technical stakeholders.
 
 ### The shape of the whole
 
-The Acme Catalog & Storefront platform is a **modular, service-oriented
-architecture**: a small number of independently deployable services, each
-owning a distinct area of responsibility, communicating over synchronous HTTP
+The Acme Catalog & Storefront platform is a modular, service-oriented
+architecture. It consists of a small number of independently deployable services,
+each owning a distinct area of responsibility, communicating over synchronous HTTP
 for request/response work and an asynchronous event bus for workflows that
 outlive a single request. It is neither a single monolith nor a fine-grained
 microservices mesh — the service boundaries are drawn around durable business

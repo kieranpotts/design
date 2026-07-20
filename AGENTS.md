@@ -45,7 +45,7 @@ serves that purpose.
 
 ## Project structure
 
-- **`design/`**:
+- **`design/`:**
   The architectural artifacts, organized into eight views that are extended from
   the 4+1 architectural view model (and draw on C4 and Arc42). Six views form a
   ladder from most abstract to most concrete. The other two – `scenarios` and
@@ -53,45 +53,45 @@ serves that purpose.
   `README.md` entry point. Supporting artifacts (diagrams, schemas, exports)
   live inside the directories and MUST be referenced from the `README.md`.
 
-  - **`conceptual/`**:
+  - **`conceptual/`:**
     The strategic, whole-system overview – major parts, system landscape, and
     the shape of the whole. Readable by non-technical stakeholders. Entry point
     to the other views. Most abstract view.
 
-  - **`logical/`**:
+  - **`logical/`:**
     The functional structure – components, their responsibilities, and their
     relationships. The developer-facing decomposition of what the system _is_.
 
-  - **`development/`**:
+  - **`development/`:**
     The static organization of the codebase – modules, layers, repositories,
     build artifacts, and their dependencies.
 
-  - **`process/`**:
+  - **`process/`:**
     The runtime view – processes, threads, services, and how they communicate,
     synchronize, and handle concurrency.
 
-  - **`physical/`**:
+  - **`physical/`:**
     The deployment view – how software maps onto infrastructure: hosts,
     networks, environments, and runtime topology.
 
-  - **`technical/`**:
+  - **`technical/`:**
     The concrete stack – the languages, runtimes, and system software the system
     is built from, named and versioned. This is the most concrete view.
 
-  - **`scenarios/`**:
+  - **`scenarios/`:**
     The cross-cutting view – key end-to-end flows that tie the other views
     together, illustrating how the architecture realizes important behaviors.
 
-  - **`concepts/`**:
+  - **`concepts/`:**
     The other cross-cutting view – system-wide concerns such as the domain
     model, security, persistence, error handling, and observability, described
     once and applied across all the views.
 
-  - **`glossary.md`**:
+  - **`glossary.md`:**
     The architecture- and technical-specific terms used across the views. Domain
     and business terms live in the SRS.
 
-- **`docs/`**:
+- **`docs/`:**
   General guidelines for humans on maintaining architectural documentation.
 
 ## How design changes are introduced
