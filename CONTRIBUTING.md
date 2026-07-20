@@ -3,13 +3,17 @@
 <!-- Agents MUST read ./AGENTS.md. This document is for humans. -->
 
 These contributing guidelines provide step-by-step instructions for keeping the
-design documentation synchronized with the production system. The focus here is
-on the mechanics and guardrails of the process. See the [documentation](./docs/)
-for more general guidance on maintaining good quality architectural
-documentation.
+design documentation synchronized with the production system.
+
+The focus here is on the mechanics and guardrails of the process. See the
+[documentation](./docs/) for more general guidance on maintaining good quality
+architectural documentation.
 
 The design documentation is maintained by the technical teams. Anyone with write
 access to this repository may propose changes to it.
+
+See also [TS-3](https://github.com/kieranpotts/standards/tree/latest/dev/src/003)
+for the technical standard that underpins this process.
 
 > [!NOTE]
 > The capitalized words REQUIRED, MUST, MUST NOT, RECOMMENDED, SHOULD, SHOULD

@@ -1,6 +1,7 @@
 # 📐 Design Docs
 
-**A template for maintaining a system's architectural artifacts via version control.**
+**A template for maintaining a system's architectural artifacts**
+via version control.
 
 This repository is the home of the design documentation for [Project Name]. It
 is the living, authoritative description of the system's architecture as it
@@ -18,10 +19,6 @@ This is living documentation. The artifacts on the `main` trunk reflect the
 current state of the production system. A change to the architecture is merged
 into `main` _at the same time_ as the corresponding code and configuration are
 shipped to production, so the documentation never drifts from reality.
-
-> [!NOTE]
-> See **[TS-3: Design Docs](https://github.com/kieranpotts/standards/tree/latest/dev/src/003)**
-> for more guidance on maintaining design docs.
 
 ## Ecosystem
 
