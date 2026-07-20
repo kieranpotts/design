@@ -1,5 +1,5 @@
-_Briefly describe the architecture change this documents — what the system looks
-like after the change._
+Briefly describe the architecture change this documents — what the system looks
+like after the change.
 
 - Discussion thread: [Link] _(required)_
 - RFC, if a significant decision drove this change: [Link] _(optional)_

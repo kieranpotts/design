@@ -6,7 +6,7 @@ labels: MAINTENANCE
 assignees: ""
 ---
 
-_Write a concise description of the maintenance work that needs to be done._
+Write a concise description of the maintenance work that needs to be done.
 
 ## Steps to complete
 
@@ -16,5 +16,4 @@ _Write a concise description of the maintenance work that needs to be done._
 
 ## Additional notes
 
-_Add any additional information or context that might help to complete this
-task._
+Add any additional information or context that might help to complete this task.
