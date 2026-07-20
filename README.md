@@ -20,7 +20,7 @@ into `main` _at the same time_ as the corresponding code and configuration are
 shipped to production, so the documentation never drifts from reality.
 
 > [!NOTE]
-> See **[TS-3: Design Docs](https://github.com/kieranpotts/standards/tree/latest/dev/src/003)**.
+> See **[TS-3: Design Docs](https://github.com/kieranpotts/standards/tree/latest/dev/src/003)**
 > for more guidance on maintaining design docs.
 
 ## Ecosystem
@@ -47,8 +47,8 @@ system.
 - [**⚠️ Risk Register**](https://github.com/kieranpotts/risks) \
   Records the inherent security and privacy risks the system carries.
 
-In addition, the [**✨ Agent SKills**](https://github.com/kieranpotts/skills)
-collection offers composabe agentic workflows that operate across all six
+In addition, the [**✨ Agent Skills**](https://github.com/kieranpotts/skills)
+collection offers composable agentic workflows that operate across all six
 repositories.
 
 This separation into dedicated repositories is intended for application software
@@ -69,7 +69,7 @@ better to fold all documentation into the same repository.
   with the production system.
 
 - [**Agents**](./AGENTS.md) and [**Skills**](./.agents/skills/) \
-  Instructions for agents tools to maintain the design documentation with a
+  Instructions for agent tools to maintain the design documentation with a
   high degree of autonomy.
 
 - [**Documentation**](./docs/) \

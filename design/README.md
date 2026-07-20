@@ -41,7 +41,7 @@ rather than sitting on a rung.
 
 The architectural views are:
 
-- [**Conceptual**](./conceptual/): The whole system at-a-glance – major ports,
+- [**Conceptual**](./conceptual/): The whole system at-a-glance – major parts,
   system landscape, the shape of the whole.
 
 - [**Logical**](./logical/): The composition of the system – functional

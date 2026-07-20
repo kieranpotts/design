@@ -1,6 +1,6 @@
 # Conceptual view
 
-This is the a strategic, whole-system overview. It names the system's major
+This is a strategic, whole-system overview. It names the system's major
 parts and shows how they fit together, without going into how any part is built
 or run.
 
