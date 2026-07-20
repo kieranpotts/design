@@ -42,9 +42,9 @@ microservices mesh — the service boundaries are drawn around durable business
 capabilities (catalog, payments, notifications), not individual features.
 
 The platform realizes the requirements captured in the [Acme Catalog API
-SRS](https://github.com/kieranpotts/specs) — a read-mostly product catalog with
-reservation and checkout capabilities for retailers and their technology
-partners.
+SRS](https://github.com/kieranpotts/specs) — an authoritative product catalog
+with reservation and checkout capabilities, serving retailers, their technology
+partners, and shoppers buying directly.
 
 ### System landscape
 

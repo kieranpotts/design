@@ -23,8 +23,8 @@ sequenceDiagram
     Shopper->>Web: Click "Checkout"
     Web->>API: POST /checkout {cartId}
     API->>Catalog: POST /reservations {productId}
-    Catalog-->>API: 201 reservation held (60s TTL)
-    API->>Payments: POST /payments {reservationId}
+    Catalog-->>API: 201 checkout hold held (60s TTL)
+    API->>Payments: POST /payments {holdId}
     Payments->>Stripe: Authorize card
     Note over Payments,Stripe: Timeout after 5s, no response
     Payments->>Payments: Retry with backoff (2 attempts)
@@ -46,7 +46,7 @@ sequenceDiagram
 - **[Concepts](../concepts/)** — this is the canonical illustration of the
   system-wide [error and failure handling](../concepts/) concept: an
   unavailable external dependency degrades to an explicit, retryable failure
-  rather than a silent inconsistency. It also demonstrates the reservation
+  rather than a silent inconsistency. It also demonstrates the checkout-hold
   time-to-live safeguard described under [persistence](../concepts/), which
   bounds how long a hold can block a product if a release call is itself
   never made.

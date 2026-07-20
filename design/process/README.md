@@ -109,7 +109,7 @@ sequenceDiagram
     Shopper->>Web: Submit checkout
     Web->>API: POST /checkout
     API->>Catalog: POST /reservations/:id/confirm
-    Catalog-->>API: 200 reservation confirmed
+    Catalog-->>API: 200 checkout hold confirmed
     API->>Payments: POST /payments (idempotency key)
     Payments-->>API: 200 payment captured
     API-->>Web: 200 order confirmed

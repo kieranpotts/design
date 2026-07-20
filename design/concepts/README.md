@@ -72,11 +72,11 @@ erDiagram
         string status
         datetime expiresAt
     }
-    ORDER ||--|| RESERVATION : confirms
+    ORDER ||--|| RESERVATION : "confirms checkout hold"
     ORDER ||--|| PAYMENT : "paid by"
     ORDER {
         string id
-        string reservationId
+        string holdId
         string status
     }
     PAYMENT {
@@ -87,21 +87,34 @@ erDiagram
     }
 ```
 
-`Product` and `Reservation` are owned by `catalog-service`; `Order` and
-`Payment` are owned by `payments-service`. An `Order` references a
-`Reservation` by ID rather than sharing a database — see
-[persistence](#persistence-and-data) below.
+`Product` and `Reservation` are owned by `catalog-service` — a `Reservation`
+record backs both a Partner's business hold and the short-lived checkout hold
+(see [persistence](#persistence-and-data)). `Order` and `Payment` are owned by
+`payments-service`. An `Order` references the checkout hold it confirms by ID
+rather than sharing a database — see [persistence](#persistence-and-data) below.
 
 ### Persistence and data
 
 Each domain service owns its own PostgreSQL database exclusively; no service
 reads another service's tables directly. Cross-service references (e.g. an
 `Order` pointing at a `Reservation`) are held as opaque IDs, resolved by
-calling the owning service's API, never by a cross-database join. Reservations
-carry a 60-second time-to-live; an unconfirmed reservation is automatically
-released by a scheduled job in `catalog-service`, bounding how long a checkout
-failure can hold a product unavailable — see the [payment provider outage
-scenario](../scenarios/payment-provider-outage.md).
+calling the owning service's API, never by a cross-database join.
+
+`catalog-service` distinguishes two kinds of hold on a product, both bounded by
+a time-to-live so a product is never stranded as unavailable:
+
+- A **Partner reservation** — a business hold placed via the SRS reservation
+  capability while a sale is arranged out-of-band. Its hold window is a
+  configuration value (hours to days), and an expired hold is swept back to
+  `available` by a scheduled job.
+
+- A **checkout hold** — a short-lived hold `catalog-service` takes for the
+  duration of a single synchronous `storefront-api` checkout, carrying a
+  60-second time-to-live. It bounds how long a stalled or failed checkout can
+  hold a product unavailable: if the checkout does not confirm within the
+  window, the hold lapses (or is released explicitly on failure) and the product
+  returns to `available` — see the [payment provider outage
+  scenario](../scenarios/payment-provider-outage.md).
 
 ### Security
 
