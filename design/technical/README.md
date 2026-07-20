@@ -28,3 +28,55 @@ It includes:
 - **Links to technical decision log.** For each significant technology, a link
   to the [RFC](https://github.com/kieranpotts/rfc) that records the decision to
   adopt it.
+
+## Example: Acme Catalog & Storefront platform
+
+> [!NOTE]
+> This is a sample technical view, included to illustrate the format. It
+> describes a fictional catalog and storefront platform for a fictional project
+> ("acme") and is not one of this project's real architectural views.
+
+### Languages and runtimes
+
+| Component | Language | Runtime |
+|---|---|---|
+| `storefront-web` | TypeScript | Node.js 22 LTS (Next.js 15) |
+| `storefront-api` | TypeScript | Node.js 22 LTS (Express 4) |
+| `catalog-service` | TypeScript | Node.js 22 LTS (Express 4) |
+| `payments-service` | TypeScript | Node.js 22 LTS (Express 4) |
+| `notification-worker` | TypeScript | Node.js 22 LTS |
+
+All backend services are packaged with `npm` and compiled with `tsc` ahead of
+container build.
+
+### System software
+
+- **PostgreSQL 16** — primary datastore for `catalog-service` and
+  `payments-service`, run as Amazon RDS instances.
+- **Redis 7** — caching layer for catalog reads, run as Amazon ElastiCache.
+- **Apache Kafka 3.7** (Amazon MSK) — event bus for order and reservation
+  events.
+- **NGINX Ingress Controller** — routes ALB traffic into the EKS cluster.
+
+### Significant platform components
+
+- **Kubernetes 1.30** (Amazon EKS) — container orchestration for all four
+  backend services.
+- **Docker** — container image format and build tooling for every deployable
+  repository.
+- **Amazon CloudFront** — CDN serving `storefront-web`.
+- **Amazon S3** — object storage for product images.
+- **GitHub** — source hosting and CI/CD (GitHub Actions) for all
+  repositories, per RFC 0002 ("GitHub as the remote forge").
+- **Trunk-based branching**, per RFC 0003 ("trunk-based branching"), is the
+  branching model used across all Acme repositories; it materially shapes how
+  frequently images are built and deployed from `main`.
+
+### Links to technical decision log
+
+- The choice of GitHub as the remote forge for all Acme repositories is
+  recorded in
+  [RFC 0002 — GitHub for remote forge](https://github.com/kieranpotts/rfc/tree/main/rfc/tooling/acme-github-for-remote-forge).
+- The trunk-based branching model used across all backend and frontend
+  repositories is recorded in
+  [RFC 0003 — trunk-based branching](https://github.com/kieranpotts/rfc/tree/main/rfc/process/acme-trunk-based-branching).

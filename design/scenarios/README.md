@@ -35,3 +35,21 @@ Scenarios include:
 - **Cross-references.** Link each step to the artifact in the relevant view that
   defines the component, process, or host involved, rather than redescribing it
   here.
+
+## Example: Acme Catalog & Storefront platform
+
+> [!NOTE]
+> This is a sample scenarios view, included to illustrate the format. It
+> describes a fictional catalog and storefront platform for a fictional project
+> ("acme") and is not one of this project's real architectural views.
+
+Two scenarios are documented for the fictional Acme platform:
+
+- [**Checkout**](./checkout.md) — the primary request path: a shopper reserves
+  a product and completes payment. Traces the
+  [`checkout-and-payments`](https://github.com/kieranpotts/specs) journey
+  through every view.
+
+- [**Payment provider outage**](./payment-provider-outage.md) — a
+  failure-and-recovery path, showing how the architecture behaves when the
+  Stripe payment service provider is unavailable.

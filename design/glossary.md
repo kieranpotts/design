@@ -13,17 +13,38 @@ with a link back to its authoritative definition in the SRS.
 Terms are listed alphabetically. Keep each definition short — a sentence or two —
 and describe what the term _means in this system_, not the general concept.
 
+> [!NOTE]
+> The terms below are sample entries, included to illustrate the format. They
+> describe a fictional catalog and storefront platform for a fictional project
+> ("acme") and are not this project's real glossary terms.
+
 ## Terms
 
-**[Example Component]**
-: [A one- or two-sentence description of what this component is and the
-responsibility it owns. Link to the [logical](./logical/) view where it is
-defined in full.]
+**catalog-service**
+: The [logical](./logical/) component that owns the product catalog, listings,
+and reservation state for the fictional Acme platform. Realizes the [Acme
+Catalog API](https://github.com/kieranpotts/specs) domain. See the
+[logical view](./logical/) for its full responsibilities.
 
-**[Example Runtime Unit]**
-: [What this process or service is at runtime, and how it maps to the logical
-components. Link to the [process](./process/) view.]
+**domain-kit**
+: A shared, versioned internal package containing domain event schemas, HTTP
+client SDKs, and logging/tracing conventions common to Acme's backend
+services. Not a deployable runtime unit itself — see the [development
+view](./development/).
 
-**[Example Domain Term]**
-: [A domain term restated here only for convenience. The authoritative
-definition lives in the [SRS](https://github.com/kieranpotts/specs).]
+**notification-worker**
+: The [runtime unit](./process/) that consumes order and reservation events
+from the event bus and sends transactional email. Runs as a Kafka consumer
+group with no HTTP surface. See the [process view](./process/).
+
+**reservation**
+: A domain term restated here for convenience: a time-bounded hold on a
+product that prevents it being sold to another shopper while checkout is in
+progress. The authoritative definition lives in the
+[SRS](https://github.com/kieranpotts/specs).
+
+**storefront-api**
+: The [runtime unit](./process/) that acts as the backend-for-frontend and API
+gateway between `storefront-web` and the domain services (`catalog-service`,
+`payments-service`). Holds no persistent state of its own. See the [process
+view](./process/).
