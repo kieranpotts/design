@@ -11,8 +11,5 @@ General guidance for getting the most out of architectural design documentation.
   maintaining the design artifacts — keeping them descriptive, decision-free,
   and honest.
 
-- [**Development**](./development.md): Local repository setup, including
-  pre-commit hooks.
-
 - [**Contributing**](../CONTRIBUTING.md): The mechanics of the design-change
   workflow.
