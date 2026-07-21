@@ -5,7 +5,7 @@ Skills available to agents in this repository are:
 - **[Scaffold design](./scaffold-design/):**
   Scaffolds a design change.
 
-- **[Ship design](./ship-design/):**
+- **[Complete design](./complete-design/):**
   Lands a design change.
 
 - **[Reconcile design](./reconcile-design/):**

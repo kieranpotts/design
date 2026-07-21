@@ -1,5 +1,5 @@
 ---
-name: ship-design
+name: complete-design
 description: >-
   Land a design change once the production change it describes is live. Mark
   the PR ready, squash-merge it to main, and close the discussion thread. Use
@@ -10,7 +10,7 @@ metadata:
   interactive: yes
 ---
 
-# Ship design
+# Complete design
 
 Use this skill to land a design change — to merge it into `main` once the
 corresponding production change is live. This is the gate that protects the

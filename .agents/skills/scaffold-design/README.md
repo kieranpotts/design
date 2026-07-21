@@ -35,5 +35,5 @@ architectural views.
   drafts the edits.
 
 Refine the artifacts yourself, gather feedback in the discussion thread, then
-use [`/ship-design`](../ship-design/README.md) to land the change once it is
+use [`/complete-design`](../complete-design/README.md) to land the change once it is
 live in production.

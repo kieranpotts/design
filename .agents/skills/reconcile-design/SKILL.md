@@ -23,7 +23,7 @@ artifacts against reality and scaffolding a design change to fix the gaps.
 
 Do NOT use this skill to document a _new_ change going through review — use
 [`/scaffold-design`](../scaffold-design/SKILL.md). Do NOT use it to merge — use
-[`/ship-design`](../ship-design/SKILL.md).
+[`/complete-design`](../complete-design/SKILL.md).
 
 ## What "drift" means here
 
@@ -124,7 +124,7 @@ coherent area of drift.
 -   **Ship via the normal gate.**
 
     A reconciliation change still lands through
-    [`/ship-design`](../ship-design/SKILL.md). Because the production change is
+    [`/complete-design`](../complete-design/SKILL.md). Because the production change is
     already live, the gate is satisfied — but the change is still reviewed and
     merged through a pull request, not committed directly to `main`.
 

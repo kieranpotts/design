@@ -159,7 +159,7 @@ thread.
 
     A new design change is not yet ready for review, and the production change
     it describes may not yet be live. It MUST be opened as a draft pull request,
-    and MUST NOT be merged until [`/ship-design`](../ship-design/SKILL.md)
+    and MUST NOT be merged until [`/complete-design`](../complete-design/SKILL.md)
     confirms the change is live in production.
 
 -   **Every design change has an associated discussion thread.**

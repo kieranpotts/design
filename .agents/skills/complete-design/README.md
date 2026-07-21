@@ -1,4 +1,4 @@
-# Ship design
+# Complete design
 
 Lands a design change once the production change it describes is live.
 
@@ -20,7 +20,7 @@ Lands a design change once the production change it describes is live.
 
 Run from a `design/<slug>` branch:
 
-> Ship design
+> Complete design
 
 Or describe which design to ship:
 
@@ -28,8 +28,8 @@ Or describe which design to ship:
 
 ## Examples
 
-- `/ship-design`: From a `design/<slug>` branch, the agent verifies the change
-  is live, then merges and closes the thread (with your confirmation).
+- `/complete-design`: From a `design/<slug>` branch, the agent verifies the
+  change is live, then merges and closes the thread (with your confirmation).
 
-- `/ship-design <Description>`: From `main`, the agent finds the matching
+- `/complete-design <Description>`: From `main`, the agent finds the matching
   design-change PR and lands it.
