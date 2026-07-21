@@ -1,11 +1,11 @@
 ---
 name: reconcile-design
 description: >-
-  Detect and correct drift between the design
-  documentation on main and the real production system. Scaffolds a design change
-  to bring the artifacts back in line with production. Use when the user says "the
-  design docs are out of date", "reconcile the design docs", "check the docs
-  against the code", or "the architecture has drifted".
+  Detect and correct drift between the design documentation on main and the
+  real production system. Scaffolds a design change to bring the artifacts
+  back in line with production. Use when the user says "the design docs are
+  out of date", "reconcile the design docs", "check the docs against the
+  code", or "the architecture has drifted".
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -37,6 +37,16 @@ Because the production change is _already_ live, the gate that normally blocks
 merging (the production change must be live first) is already satisfied.
 Reconciliation is the one case where the documentation legitimately lags
 production and is being caught up.
+
+**Input:** Sources of truth to compare the documentation against — REQUIRED.
+Code repositories, infrastructure-as-code, configuration, deployment
+manifests, or running-system inspection. Ask the user for the relevant
+locations if they are not obvious. A known area of drift — OPTIONAL. Narrows
+the comparison; otherwise all seven views are checked.
+
+**Output:** A reported list of drift discrepancies, and a `design/<slug>`
+branch with a draft pull request and linked discussion thread, correcting one
+coherent area of drift.
 
 ## Instructions
 

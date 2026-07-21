@@ -1,34 +1,26 @@
 # Agent skills
 
-This repository ships a small set of [agent skills](https://agentskills.io/) —
-invoked as slash commands through agentic tools such as Claude Code — that
-automate the design-change workflow.
+Skills available to agents in this repository are:
 
-The skills automate the recurring mechanics of keeping `main` synchronized with
-production. The available skills are:
+- **[Draft design](./draft-design/):**
+  Scaffolds a design change.
 
-- **[`/draft-design`](./draft-design/):** Scaffolds a design change. Cuts a
-  `design/<slug>` branch from `main`, opens a draft pull request, and opens a
-  linked discussion thread, ready for the author to edit the affected [design
-  views](../../design/).
+- **[Ship design](./ship-design/):**
+  Lands a design change.
 
-- **[`/ship-design`](./ship-design/):** Lands a design change. Confirms the
-  corresponding production change is live, marks the pull request ready,
-  squash-merges it to `main` with a `design: <description>` message, and closes
-  the discussion thread. This is the gate that protects the "`main` describes
-  production" promise.
+- **[Reconcile design](./reconcile-design/):**
+  Corrects drift from reality.
 
-- **[`/reconcile-design`](./reconcile-design/):** Corrects drift. Compares the
-  documentation on `main` against the real system (code, configuration,
-  infrastructure), and scaffolds a design change to bring the artifacts back in
-  line with production when something shipped without updating the docs.
+## Compatibility
 
-A typical journey runs `/draft-design` → the author edits the affected views →
-review in the discussion thread → `/ship-design` once the change is live in
-production. Separately, `/reconcile-design` is run whenever the documentation is
-found to have drifted from reality.
+Agent harnesses are converging on the `./.agents/skills/` path for dynamic
+retrieval of project-specific skills. This is compatible with the Agent Skills
+convention — see https://agentskills.io/.
 
-Each skill knows the guardrails for its step — above all, that a design change
-MUST NOT land on `main` before the production change it describes — and will not
-proceed until they are met, keeping the process consistent whether a human or an
-agent is driving it.
+As of May 2026, OpenAI Codex, GitHub Copilot, Gemini CLI, Google Antigravity,
+OpenCode, and Pi will auto-discover these skills, but Claude Code and Cursor
+will not.
+
+You will require workarounds for incompatible harnesses. For Claude Code, you
+can simply symlink this directory from `.claude/skills/`. Cursor requires more
+effort to transpile these skills into its native "rules" format.

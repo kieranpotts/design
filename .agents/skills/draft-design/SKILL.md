@@ -1,22 +1,32 @@
 ---
 name: draft-design
 description: >-
-  Scaffold a design change. Use this skill when
-  the user wants to update the architectural documentation to reflect a change to
-  the production system, or says "draft a design change", "new design change",
-  "document this architecture change", or "update the design docs". Do not use
-  this skill to ship a design change, or to correct documentation that has drifted
-  from production.
+  Scaffold a design change. Use this skill when the user wants to update the
+  architectural documentation to reflect a change to the production system, or
+  says "draft a design change", "new design change", "document this
+  architecture change", or "update the design docs". Do not use this skill to
+  ship a design change, or to correct documentation that has drifted from
+  production.
 license: CC0-1.0
 metadata:
   interactive: yes
 ---
 
-# `/draft-design`
+# Draft design
 
 A design change edits the [design views](../../../design/) to describe the
 architecture as it will be once a production change has shipped. There is no
 lifecycle state machine.
+
+**Input:** A description of the production change to document — REQUIRED.
+Prompt the user if they have not described it. Determine from it the slug, the
+affected views, and any architecturally significant decision behind the
+change.
+
+**Output:** A `design/<slug>` branch, with the affected [design
+views](../../../design/) edited (or clearly marked for the author), committed
+to a draft pull request opened against `main`, with a linked discussion
+thread.
 
 ## Before scaffolding
 

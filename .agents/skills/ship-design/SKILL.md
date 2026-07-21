@@ -1,10 +1,10 @@
 ---
 name: ship-design
 description: >-
-  Land a design change once the production change
-  it describes is live. Mark the PR ready, squash-merge it to main, and close the
-  discussion thread. Use when the user says "ship this design change", "the change
-  is live", "merge the design docs", or "land the design change".
+  Land a design change once the production change it describes is live. Mark
+  the PR ready, squash-merge it to main, and close the discussion thread. Use
+  when the user says "ship this design change", "the change is live", "merge
+  the design docs", or "land the design change".
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -19,6 +19,13 @@ repository's core promise: **`main` describes production**.
 Do NOT use this skill to scaffold a change — use
 [`/draft-design`](../draft-design/SKILL.md). Do NOT use it to correct drift —
 use [`/reconcile-design`](../reconcile-design/SKILL.md).
+
+**Input:** Target — REQUIRED. Infer the design change from the checked-out
+branch (`design/<slug>`). If on `main`, use the user's description, or list
+open design-change pull requests and ask the user to choose.
+
+**Output:** A squash-merged pull request on `main` with a `design:
+<description>` message, its branch deleted, and its discussion thread closed.
 
 ## Gate: the production change MUST be live
 
