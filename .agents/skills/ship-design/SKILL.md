@@ -17,8 +17,8 @@ corresponding production change is live. This is the gate that protects the
 repository's core promise: **`main` describes production**.
 
 Do NOT use this skill to scaffold a change — use
-[`/draft-design`](../draft-design/SKILL.md). Do NOT use it to correct drift —
-use [`/reconcile-design`](../reconcile-design/SKILL.md).
+[`/scaffold-design`](../scaffold-design/SKILL.md). Do NOT use it to correct
+drift — use [`/reconcile-design`](../reconcile-design/SKILL.md).
 
 **Input:** Target — REQUIRED. Infer the design change from the checked-out
 branch (`design/<slug>`). If on `main`, use the user's description, or list

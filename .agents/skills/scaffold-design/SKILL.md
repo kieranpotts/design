@@ -1,5 +1,5 @@
 ---
-name: draft-design
+name: scaffold-design
 description: >-
   Scaffold a design change. Use this skill when the user wants to update the
   architectural documentation to reflect a change to the production system, or
@@ -12,7 +12,7 @@ metadata:
   interactive: yes
 ---
 
-# Draft design
+# Scaffold design
 
 A design change edits the [design views](../../../design/) to describe the
 architecture as it will be once a production change has shipped. There is no

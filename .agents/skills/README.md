@@ -2,7 +2,7 @@
 
 Skills available to agents in this repository are:
 
-- **[Draft design](./draft-design/):**
+- **[Scaffold design](./scaffold-design/):**
   Scaffolds a design change.
 
 - **[Ship design](./ship-design/):**

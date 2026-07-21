@@ -22,7 +22,7 @@ production. Drift breaks that promise. This skill restores it by comparing the
 artifacts against reality and scaffolding a design change to fix the gaps.
 
 Do NOT use this skill to document a _new_ change going through review — use
-[`/draft-design`](../draft-design/SKILL.md). Do NOT use it to merge — use
+[`/scaffold-design`](../scaffold-design/SKILL.md). Do NOT use it to merge — use
 [`/ship-design`](../ship-design/SKILL.md).
 
 ## What "drift" means here
@@ -90,7 +90,7 @@ coherent area of drift.
 4.  **Scaffold the correction.**
 
     Hand off to the same scaffolding mechanics as
-    [`/draft-design`](../draft-design/SKILL.md): cut a `design/<slug>` branch
+    [`/scaffold-design`](../scaffold-design/SKILL.md): cut a `design/<slug>` branch
     from `main` (a slug like `reconcile-billing-topology`), edit the affected
     views to describe the _current_ production state, commit with a `design:
     <description>` message, open a draft pull request, and open a linked
