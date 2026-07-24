@@ -20,6 +20,12 @@ current state of the production system. A change to the architecture is merged
 into `main` _at the same time_ as the corresponding code and configuration are
 shipped to production, so the documentation never drifts from reality.
 
+Design docs are central to architectural knowledge management (AKM) – the
+practice of capturing, organizing, sharing, and preserving the knowledge that
+shapes a software system. Keeping these artifacts under version control, in
+sync with production, is what makes that knowledge explicit and durable rather
+than tacit and fragile.
+
 ## Ecosystem
 
 This repository is one of six that form a coherent, version-controlled
