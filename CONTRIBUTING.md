@@ -15,124 +15,73 @@ access to this repository may propose changes to it.
 See also [TS-3](https://github.com/kieranpotts/standards/tree/latest/dev/src/003)
 for the technical standard that underpins this process.
 
-> [!NOTE]
-> The capitalized words REQUIRED, MUST, MUST NOT, RECOMMENDED, SHOULD, SHOULD
-> NOT, OPTIONAL, and MAY herein are to be interpreted as described in [IETF RFC
-> 2119](https://www.ietf.org/rfc/rfc2119.txt).
+****
+The capitalized words REQUIRED, MUST, MUST NOT, RECOMMENDED, SHOULD,
+SHOULD NOT, OPTIONAL, and MAY herein are to be interpreted as described
+in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+****
 
-## Overview
+## Workflow
 
-The [design artifacts](./design/) always reflect the current state of the
-production system's architecture, expressed through a coherent set of
-architectural views. This is a living document. The description on `main` and
-the real system stay in lock-step.
+> [!TIP]
+> [Agent skills](./.agents/skills/) are available to help automate some steps in
+> this workflow.
 
-The design docs are deliberately narrow in purpose. They are descriptive –
-stating what the architecture _is_ – and decision-free – they do not record
-_why_ the architecture is the way it is. Two sibling repositories cover these
-related concerns:
+1.  If the change embodies an architecturally significant decision – a new
+    pattern, a deviation from the established stack, a structural shift with
+    broad impact – make that decision first, through the [RFC
+    process](https://github.com/kieranpotts/rfc), before the work is done. The
+    design docs capture the resulting architecture; this is NOT where the
+    decision is debated. Routine design changes that follow already-established
+    patterns need no RFC. If the change would impact multiple technical
+    stakeholders and is worth building consensus on, it is worthy of an RFC.
 
-- The [SRS](https://github.com/kieranpotts/specs) records the requirements –
-  _what_ the system must do.
+2.  Branch off `main` using the convention `design/<slug>`, where `<slug>` is a
+    short, hyphen-delimited description of the change, eg.
+    `design/extract-billing-service`.
 
-- The [RFC](https://github.com/kieranpotts/rfc) archive records the significant
-  technical decisions – _how_ a choice was made and _why_.
+3.  Edit the artifacts in the [`design/` directory](./design/). Modify all
+    appropriate architectural views to describe the architecture as it will be
+    once the change has shipped. Add, modify, or remove artifacts as needed to
+    describe the desired end state. The edits MUST read as a description of the
+    destination, not a list of steps to get there – the diff against `main`
+    already shows what is changing.
 
-A typical flow is SRS → RFC → design docs. A new requirement (specified in the
-SRS) requires an architecturally-significant design decision (such as a change
-to the technology stack, negotiated via an RFC) before the necessary changes can
-be implemented in code (the design docs capture the end result).
+4.  Where a significant decision drove the change, link the relevant artifact to
+    its RFC, rather than restating the rationale.
 
-## The design-change workflow
+5.  Ensure every artifact is referenced from its view's `README.md`.
 
-The workflow is designed around a single, firm rule:
+6.  Commit your changes and open a pull request as a draft, titled `design:
+    <description>`, where `<description>` is a short prose title, written full
+    lowercase, eg. `design: extract the billing service`. Fill out the top of
+    the PR template. (You will link the discussion thread, opened in the next
+    step, here and in the artifacts.)
 
-**The `main` trunk describes production.**
+7.  Open an associated [discussion
+    thread](https://github.com/kieranpotts/design/discussions) (REQUIRED). It
+    MUST exist by the time the pull request is marked ready for review; you MAY
+    open it earlier – even before the pull request – to align on the shape of
+    the change before editing artifacts. Link the discussion and the pull
+    request to each other. All review feedback is gathered here, keeping the
+    pull request focused on the evolution of the design artifacts themselves.
+    (The GitHub issue tracker is _not_ used for design changes. It is reserved
+    for repository maintenance only.)
 
-The [design artifacts](./design/) on `main` are the current truth. The
-design-change workflow exists to protect that promise.
+8.  When the artifacts are ready for review, mark the pull request ready for
+    review. Gather all feedback in the discussion thread.
 
-A change to the architecture is introduced through a design-change pull request.
-Follow these steps.
+9.  As implementation proceeds, reconcile any drift between the proposed
+    documentation and the real system back into the artifacts, so the
+    documentation that is eventually merged describes the architecture as
+    actually built.
 
-### Step 1: Make the decision first, if it is significant
+10. Confirm the corresponding code and configuration are live in production.
 
-If the change embodies an architecturally significant decision – a new pattern,
-a deviation from the established stack, a structural shift with broad impact –
-that decision is made through the [RFC
-process](https://github.com/kieranpotts/rfc), _before_ the work is done.
+11. Squash-merge the pull request, with a message of the form `design:
+    <description>`. Delete the branch.
 
-The design docs capture the resulting architecture. This is NOT where the
-decision is debated.
-
-Routine design changes that follow already-established patterns need no RFC. If
-the change would impact multiple technical stakeholders and is worth building
-consensus on, it is worthy of an RFC.
-
-### Step 2: Edit the artifacts to describe the end state
-
-1. Branch off `main` using the convention `design/<slug>`, where `<slug>` is a
-   short, hyphen-delimited description of the change, eg.
-   `design/extract-billing-service`.
-
-2. Edit the artifacts in the [`design/` directory](./design/). Modify all
-   appropriate architectural views to describe the architecture as it will be
-   once the change has shipped. Add, modify, or remove artifacts as needed to
-   describe the desired end state. The edits MUST read as a description of the
-   destination, not a list of steps to get there – the diff against `main`
-   already shows what is changing.
-
-3. Where a significant decision drove the change, link the relevant artifact to
-   its RFC, rather than restating the rationale.
-
-4. Ensure every artifact is referenced from its view's `README.md`.
-
-### Step 3: Open a pull request
-
-1. Commit your changes and open a pull request titled `design: <description>`,
-   where `<description>` is a short prose title, written full lowercase, eg.
-   `design: extract the billing service`.
-
-2. Open the PR as a draft while you refine it.
-
-3. Fill out the top of the PR template. (You will link the discussion thread,
-   opened in step 4, here and in the artifacts.)
-
-### Step 4: Open a discussion thread (REQUIRED)
-
-Every design-change pull request has an associated discussion thread, where
-_all_ review feedback is gathered. This keeps the pull request focused on the
-evolution of the design artifacts themselves.
-
-Open a [discussion](https://github.com/kieranpotts/design/discussions). It MUST
-exist by the time the pull request is marked ready for review; you MAY open it
-earlier – even before the pull request – to align on the shape of the change
-before editing artifacts.
-
-Link the discussion and the pull request to each other. The thread is closed
-when the PR is merged.
-
-(The GitHub issue tracker is _not_ used for design changes. It is reserved for
-repository maintenance only.)
-
-### Step 5: Review and reconcile
-
-1. When the artifacts are ready for review, mark the pull request ready for
-   review. Gather all feedback in the discussion thread.
-
-2. As implementation proceeds, reconcile any drift between the proposed
-   documentation and the real system back into the artifacts, so the
-   documentation that is eventually merged describes the architecture as
-   actually built.
-
-### Step 6: Merge once the change is live
-
-1. Confirm the corresponding code and configuration are live in production.
-
-2. Squash-merge the pull request, with a message of the form `design:
-   <description>`. Delete the branch.
-
-3. Close the discussion thread – it has served its purpose.
+12. Close the discussion thread – it has served its purpose.
 
 ## Rules
 
