@@ -89,8 +89,20 @@ in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 - The discussion thread MUST be closed when the PR is merged.
 
-- Diagrams SHOULD be authored as text so they diff cleanly and live in version
-  control.
+- Keep each artifact in the view where it belongs. A structural decomposition
+  is logical; a deployment topology is physical; an end-to-end flow is a
+  scenario; etc. When an artifact could plausibly sit in two views, prefer the
+  one that answers the reader's most likely question, and cross-reference from
+  the other.
+
+- Every supporting artifact (diagram, schema, export) MUST be referenced
+  from a view's `README.md`. If it is not referenced there, it is not part of
+  the design documentation.
+
+- Diagrams SHOULD be authored as text where practical (eg. Mermaid, PlantUML,
+  Structurizr DSL) so they diff cleanly and live in version control alongside
+  the prose. Binary exports MAY accompany a textual source, but the source is
+  authoritative.
 
 - The GitHub issue tracker MUST be used only for maintenance work on this
   repository itself.
