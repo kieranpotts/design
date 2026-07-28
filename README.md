@@ -11,9 +11,9 @@ coherent set of architectural views.
 
 The design docs are descriptive, not prescriptive. They capture the design
 that exists, not the requirements it satisfies (those live in the
-[SRS](https://github.com/kieranpotts/specs)), nor the rationale for the
-choices behind it (that lives in the [RFC](https://github.com/kieranpotts/rfc)
-archive).
+[requirements specification](https://github.com/kieranpotts/specs)), nor the
+rationale for the choices behind it (that lives in the
+[Requests for Comments](https://github.com/kieranpotts/rfc) archive).
 
 This is living documentation. The artifacts on the `main` trunk reflect the
 current state of the production system. A change to the architecture is merged
@@ -25,6 +25,11 @@ practice of capturing, organizing, sharing, and preserving the knowledge that
 shapes a software system. Keeping these artifacts under version control, in
 sync with production, is what makes that knowledge explicit and durable rather
 than tacit and fragile.
+
+> [!NOTE]
+> See also [TS-3](https://github.com/kieranpotts/standards/tree/latest/dev/src/003),
+> a technical standard for maintaining design documentation. This repository is
+> a reference implementation for part of that standard.
 
 ## Ecosystem
 
