@@ -34,118 +34,122 @@ a data store that was replaced; a flow that now takes a different path.
 Reconciliation makes the documentation true again — it describes the _present_
 state, never a history of the change.
 
-Because the production change is _already_ live, the gate that normally blocks
+Because the production change is already live, the gate that normally blocks
 merging (the production change must be live first) is already satisfied.
 Reconciliation is the one case where the documentation legitimately lags
 production and is being caught up.
 
-**Input:** Sources of truth to compare the documentation against — REQUIRED.
-Code repositories, infrastructure-as-code, configuration, deployment
-manifests, or running-system inspection. Ask the user for the relevant
-locations if they are not obvious. A known area of drift — OPTIONAL. Narrows
-the comparison; otherwise all eight views are checked.
+## Input
 
-**Output:** A reported list of drift discrepancies, and a `design/<slug>`
-branch with a draft pull request and linked discussion thread, correcting one
-coherent area of drift.
+Determine the following information from the surrounding context and
+environment, if possible.
+
+- Sources of truth — REQUIRED. Code repositories, infrastructure-as-code,
+  configuration, deployment manifests, or running-system inspection to compare
+  the documentation against. Ask the user for the relevant locations if they
+  are not obvious.
+
+- Known area of drift — OPTIONAL. Narrows the comparison; otherwise all eight
+  views are checked.
+
+## Output
+
+A reported list of drift discrepancies, and a `design/<slug>` branch with a
+draft pull request and linked discussion thread, correcting one coherent area
+of drift.
 
 ## Instructions
 
-1.  **Establish the sources of truth.**
+1.  Establish the sources of truth.
 
     Identify what to compare the documentation against — the code repositories,
     infrastructure-as-code, configuration, deployment manifests, and any
     running-system inspection the user can point you to. Ask the user for the
     relevant locations if they are not obvious.
 
-2.  **Compare each view against reality.**
+2.  Compare each view against reality.
 
     Walk the eight [design views](../../../design/) and check each against the
     corresponding source of truth:
 
-    - **Conceptual:** Do the documented major parts and system landscape still
+    - Conceptual: Do the documented major parts and system landscape still
       match the system as a whole?
-    - **Logical:** Do the documented components, responsibilities, and
+    - Logical: Do the documented components, responsibilities, and
       relationships still match the code's structure?
-    - **Development:** Do the documented modules, layers, and build artifacts
+    - Development: Do the documented modules, layers, and build artifacts
       match the actual repositories?
-    - **Process:** Do the documented runtime units, communication, and
+    - Process: Do the documented runtime units, communication, and
       concurrency match what actually runs?
-    - **Physical:** Does the documented deployment topology match the actual
+    - Physical: Does the documented deployment topology match the actual
       infrastructure?
-    - **Technical:** Do the documented languages, runtimes, and system software
+    - Technical: Do the documented languages, runtimes, and system software
       match the stack actually in production?
-    - **Scenarios:** Do the traced end-to-end flows still play out as
+    - Scenarios: Do the traced end-to-end flows still play out as
       documented?
-    - **Concepts:** Do the documented crosscutting concerns — domain model,
+    - Concepts: Do the documented crosscutting concerns — domain model,
       security, persistence, error handling, observability — still match how
       they are applied system-wide?
 
     Record each discrepancy: what the documentation says, what production
     actually does, and which view and artifact is affected.
 
-3.  **Report the drift and confirm scope.**
+3.  Report the drift and confirm scope.
 
-    Present the list of discrepancies to the user. Confirm which to correct now
-    — a single reconciliation change should address one coherent area of drift,
-    not sweep up unrelated gaps into one un-reviewable PR. If the drift spans
-    several unrelated areas, recommend separate reconciliation changes.
+    Present the list of discrepancies to the user. Confirm which to correct
+    now — a single reconciliation change should address one coherent area of
+    drift, not sweep up unrelated gaps into one un-reviewable PR. If the drift
+    spans several unrelated areas, recommend separate reconciliation changes.
 
-4.  **Scaffold the correction.**
+4.  Scaffold the correction.
 
     Hand off to the same scaffolding mechanics as
-    [`/scaffold-design`](../scaffold-design/SKILL.md): cut a `design/<slug>` branch
-    from `main` (a slug like `reconcile-billing-topology`), edit the affected
-    views to describe the _current_ production state, commit with a `design:
-    <description>` message, open a draft pull request, and open a linked
-    discussion thread.
+    [`/scaffold-design`](../scaffold-design/SKILL.md): cut a `design/<slug>`
+    branch from `main` (a slug like `reconcile-billing-topology`), edit the
+    affected views to describe the current production state, commit with a
+    `design: <description>` message, open a draft pull request, and open a
+    linked discussion thread.
 
-5.  **Note the absence of an RFC, where applicable.**
+5.  Note the absence of an RFC, where applicable.
 
-    If a discrepancy reflects an architecturally significant change that shipped
-    _without_ going through the RFC process, flag it to the user — the decision
-    record may be missing and worth backfilling in the
+    If a discrepancy reflects an architecturally significant change that
+    shipped without going through the RFC process, flag it to the user — the
+    decision record may be missing and worth backfilling in the
     [RFC](https://github.com/kieranpotts/rfc) repository. Reconciling the
     documentation does not substitute for the missing decision record.
 
 ## Rules
 
-- **You MUST describe the present, not the change.**
+- You MUST describe the present, not the change.
 
-  The corrected artifacts describe production as it is _now_, in the present
+  The corrected artifacts describe production as it is now, in the present
   tense. Do not narrate what changed or when — the Git history records that.
 
-- **You MUST compare against reality, not assumptions.**
+- You MUST compare against reality, not assumptions.
 
   Base every correction on an actual source of truth — code, configuration,
   infrastructure — not on what the architecture "should" be. If you cannot
   verify a section against a real source, say so rather than guessing.
 
-- **You MUST keep reconciliation changes coherent and reviewable.**
+- You MUST keep reconciliation changes coherent and reviewable.
 
   One area of drift per change. Do not bundle unrelated corrections.
 
-- **You MUST ship reconciliation changes via the normal gate.**
+- You MUST ship reconciliation changes via the normal gate.
 
   A reconciliation change still lands through
-  [`/complete-design`](../complete-design/SKILL.md). Because the production change is
-  already live, the gate is satisfied — but the change is still reviewed and
-  merged through a pull request, not committed directly to `main`.
+  [`/complete-design`](../complete-design/SKILL.md). Because the production
+  change is already live, the gate is satisfied — but the change is still
+  reviewed and merged through a pull request, not committed directly to `main`.
 
 ## Success criteria
 
-- **A list of drift discrepancies is reported**, each naming the affected view
+- A list of drift discrepancies is reported, each naming the affected view
   and artifact.
 
-- **A `design/<slug>` branch and draft pull request are scaffolded**,
-  correcting one coherent area of drift, with the artifacts describing the
-  current production state.
+- A `design/<slug>` branch and draft pull request are scaffolded, correcting
+  one coherent area of drift, with the artifacts describing the current
+  production state.
 
-- **An associated discussion thread is open and linked.**
+- An associated discussion thread is open and linked.
 
-- **Any significant change that bypassed the RFC process is flagged to the
-  user.**
-
-## References
-
-- [`AGENTS.md`](../../../AGENTS.md): The "`main` describes production" rule.
+- Any significant change that bypassed the RFC process is flagged to the user.
