@@ -9,6 +9,7 @@ description: >-
 license: CC0-1.0
 metadata:
   interactive: yes
+  preferred_model: prose-writing
 ---
 
 # Reconcile design
@@ -42,7 +43,7 @@ production and is being caught up.
 Code repositories, infrastructure-as-code, configuration, deployment
 manifests, or running-system inspection. Ask the user for the relevant
 locations if they are not obvious. A known area of drift — OPTIONAL. Narrows
-the comparison; otherwise all seven views are checked.
+the comparison; otherwise all eight views are checked.
 
 **Output:** A reported list of drift discrepancies, and a `design/<slug>`
 branch with a draft pull request and linked discussion thread, correcting one
@@ -59,7 +60,7 @@ coherent area of drift.
 
 2.  **Compare each view against reality.**
 
-    Walk the seven [design views](../../../design/) and check each against the
+    Walk the eight [design views](../../../design/) and check each against the
     corresponding source of truth:
 
     - **Conceptual:** Do the documented major parts and system landscape still
@@ -76,6 +77,9 @@ coherent area of drift.
       match the stack actually in production?
     - **Scenarios:** Do the traced end-to-end flows still play out as
       documented?
+    - **Concepts:** Do the documented crosscutting concerns — domain model,
+      security, persistence, error handling, observability — still match how
+      they are applied system-wide?
 
     Record each discrepancy: what the documentation says, what production
     actually does, and which view and artifact is affected.
@@ -106,40 +110,41 @@ coherent area of drift.
 
 ## Rules
 
--   **Describe the present, not the change.**
+- **You MUST describe the present, not the change.**
 
-    The corrected artifacts describe production as it is _now_, in the present
-    tense. Do not narrate what changed or when — the Git history records that.
+  The corrected artifacts describe production as it is _now_, in the present
+  tense. Do not narrate what changed or when — the Git history records that.
 
--   **Compare against reality, not assumptions.**
+- **You MUST compare against reality, not assumptions.**
 
-    Base every correction on an actual source of truth — code, configuration,
-    infrastructure — not on what the architecture "should" be. If you cannot
-    verify a section against a real source, say so rather than guessing.
+  Base every correction on an actual source of truth — code, configuration,
+  infrastructure — not on what the architecture "should" be. If you cannot
+  verify a section against a real source, say so rather than guessing.
 
--   **Keep reconciliation changes coherent and reviewable.**
+- **You MUST keep reconciliation changes coherent and reviewable.**
 
-    One area of drift per change. Do not bundle unrelated corrections.
+  One area of drift per change. Do not bundle unrelated corrections.
 
--   **Ship via the normal gate.**
+- **You MUST ship reconciliation changes via the normal gate.**
 
-    A reconciliation change still lands through
-    [`/complete-design`](../complete-design/SKILL.md). Because the production change is
-    already live, the gate is satisfied — but the change is still reviewed and
-    merged through a pull request, not committed directly to `main`.
+  A reconciliation change still lands through
+  [`/complete-design`](../complete-design/SKILL.md). Because the production change is
+  already live, the gate is satisfied — but the change is still reviewed and
+  merged through a pull request, not committed directly to `main`.
 
 ## Success criteria
 
-- A list of drift discrepancies is reported, each naming the affected view and
-  artifact.
+- **A list of drift discrepancies is reported**, each naming the affected view
+  and artifact.
 
-- A `design/<slug>` branch and draft pull request are scaffolded, correcting one
-  coherent area of drift, with the artifacts describing the current production
-  state.
+- **A `design/<slug>` branch and draft pull request are scaffolded**,
+  correcting one coherent area of drift, with the artifacts describing the
+  current production state.
 
-- An associated discussion thread is open and linked.
+- **An associated discussion thread is open and linked.**
 
-- Any significant change that bypassed the RFC process is flagged to the user.
+- **Any significant change that bypassed the RFC process is flagged to the
+  user.**
 
 ## References
 

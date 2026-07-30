@@ -10,6 +10,7 @@ description: >-
 license: CC0-1.0
 metadata:
   interactive: yes
+  preferred_model: prose-writing
 ---
 
 # Scaffold design
@@ -30,27 +31,27 @@ thread.
 
 ## Before scaffolding
 
--   **Confirm the change belongs here.**
+- **Confirm the change belongs here.**
 
-    This repository documents what the architecture _looks like_. It does NOT
-    record requirements (those live in the
-    [SRS](https://github.com/kieranpotts/specs)) or the rationale for decisions
-    (that lives in the [RFC](https://github.com/kieranpotts/rfc) archive).
+  This repository documents what the architecture _looks like_. It does NOT
+  record requirements (those live in the
+  [SRS](https://github.com/kieranpotts/specs)) or the rationale for decisions
+  (that lives in the [RFC](https://github.com/kieranpotts/rfc) archive).
 
-    - A change to _what the system does_ → an SRS proposal, not a design change.
-    - An architecturally significant _decision_ → an RFC first; this repository
-      then documents the result once it ships.
-    - A change to _what the architecture looks like_ → a design change here.
+  - A change to _what the system does_ → an SRS proposal, not a design change.
+  - An architecturally significant _decision_ → an RFC first; this repository
+    then documents the result once it ships.
+  - A change to _what the architecture looks like_ → a design change here.
 
-    If the request is really a requirement change or an undecided significant
-    decision, say so before scaffolding.
+  If the request is really a requirement change or an undecided significant
+  decision, say so before scaffolding.
 
--   **Identify the significant decision behind the change, if any.**
+- **Identify the significant decision behind the change, if any.**
 
-    If the change embodies an architecturally significant decision, that
-    decision should be (or have been) made through the RFC process. Note the RFC
-    so the affected artifact can link to it. Routine changes following
-    established patterns need no RFC.
+  If the change embodies an architecturally significant decision, that
+  decision should be (or have been) made through the RFC process. Note the RFC
+  so the affected artifact can link to it. Routine changes following
+  established patterns need no RFC.
 
 ## Instructions
 
@@ -62,10 +63,10 @@ thread.
 
 2.  **Determine the affected views.**
 
-    Work out which of the seven [design views](../../../design/) the change
+    Work out which of the eight [design views](../../../design/) the change
     touches — `conceptual`, `logical`, `development`, `process`, `physical`,
-    `technical`, `scenarios`. A change often touches more than one. Ask the user
-    if it is unclear.
+    `technical`, `scenarios`, `concepts`. A change often touches more than one.
+    Ask the user if it is unclear.
 
 3.  **Create the branch.**
 
@@ -134,54 +135,52 @@ thread.
 
 ## Rules
 
--   **Document architecture, not requirements or decisions.**
+- **You MUST keep artifacts descriptive of architecture, not requirements or decisions.**
 
-    Keep the artifacts descriptive (what the architecture _is_) and
-    decision-free (link to the RFC for the why). Redirect requirement changes to
-    the SRS and undecided significant decisions to the RFC process.
+  Keep the artifacts descriptive (what the architecture _is_) and
+  decision-free (link to the RFC for the why). Redirect requirement changes to
+  the SRS and undecided significant decisions to the RFC process.
 
--   **One design change per branch and pull request.**
+- **You MUST scaffold exactly one design change per branch and pull request.**
 
-    Do not bundle unrelated architecture changes. If the user describes several
-    independent changes, recommend scaffolding separate branches.
+  Do not bundle unrelated architecture changes. If the user describes several
+  independent changes, recommend scaffolding separate branches.
 
--   **Branch from `main`, not from any other branch.**
+- **You MUST branch from `main`, not from any other branch.**
 
-    Design changes are always cut from `main`. If local `main` is behind the
-    remote, pull first.
+  Design changes are always cut from `main`. If local `main` is behind the
+  remote, pull first.
 
--   **Describe the end state, not a changelog.**
+- **You MUST describe the end state, not a changelog.**
 
-    Edits describe the architecture as it will be once shipped — not the
-    migration steps. The diff against `main` already shows what is changing.
+  Edits describe the architecture as it will be once shipped — not the
+  migration steps. The diff against `main` already shows what is changing.
 
--   **Open the PR as a draft.**
+- **You MUST open the PR as a draft.**
 
-    A new design change is not yet ready for review, and the production change
-    it describes may not yet be live. It MUST be opened as a draft pull request,
-    and MUST NOT be merged until [`/complete-design`](../complete-design/SKILL.md)
-    confirms the change is live in production.
+  A new design change is not yet ready for review, and the production change
+  it describes may not yet be live. It MUST be opened as a draft pull request,
+  and MUST NOT be merged until [`/complete-design`](../complete-design/SKILL.md)
+  confirms the change is live in production.
 
--   **Every design change has an associated discussion thread.**
+- **Every design change MUST have an associated discussion thread.**
 
-    Opened with the PR (even as a draft) and linked from it. All review feedback
-    belongs in the discussion, not in the PR's own comments.
+  Opened with the PR (even as a draft) and linked from it. All review feedback
+  belongs in the discussion, not in the PR's own comments.
 
 ## Success criteria
 
-- Branch `design/<slug>` exists and is checked out.
+- **Branch `design/<slug>` exists and is checked out.**
 
-- The affected [views](../../../design/) are edited (or clearly marked for the
-  author), describing the intended end state.
+- **The affected [views](../../../design/) are edited (or clearly marked for
+  the author), describing the intended end state.**
 
-- A draft pull request titled `design: <short lowercase description>` is open.
+- **A draft pull request titled `design: <short lowercase description>` is
+  open.**
 
-- An associated discussion thread is open, linked from the PR.
+- **An associated discussion thread is open, linked from the PR.**
 
 ## References
-
-- [`AGENTS.md`](../../../AGENTS.md): The full design-change workflow and
-  conventions, written for agents.
 
 - [`design/README.md`](../../../design/README.md): The architectural views and
   what each one covers.

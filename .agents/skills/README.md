@@ -11,6 +11,22 @@ Skills available to agents in this repository are:
 - **[Reconcile design](./reconcile-design/):**
   Corrects drift from reality.
 
+## Conventions
+
+Two structural conventions recur across skill files in this ecosystem:
+
+- **"Transition gates" sections** (`## Transition gates: <FROM> → <TO>`)
+  document the conditions that must hold before a document moves between
+  lifecycle states. This repository's design views are living documents
+  without discrete lifecycle states, so this convention does not apply here —
+  [`complete-design`](./complete-design/) instead uses a single
+  `## Gate: the production change MUST be live` section to protect its one
+  invariant.
+
+- **"References" closing sections** link out to related documentation, such
+  as the [`design/README.md`](../../design/README.md) index of architectural
+  views. See [`scaffold-design`](./scaffold-design/SKILL.md) for an example.
+
 ## Compatibility
 
 Agent harnesses are converging on the `./.agents/skills/` path for dynamic
