@@ -1,11 +1,11 @@
 ---
 name: reconcile-design
 description: >-
-  Detect and correct drift between the design documentation on main and the
-  real production system. Scaffolds a design change to bring the artifacts
-  back in line with production. Use when the user says "the design docs are
-  out of date", "reconcile the design docs", "check the docs against the
-  code", or "the architecture has drifted".
+  Detect and correct drift between the design documentation on `main` and the
+  real production system. Use this skill when the user says something like
+  "the design docs are out-of -date", "reconcile the design docs",
+  "check the docs against the code", or
+  "the architecture has drifted from the docs".
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -22,11 +22,7 @@ The documentation's entire value rests on one promise: that `main` describes
 production. Drift breaks that promise. This skill restores it by comparing the
 artifacts against reality and scaffolding a design change to fix the gaps.
 
-Do NOT use this skill to document a _new_ change going through review — use
-[`/scaffold-design`](../scaffold-design/SKILL.md). Do NOT use it to merge — use
-[`/complete-design`](../complete-design/SKILL.md).
-
-## What "drift" means here
+<!-- ## What "drift" means here
 
 Drift is documentation that contradicts the current production system: a
 component that was renamed, split, or removed; a runtime topology that changed;
@@ -37,26 +33,39 @@ state, never a history of the change.
 Because the production change is already live, the gate that normally blocks
 merging (the production change must be live first) is already satisfied.
 Reconciliation is the one case where the documentation legitimately lags
-production and is being caught up.
+production and is being caught up. -->
 
-## Input
+## Parameters
 
 Determine the following information from the surrounding context and
 environment, if possible.
 
-- Sources of truth — REQUIRED. Code repositories, infrastructure-as-code,
+- **Sources of truth — REQUIRED.** Code repositories, infrastructure-as-code,
   configuration, deployment manifests, or running-system inspection to compare
   the documentation against. Ask the user for the relevant locations if they
   are not obvious.
 
-- Known area of drift — OPTIONAL. Narrows the comparison; otherwise all eight
+- **Known area of drift — OPTIONAL.** Narrows the comparison; otherwise all eight
   views are checked.
 
-## Output
+## Success criteria
 
-A reported list of drift discrepancies, and a `design/<slug>` branch with a
+You will achieve the following outcomes:
+
+<!-- A reported list of drift discrepancies, and a `design/<slug>` branch with a
 draft pull request and linked discussion thread, correcting one coherent area
-of drift.
+of drift. -->
+
+- A list of drift discrepancies is reported, each naming the affected view
+  and artifact.
+
+- A `design/<slug>` branch and draft pull request are scaffolded, correcting
+  one coherent area of drift, with the artifacts describing the current
+  production state.
+
+- An associated discussion thread is open and linked.
+
+- Any significant change that bypassed the RFC process is flagged to the user.
 
 ## Instructions
 
@@ -140,16 +149,3 @@ of drift.
   [`/complete-design`](../complete-design/SKILL.md). Because the production
   change is already live, the gate is satisfied — but the change is still
   reviewed and merged through a pull request, not committed directly to `main`.
-
-## Success criteria
-
-- A list of drift discrepancies is reported, each naming the affected view
-  and artifact.
-
-- A `design/<slug>` branch and draft pull request are scaffolded, correcting
-  one coherent area of drift, with the artifacts describing the current
-  production state.
-
-- An associated discussion thread is open and linked.
-
-- Any significant change that bypassed the RFC process is flagged to the user.

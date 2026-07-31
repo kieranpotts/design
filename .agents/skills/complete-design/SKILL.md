@@ -1,10 +1,9 @@
 ---
 name: complete-design
 description: >-
-  Land a design change once the production change it describes is live. Mark
-  the PR ready, squash-merge it to main, and close the discussion thread. Use
-  when the user says "ship this design change", "the change is live", "merge
-  the design docs", or "land the design change".
+  Land a design change in `main`. Use this skill when the user says something
+  like "ship this design change", "the change is live", "merge the design docs",
+  or "land the design change".
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -13,20 +12,14 @@ metadata:
 
 # Complete design
 
-Use this skill to land a design change — to merge it into `main` once the
-corresponding production change is live. This is the gate that protects the
-repository's core promise: `main` describes production.
+Land changes to the design docs in the `main` trunk.
 
-Do NOT use this skill to scaffold a change — use
-[`/scaffold-design`](../scaffold-design/SKILL.md). Do NOT use it to correct
-drift — use [`/reconcile-design`](../reconcile-design/SKILL.md).
-
-## Input
+## Parameters
 
 Determine the following information from the surrounding context and
 environment, if possible.
 
-- Target — REQUIRED. Infer the design change from the checked-out branch
+- **Target — REQUIRED.** Infer the design change from the checked-out branch
   (`design/<slug>`). If on `main`, use the user's description, or list open
   design-change pull requests and ask the user to choose:
 
@@ -34,10 +27,19 @@ environment, if possible.
   gh pr list --search "design:" --json number,title,headRefName
   ```
 
-## Output
+## Success criteria
 
-A squash-merged pull request on `main` with a `design: <description>` message,
-its branch deleted, and its discussion thread closed.
+You will achieve the following outcomes:
+
+<!-- A squash-merged pull request on `main` with a `design: <description>` message,
+its branch deleted, and its discussion thread closed. -->
+
+- The corresponding production change is confirmed live.
+
+- The PR is squash-merged into `main` with a `design: <description>` message,
+  and the branch is deleted.
+
+- The associated discussion thread is closed.
 
 ## Instructions
 
@@ -137,12 +139,3 @@ its branch deleted, and its discussion thread closed.
   index to update — this is a living document, not an archive.
 
 - You MUST NOT merge without explicit instruction from the user.
-
-## Success criteria
-
-- The corresponding production change is confirmed live.
-
-- The PR is squash-merged into `main` with a `design: <description>` message,
-  and the branch is deleted.
-
-- The associated discussion thread is closed.

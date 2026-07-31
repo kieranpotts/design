@@ -3,10 +3,8 @@ name: scaffold-design
 description: >-
   Scaffold a design change. Use this skill when the user wants to update the
   architectural documentation to reflect a change to the production system, or
-  says "draft a design change", "new design change", "document this
-  architecture change", or "update the design docs". Do not use this skill to
-  ship a design change, or to correct documentation that has drifted from
-  production.
+  says something like "draft a design change", "new design change",
+  "document this architecture change", or "update the design docs".
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -19,21 +17,32 @@ A design change edits the [design views](../../../design/) to describe the
 architecture as it will be once a production change has shipped. There is no
 lifecycle state machine.
 
-## Input
+## Parameters
 
 Determine the following information from the surrounding context and
 environment, if possible.
 
-- Description of the production change — REQUIRED. Prompt the user if they
+- **Description of the production change — REQUIRED.** Prompt the user if they
   have not described it. Determine from it the slug, the affected views, and
   any architecturally significant decision behind the change.
 
-## Output
+## Success criteria
 
-A `design/<slug>` branch, with the affected [design
+You will achieve the following outcomes:
+
+<!-- A `design/<slug>` branch, with the affected [design
 views](../../../design/) edited (or clearly marked for the author), committed
 to a draft pull request opened against `main`, with a linked discussion
-thread.
+thread. -->
+
+- Branch `design/<slug>` exists and is checked out.
+
+- The affected [views](../../../design/) are edited (or clearly marked for the
+  author), describing the intended end state.
+
+- A draft pull request titled `design: <short lowercase description>` is open.
+
+- An associated discussion thread is open, linked from the PR.
 
 ## Instructions
 
@@ -172,14 +181,3 @@ thread.
 
   Opened with the PR (even as a draft) and linked from it. All review feedback
   belongs in the discussion, not in the PR's own comments.
-
-## Success criteria
-
-- Branch `design/<slug>` exists and is checked out.
-
-- The affected [views](../../../design/) are edited (or clearly marked for the
-  author), describing the intended end state.
-
-- A draft pull request titled `design: <short lowercase description>` is open.
-
-- An associated discussion thread is open, linked from the PR.
