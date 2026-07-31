@@ -1,42 +1,39 @@
-# Agent skills
+# Agent skills for managing design docs
 
-Skills available to agents in this repository are:
+The skills available to agents in this project are:
 
-- **[Scaffold design](./scaffold-design/):**
-  Scaffolds a design change.
+- **[scaffold-design](./scaffold-design/):** \
+  Scaffolds a changeset to the design docs.
 
-- **[Complete design](./complete-design/):**
-  Lands a design change.
+- **[complete-design](./complete-design/):** \
+  Lands design doc changes in the `main` trunk.
 
-- **[Reconcile design](./reconcile-design/):**
+- **[reconcile-design](./reconcile-design/):** \
   Corrects drift from reality.
 
-## Conventions
+The **scaffold-design** prepares changes to the design docs in a draft PR.
+After this step, the user edits the design docs. When done, the
+**complete-design** skill may be used to get an agent to check over the
+changes and land them in the `main` trunk.
 
-Two structural conventions recur across skill files in this ecosystem:
+```mermaid
+flowchart LR
+  scaffold["🤖<br/>scaffold"]:::agentic
+  write["🧑<br/>write"]:::anthropic
+  complete["🤖<br/>complete"]:::agentic
+  reconcile["🤖<br/>reconcile"]:::agentic
 
-- **"Transition gates" sections** (`## Transition gates: <FROM> → <TO>`)
-  document the conditions that must hold before a document moves between
-  lifecycle states. This repository's design views are living documents
-  without discrete lifecycle states, so this convention does not apply here —
-  [`complete-design`](./complete-design/) instead uses a single
-  `## Gate: the production change MUST be live` section to protect its one
-  invariant.
+  scaffold ==> write
+  write ==> complete
+  complete -.-> reconcile
 
-- **"References" closing sections** link out to related documentation, such
-  as the [`design/README.md`](../../design/README.md) index of architectural
-  views. See [`scaffold-design`](./scaffold-design/SKILL.md) for an example.
+  classDef agentic fill:#cce5ff,stroke:#004085,color:#004085,stroke-width:2px
+  classDef scripted fill:#e2e3e5,stroke:#4b5157,color:#383d41,stroke-width:2px
+  classDef anthropic fill:#fff3cd,stroke:#856404,color:#856404,stroke-width:2px,stroke-dasharray:2 3
+```
 
 ## Compatibility
 
-Agent harnesses are converging on the `./.agents/skills/` path for dynamic
-retrieval of project-specific skills. This is compatible with the Agent Skills
-convention — see https://agentskills.io/.
-
-As of May 2026, OpenAI Codex, GitHub Copilot, Gemini CLI, Google Antigravity,
-OpenCode, and Pi will auto-discover these skills, but Claude Code and Cursor
-will not.
-
-You will require workarounds for incompatible harnesses. For Claude Code, you
-can simply symlink this directory from `.claude/skills/`. Cursor requires more
-effort to transpile these skills into its native "rules" format.
+These skills are compatible with the [Agent Skills](https://agentskills.io/)
+convention. Most agent harnesses support this convention natively, but
+workarounds may be required for harnesses that do not.
