@@ -8,14 +8,13 @@ description: >-
 license: CC0-1.0
 metadata:
   interactive: yes
-  preferred_model: ollama/prose-writing
+  preferred_model: ollama/PROSE_DEEP
 ---
 
 # Draft design
 
-A design change edits the [design views](../../../design/) to describe the
-architecture as it will be once a production change has shipped. There is no
-lifecycle state machine.
+Scaffold a PR that the user will subsequently use to propose a change to the
+system design.
 
 ## Parameters
 
