@@ -1,7 +1,7 @@
 ---
-name: scaffold-design
+name: draft-design
 description: >-
-  Scaffold a design change. Use this skill when the user wants to update the
+  Draft a design change. Use this skill when the user wants to update the
   architectural documentation to reflect a change to the production system, or
   says something like "draft a design change", "new design change",
   "document this architecture change", or "update the design docs".
@@ -11,7 +11,7 @@ metadata:
   preferred_model: prose-writing
 ---
 
-# Scaffold design
+# Draft design
 
 A design change edits the [design views](../../../design/) to describe the
 architecture as it will be once a production change has shipped. There is no
@@ -59,7 +59,7 @@ thread. -->
     - A change to what the architecture looks like → a design change here.
 
     If the request is really a requirement change or an undecided significant
-    decision, say so before scaffolding.
+    decision, say so before drafting.
 
 2.  Identify the significant decision behind the change, if any.
 
@@ -155,10 +155,10 @@ thread. -->
   (link to the RFC for the why). Redirect requirement changes to the SRS and
   undecided significant decisions to the RFC process.
 
-- You MUST scaffold exactly one design change per branch and pull request.
+- You MUST draft exactly one design change per branch and pull request.
 
   Do not bundle unrelated architecture changes. If the user describes several
-  independent changes, recommend scaffolding separate branches.
+  independent changes, recommend drafting separate branches.
 
 - You MUST branch from `main`, not from any other branch.
 

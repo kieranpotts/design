@@ -1,6 +1,6 @@
-# Scaffold design
+# Draft design
 
-Scaffolds a design change, ready for the author to edit the affected
+Drafts a design change, ready for the author to edit the affected
 architectural views.
 
 ## What it does
@@ -20,17 +20,17 @@ architectural views.
 
 ## How to invoke
 
-> Scaffold design
+> Draft design
 
 > We will extract billing into its own service, consuming order events off
 > the bus. Draft changes to the design.
 
 ## Examples
 
-- `/scaffold-design`: The agent prompts you for details, then scaffolds the
+- `/draft-design`: The agent prompts you for details, then drafts the
   branch and a draft PR.
 
-- `/scaffold-design <Description>`: Provide details of the architecture
+- `/draft-design <Description>`: Provide details of the architecture
   change, from which the agent infers the slug and the affected views, and
   drafts the edits.
 

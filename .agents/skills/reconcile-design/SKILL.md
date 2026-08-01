@@ -20,7 +20,7 @@ without the documentation being updated.
 
 The documentation's entire value rests on one promise: that `main` describes
 production. Drift breaks that promise. This skill restores it by comparing the
-artifacts against reality and scaffolding a design change to fix the gaps.
+artifacts against reality and drafting a design change to fix the gaps.
 
 <!-- ## What "drift" means here
 
@@ -59,7 +59,7 @@ of drift. -->
 - A list of drift discrepancies is reported, each naming the affected view
   and artifact.
 
-- A `design/<slug>` branch and draft pull request are scaffolded, correcting
+- A `design/<slug>` branch and draft pull request are drafted, correcting
   one coherent area of drift, with the artifacts describing the current
   production state.
 
@@ -109,10 +109,10 @@ of drift. -->
     drift, not sweep up unrelated gaps into one un-reviewable PR. If the drift
     spans several unrelated areas, recommend separate reconciliation changes.
 
-4.  Scaffold the correction.
+4.  Draft the correction.
 
-    Hand off to the same scaffolding mechanics as
-    [`/scaffold-design`](../scaffold-design/SKILL.md): cut a `design/<slug>`
+    Hand off to the same drafting mechanics as
+    [`/draft-design`](../draft-design/SKILL.md): cut a `design/<slug>`
     branch from `main` (a slug like `reconcile-billing-topology`), edit the
     affected views to describe the current production state, commit with a
     `design: <description>` message, open a draft pull request, and open a
