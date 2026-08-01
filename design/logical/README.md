@@ -35,51 +35,51 @@ It includes:
 
 ```mermaid
 C4Container
-    Person(shopper, "Shopper")
-    Person(retailer, "Retailer admin")
+  Person(shopper, "Shopper")
+  Person(retailer, "Retailer admin")
 
-    System_Boundary(acme, "Acme Storefront platform") {
-        Container(web, "storefront-web", "Next.js", "Renders catalog, cart, checkout")
-        Container(api, "storefront-api", "Node.js / Express", "BFF and API gateway")
-        Container(catalog, "catalog-service", "Node.js", "Catalog, listings, reservations")
-        Container(payments, "payments-service", "Node.js", "Payment authorization & capture")
-        Container(notify, "notification-worker", "Node.js", "Async transactional email")
-        ContainerDb(catalogdb, "catalog-db", "PostgreSQL", "Listings & reservations")
-        ContainerDb(paymentsdb, "payments-db", "PostgreSQL", "Payment records")
-        ContainerQueue(bus, "event bus", "Kafka", "Order & reservation events")
-    }
+  System_Boundary(acme, "Acme Storefront platform") {
+    Container(web, "storefront-web", "Next.js", "Renders catalog, cart, checkout")
+    Container(api, "storefront-api", "Node.js / Express", "BFF and API gateway")
+    Container(catalog, "catalog-service", "Node.js", "Catalog, listings, reservations")
+    Container(payments, "payments-service", "Node.js", "Payment authorization & capture")
+    Container(notify, "notification-worker", "Node.js", "Async transactional email")
+    ContainerDb(catalogdb, "catalog-db", "PostgreSQL", "Listings & reservations")
+    ContainerDb(paymentsdb, "payments-db", "PostgreSQL", "Payment records")
+    ContainerQueue(bus, "event bus", "Kafka", "Order & reservation events")
+  }
 
-    System_Ext(stripe, "Stripe", "Payment service provider")
-    System_Ext(ses, "Amazon SES", "Email delivery")
+  System_Ext(stripe, "Stripe", "Payment service provider")
+  System_Ext(ses, "Amazon SES", "Email delivery")
 
-    Rel(shopper, web, "Uses", "HTTPS")
-    Rel(retailer, web, "Uses", "HTTPS")
-    Rel(web, api, "Calls", "HTTPS/JSON")
-    Rel(api, catalog, "Calls", "HTTPS/JSON")
-    Rel(api, payments, "Calls", "HTTPS/JSON")
-    Rel(catalog, catalogdb, "Reads/writes")
-    Rel(payments, paymentsdb, "Reads/writes")
-    Rel(payments, stripe, "Authorizes/captures", "HTTPS")
-    Rel(payments, bus, "Publishes order events")
-    Rel(catalog, bus, "Publishes reservation events")
-    Rel(bus, notify, "Delivers events to")
-    Rel(notify, ses, "Sends email", "HTTPS")
+  Rel(shopper, web, "Uses", "HTTPS")
+  Rel(retailer, web, "Uses", "HTTPS")
+  Rel(web, api, "Calls", "HTTPS/JSON")
+  Rel(api, catalog, "Calls", "HTTPS/JSON")
+  Rel(api, payments, "Calls", "HTTPS/JSON")
+  Rel(catalog, catalogdb, "Reads/writes")
+  Rel(payments, paymentsdb, "Reads/writes")
+  Rel(payments, stripe, "Authorizes/captures", "HTTPS")
+  Rel(payments, bus, "Publishes order events")
+  Rel(catalog, bus, "Publishes reservation events")
+  Rel(bus, notify, "Delivers events to")
+  Rel(notify, ses, "Sends email", "HTTPS")
 ```
 
 If the C4-DSL renderer is unavailable, the same structure as a plain flowchart:
 
 ```mermaid
 flowchart TB
-    Web["storefront-web"] --> API["storefront-api"]
-    API --> Catalog["catalog-service"]
-    API --> Payments["payments-service"]
-    Catalog --> CatalogDB[("catalog-db")]
-    Payments --> PaymentsDB[("payments-db")]
-    Payments --> Stripe(["Stripe"])
-    Payments --> Bus[["event bus"]]
-    Catalog --> Bus
-    Bus --> Notify["notification-worker"]
-    Notify --> SES(["Amazon SES"])
+  Web["storefront-web"] --> API["storefront-api"]
+  API --> Catalog["catalog-service"]
+  API --> Payments["payments-service"]
+  Catalog --> CatalogDB[("catalog-db")]
+  Payments --> PaymentsDB[("payments-db")]
+  Payments --> Stripe(["Stripe"])
+  Payments --> Bus[["event bus"]]
+  Catalog --> Bus
+  Bus --> Notify["notification-worker"]
+  Notify --> SES(["Amazon SES"])
 ```
 
 ### Responsibilities

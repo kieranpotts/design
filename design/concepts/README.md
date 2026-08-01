@@ -59,32 +59,32 @@ architecture represents them:
 
 ```mermaid
 erDiagram
-    PRODUCT ||--o{ RESERVATION : "held by"
-    PRODUCT {
-        string id
-        string sku
-        string status
-        decimal price
-    }
-    RESERVATION {
-        string id
-        string productId
-        string status
-        datetime expiresAt
-    }
-    ORDER ||--|| RESERVATION : "confirms checkout hold"
-    ORDER ||--|| PAYMENT : "paid by"
-    ORDER {
-        string id
-        string holdId
-        string status
-    }
-    PAYMENT {
-        string id
-        string orderId
-        string status
-        string idempotencyKey
-    }
+  PRODUCT ||--o{ RESERVATION : "held by"
+  PRODUCT {
+    string id
+    string sku
+    string status
+    decimal price
+  }
+  RESERVATION {
+    string id
+    string productId
+    string status
+    datetime expiresAt
+  }
+  ORDER ||--|| RESERVATION : "confirms checkout hold"
+  ORDER ||--|| PAYMENT : "paid by"
+  ORDER {
+    string id
+    string holdId
+    string status
+  }
+  PAYMENT {
+    string id
+    string orderId
+    string status
+    string idempotencyKey
+  }
 ```
 
 `Product` and `Reservation` are owned by `catalog-service` — a `Reservation`

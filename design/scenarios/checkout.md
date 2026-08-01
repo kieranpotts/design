@@ -14,34 +14,34 @@ end-to-end through the architecture.
 
 ```mermaid
 sequenceDiagram
-    actor Shopper
-    participant Web as storefront-web
-    participant API as storefront-api
-    participant Catalog as catalog-service
-    participant CatalogDB as catalog-db
-    participant Payments as payments-service
-    participant Stripe
-    participant Bus as Kafka (acme.orders)
-    participant Notify as notification-worker
-    participant SES as Amazon SES
+  actor Shopper
+  participant Web as storefront-web
+  participant API as storefront-api
+  participant Catalog as catalog-service
+  participant CatalogDB as catalog-db
+  participant Payments as payments-service
+  participant Stripe
+  participant Bus as Kafka (acme.orders)
+  participant Notify as notification-worker
+  participant SES as Amazon SES
 
-    Shopper->>Web: Add product to cart, click "Checkout"
-    Web->>API: POST /checkout {cartId}
-    API->>Catalog: POST /reservations {productId}
-    Catalog->>CatalogDB: SELECT ... FOR UPDATE, insert hold
-    CatalogDB-->>Catalog: hold created
-    Catalog-->>API: 201 checkout hold held
-    API->>Payments: POST /payments {holdId, idempotencyKey}
-    Payments->>Stripe: Authorize + capture card
-    Stripe-->>Payments: payment captured
-    Payments-->>API: 200 payment captured
-    API->>Catalog: POST /reservations/:id/confirm
-    Catalog-->>API: 200 hold confirmed, product sold
-    API-->>Web: 200 order confirmed
-    Web-->>Shopper: Order confirmation page
-    Payments->>Bus: publish order.placed
-    Bus->>Notify: deliver order.placed
-    Notify->>SES: send confirmation email
+  Shopper->>Web: Add product to cart, click "Checkout"
+  Web->>API: POST /checkout {cartId}
+  API->>Catalog: POST /reservations {productId}
+  Catalog->>CatalogDB: SELECT ... FOR UPDATE, insert hold
+  CatalogDB-->>Catalog: hold created
+  Catalog-->>API: 201 checkout hold held
+  API->>Payments: POST /payments {holdId, idempotencyKey}
+  Payments->>Stripe: Authorize + capture card
+  Stripe-->>Payments: payment captured
+  Payments-->>API: 200 payment captured
+  API->>Catalog: POST /reservations/:id/confirm
+  Catalog-->>API: 200 hold confirmed, product sold
+  API-->>Web: 200 order confirmed
+  Web-->>Shopper: Order confirmation page
+  Payments->>Bus: publish order.placed
+  Bus->>Notify: deliver order.placed
+  Notify->>SES: send confirmation email
 ```
 
 ## Views exercised

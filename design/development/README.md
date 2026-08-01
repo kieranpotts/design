@@ -53,20 +53,20 @@ artifact per repository:
 
 ```mermaid
 graph TB
-    subgraph repos["Repositories"]
-        Web["acme/storefront-web"]
-        API["acme/storefront-api"]
-        Catalog["acme/catalog-service"]
-        Payments["acme/payments-service"]
-        Notify["acme/notification-worker"]
-        Kit["acme/domain-kit<br/>(shared package)"]
-    end
+  subgraph repos["Repositories"]
+    Web["acme/storefront-web"]
+    API["acme/storefront-api"]
+    Catalog["acme/catalog-service"]
+    Payments["acme/payments-service"]
+    Notify["acme/notification-worker"]
+    Kit["acme/domain-kit<br/>(shared package)"]
+  end
 
-    API --> Kit
-    Catalog --> Kit
-    Payments --> Kit
-    Notify --> Kit
-    Web -.->|"generated API client"| Kit
+  API --> Kit
+  Catalog --> Kit
+  Payments --> Kit
+  Notify --> Kit
+  Web -.->|"generated API client"| Kit
 ```
 
 ### Layering and dependency rules

@@ -50,32 +50,32 @@ partners, and shoppers buying directly.
 
 ```mermaid
 flowchart TB
-    subgraph users["People"]
-        Shopper["Shopper<br/><i>browses & buys via web</i>"]
-        Retailer["Retailer admin<br/><i>manages catalog listings</i>"]
-    end
+  subgraph users["People"]
+    Shopper["Shopper<br/><i>browses & buys via web</i>"]
+    Retailer["Retailer admin<br/><i>manages catalog listings</i>"]
+  end
 
-    Storefront["<b>Acme Storefront</b><br/>Web storefront + API<br/>for shoppers and retailers"]
+  Storefront["<b>Acme Storefront</b><br/>Web storefront + API<br/>for shoppers and retailers"]
 
-    Identity["Identity provider<br/><i>Auth0</i>"]
-    PSP["Payment service provider<br/><i>Stripe</i>"]
-    Email["Email delivery provider<br/><i>Amazon SES</i>"]
-    Partner["Partner integrations<br/><i>hold & release reservations</i>"]
+  Identity["Identity provider<br/><i>Auth0</i>"]
+  PSP["Payment service provider<br/><i>Stripe</i>"]
+  Email["Email delivery provider<br/><i>Amazon SES</i>"]
+  Partner["Partner integrations<br/><i>hold & release reservations</i>"]
 
-    Shopper -->|"browses catalog,<br/>checks out"| Storefront
-    Retailer -->|"manages listings"| Storefront
-    Partner -->|"reserves / releases<br/>products (API)"| Storefront
+  Shopper -->|"browses catalog,<br/>checks out"| Storefront
+  Retailer -->|"manages listings"| Storefront
+  Partner -->|"reserves / releases<br/>products (API)"| Storefront
 
-    Storefront -->|"authenticates users"| Identity
-    Storefront -->|"authorizes card payments"| PSP
-    Storefront -->|"sends order & shipping<br/>notifications"| Email
+  Storefront -->|"authenticates users"| Identity
+  Storefront -->|"authorizes card payments"| PSP
+  Storefront -->|"sends order & shipping<br/>notifications"| Email
 
-    classDef sys fill:#e8f0fe,stroke:#4070c0,color:#13284b;
-    classDef ext fill:#f5f5f5,stroke:#999,color:#222;
-    classDef person fill:#fff5e6,stroke:#cc8800,color:#5a3d00;
-    class Storefront sys;
-    class Identity,PSP,Email,Partner ext;
-    class Shopper,Retailer person;
+  classDef sys fill:#e8f0fe,stroke:#4070c0,color:#13284b;
+  classDef ext fill:#f5f5f5,stroke:#999,color:#222;
+  classDef person fill:#fff5e6,stroke:#cc8800,color:#5a3d00;
+  class Storefront sys;
+  class Identity,PSP,Email,Partner ext;
+  class Shopper,Retailer person;
 ```
 
 ### Major parts
@@ -105,12 +105,12 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    Web["acme/storefront-web"] -->|HTTPS| API["acme/storefront-api"]
-    API -->|HTTPS| Catalog["acme/catalog-service"]
-    API -->|HTTPS| Payments["acme/payments-service"]
-    Payments -->|order events| Bus[["Event bus"]]
-    Catalog -->|reservation events| Bus
-    Bus -->|consumes| Notify["acme/notification-worker"]
+  Web["acme/storefront-web"] -->|HTTPS| API["acme/storefront-api"]
+  API -->|HTTPS| Catalog["acme/catalog-service"]
+  API -->|HTTPS| Payments["acme/payments-service"]
+  Payments -->|order events| Bus[["Event bus"]]
+  Catalog -->|reservation events| Bus
+  Bus -->|consumes| Notify["acme/notification-worker"]
 ```
 
 The gateway (`storefront-api`) is the only component that talks directly to

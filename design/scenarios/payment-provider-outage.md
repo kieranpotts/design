@@ -13,28 +13,28 @@ the external payment service provider, is unavailable during checkout.
 
 ```mermaid
 sequenceDiagram
-    actor Shopper
-    participant Web as storefront-web
-    participant API as storefront-api
-    participant Catalog as catalog-service
-    participant Payments as payments-service
-    participant Stripe
+  actor Shopper
+  participant Web as storefront-web
+  participant API as storefront-api
+  participant Catalog as catalog-service
+  participant Payments as payments-service
+  participant Stripe
 
-    Shopper->>Web: Click "Checkout"
-    Web->>API: POST /checkout {cartId}
-    API->>Catalog: POST /reservations {productId}
-    Catalog-->>API: 201 checkout hold held (60s TTL)
-    API->>Payments: POST /payments {holdId}
-    Payments->>Stripe: Authorize card
-    Note over Payments,Stripe: Timeout after 5s, no response
-    Payments->>Payments: Retry with backoff (2 attempts)
-    Payments->>Stripe: Authorize card (retry)
-    Note over Payments,Stripe: Still unavailable
-    Payments-->>API: 503 payment provider unavailable
-    API->>Catalog: DELETE /reservations/:id
-    Catalog-->>API: 200 hold released
-    API-->>Web: 503 checkout failed, please retry
-    Web-->>Shopper: "Payment temporarily unavailable, try again"
+  Shopper->>Web: Click "Checkout"
+  Web->>API: POST /checkout {cartId}
+  API->>Catalog: POST /reservations {productId}
+  Catalog-->>API: 201 checkout hold held (60s TTL)
+  API->>Payments: POST /payments {holdId}
+  Payments->>Stripe: Authorize card
+  Note over Payments,Stripe: Timeout after 5s, no response
+  Payments->>Payments: Retry with backoff (2 attempts)
+  Payments->>Stripe: Authorize card (retry)
+  Note over Payments,Stripe: Still unavailable
+  Payments-->>API: 503 payment provider unavailable
+  API->>Catalog: DELETE /reservations/:id
+  Catalog-->>API: 200 hold released
+  API-->>Web: 503 checkout failed, please retry
+  Web-->>Shopper: "Payment temporarily unavailable, try again"
 ```
 
 ## Views exercised

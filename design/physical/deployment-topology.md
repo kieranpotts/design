@@ -10,62 +10,62 @@
 
 ```mermaid
 flowchart TB
-    subgraph internet["Internet"]
-        Shopper((Shopper))
-        Partner((Partner integration))
-    end
+  subgraph internet["Internet"]
+    Shopper((Shopper))
+    Partner((Partner integration))
+  end
 
-    subgraph aws["AWS account: acme-prod (eu-west-1)"]
-        CF["CloudFront CDN"]
+  subgraph aws["AWS account: acme-prod (eu-west-1)"]
+    CF["CloudFront CDN"]
 
-        subgraph vpc["VPC"]
-            subgraph public["Public subnets"]
-                ALB["Application Load Balancer"]
-            end
+    subgraph vpc["VPC"]
+      subgraph public["Public subnets"]
+        ALB["Application Load Balancer"]
+      end
 
-            subgraph eks["EKS cluster: acme-prod"]
-                subgraph nsapi["namespace: storefront-api"]
-                    APIPods["storefront-api<br/>Deployment (4 replicas)"]
-                end
-                subgraph nscatalog["namespace: catalog-service"]
-                    CatalogPods["catalog-service<br/>Deployment (4 replicas)"]
-                end
-                subgraph nspayments["namespace: payments-service"]
-                    PaymentsPods["payments-service<br/>Deployment (3 replicas)"]
-                end
-                subgraph nsnotify["namespace: notification-worker"]
-                    NotifyPods["notification-worker<br/>Deployment (3 replicas,<br/>scales on Kafka lag)"]
-                end
-            end
-
-            subgraph data["Private data subnets"]
-                CatalogDB[("RDS PostgreSQL<br/>catalog-db<br/>Multi-AZ")]
-                PaymentsDB[("RDS PostgreSQL<br/>payments-db<br/>Multi-AZ")]
-                Redis[("ElastiCache Redis<br/>shared cache")]
-                MSK[["Amazon MSK<br/>(Kafka), 3 brokers"]]
-            end
+      subgraph eks["EKS cluster: acme-prod"]
+        subgraph nsapi["namespace: storefront-api"]
+          APIPods["storefront-api<br/>Deployment (4 replicas)"]
         end
+        subgraph nscatalog["namespace: catalog-service"]
+          CatalogPods["catalog-service<br/>Deployment (4 replicas)"]
+        end
+        subgraph nspayments["namespace: payments-service"]
+          PaymentsPods["payments-service<br/>Deployment (3 replicas)"]
+        end
+        subgraph nsnotify["namespace: notification-worker"]
+          NotifyPods["notification-worker<br/>Deployment (3 replicas,<br/>scales on Kafka lag)"]
+        end
+      end
+
+      subgraph data["Private data subnets"]
+        CatalogDB[("RDS PostgreSQL<br/>catalog-db<br/>Multi-AZ")]
+        PaymentsDB[("RDS PostgreSQL<br/>payments-db<br/>Multi-AZ")]
+        Redis[("ElastiCache Redis<br/>shared cache")]
+        MSK[["Amazon MSK<br/>(Kafka), 3 brokers"]]
+      end
     end
+  end
 
-    Stripe(["Stripe"])
-    SES(["Amazon SES"])
-    Auth0(["Auth0"])
+  Stripe(["Stripe"])
+  SES(["Amazon SES"])
+  Auth0(["Auth0"])
 
-    Shopper -->|HTTPS| CF
-    CF -->|static + SSR| ALB
-    Partner -->|HTTPS| ALB
-    ALB --> APIPods
-    APIPods --> CatalogPods
-    APIPods --> PaymentsPods
-    APIPods --> Auth0
-    CatalogPods --> CatalogDB
-    CatalogPods --> Redis
-    CatalogPods --> MSK
-    PaymentsPods --> PaymentsDB
-    PaymentsPods --> Stripe
-    PaymentsPods --> MSK
-    MSK --> NotifyPods
-    NotifyPods --> SES
+  Shopper -->|HTTPS| CF
+  CF -->|static + SSR| ALB
+  Partner -->|HTTPS| ALB
+  ALB --> APIPods
+  APIPods --> CatalogPods
+  APIPods --> PaymentsPods
+  APIPods --> Auth0
+  CatalogPods --> CatalogDB
+  CatalogPods --> Redis
+  CatalogPods --> MSK
+  PaymentsPods --> PaymentsDB
+  PaymentsPods --> Stripe
+  PaymentsPods --> MSK
+  MSK --> NotifyPods
+  NotifyPods --> SES
 ```
 
 ## Environments

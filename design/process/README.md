@@ -56,15 +56,15 @@ with one process per Kafka partition assigned.
 
 ```mermaid
 flowchart LR
-    Web -->|"HTTPS, sync"| API
-    API -->|"HTTPS, sync"| Catalog
-    API -->|"HTTPS, sync"| Payments
-    Payments -->|"HTTPS, sync"| Stripe(["Stripe"])
-    Payments -->|"publish: order.placed"| Bus[["Kafka topic:<br/>acme.orders"]]
-    Catalog -->|"publish: reservation.held/released"| Bus2[["Kafka topic:<br/>acme.reservations"]]
-    Bus -->|"consume"| Notify
-    Bus2 -->|"consume"| Notify
-    Notify -->|"HTTPS, sync"| SES(["Amazon SES"])
+  Web -->|"HTTPS, sync"| API
+  API -->|"HTTPS, sync"| Catalog
+  API -->|"HTTPS, sync"| Payments
+  Payments -->|"HTTPS, sync"| Stripe(["Stripe"])
+  Payments -->|"publish: order.placed"| Bus[["Kafka topic:<br/>acme.orders"]]
+  Catalog -->|"publish: reservation.held/released"| Bus2[["Kafka topic:<br/>acme.reservations"]]
+  Bus -->|"consume"| Notify
+  Bus2 -->|"consume"| Notify
+  Notify -->|"HTTPS, sync"| SES(["Amazon SES"])
 ```
 
 Requests from `storefront-web` through to `catalog-service` / `payments-service`
@@ -98,25 +98,25 @@ Kafka consumer lag.
 
 ```mermaid
 sequenceDiagram
-    participant Shopper
-    participant Web as storefront-web
-    participant API as storefront-api
-    participant Catalog as catalog-service
-    participant Payments as payments-service
-    participant Bus as Kafka (acme.orders)
-    participant Notify as notification-worker
+  participant Shopper
+  participant Web as storefront-web
+  participant API as storefront-api
+  participant Catalog as catalog-service
+  participant Payments as payments-service
+  participant Bus as Kafka (acme.orders)
+  participant Notify as notification-worker
 
-    Shopper->>Web: Submit checkout
-    Web->>API: POST /checkout
-    API->>Catalog: POST /reservations/:id/confirm
-    Catalog-->>API: 200 checkout hold confirmed
-    API->>Payments: POST /payments (idempotency key)
-    Payments-->>API: 200 payment captured
-    API-->>Web: 200 order confirmed
-    Web-->>Shopper: Order confirmation page
-    Payments->>Bus: publish order.placed
-    Bus->>Notify: deliver order.placed
-    Notify->>Notify: render confirmation email
+  Shopper->>Web: Submit checkout
+  Web->>API: POST /checkout
+  API->>Catalog: POST /reservations/:id/confirm
+  Catalog-->>API: 200 checkout hold confirmed
+  API->>Payments: POST /payments (idempotency key)
+  Payments-->>API: 200 payment captured
+  API-->>Web: 200 order confirmed
+  Web-->>Shopper: Order confirmation page
+  Payments->>Bus: publish order.placed
+  Bus->>Notify: deliver order.placed
+  Notify->>Notify: render confirmation email
 ```
 
 See the [checkout scenario](../scenarios/) for the full cross-view trace of
