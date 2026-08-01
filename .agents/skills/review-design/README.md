@@ -1,16 +1,7 @@
 # Review design
 
-Takes a design change's pull request out of draft once the affected views
-describe real content.
-
-## What it does
-
-- Identifies the design change from the current branch (or asks).
-
-- Diffs the branch against `main` and checks every touched view has real
-  descriptive prose, not just a marker left for the author.
-
-- Marks the pull request ready for review (`gh pr ready`).
+Checks the affected views describe real content, and takes the pull
+request out of draft.
 
 ## How to invoke
 
@@ -26,13 +17,5 @@ Or specify the target PR:
 
 ## Recommended models
 
-A fast or mid-tier model is enough. The check is whether each touched view
-has real descriptive prose rather than a leftover marker, not a quality
-assessment.
-
-## Notes
-
-This is a light check, not a completeness gate — wording MAY still evolve
-based on review feedback. Landing the change also requires the production
-change to be live — see
-[`/complete-design`](../complete-design/README.md).
+A fast, cheap model is sufficient to run this skill, which involves only
+mechanical tasks. There are no judgment calls that benefit from deep reasoning.

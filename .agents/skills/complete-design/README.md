@@ -1,21 +1,7 @@
 # Complete design
 
-Lands a design change once the production change it describes is live.
-
-## What it does
-
-- Identifies the design change from the current branch (or asks).
-
-- Verifies the gate: the corresponding production change is live, and the
-  documentation matches what actually shipped.
-
-- Confirms the pull request is not still a draft (see
-  [`/review-design`](../review-design/README.md)).
-
-- Squash-merges the PR to `main` with a `design: <description>` message, and
-  deletes the branch.
-
-- Closes the associated discussion thread.
+Checks the design docs describe production as it now is, and merges the
+changes into the `main` trunk.
 
 ## How to invoke
 
@@ -29,13 +15,5 @@ Or describe which design to ship:
 
 ## Recommended models
 
-A fast or mid-tier model is enough. Verifying the production change is live
-and matches the docs is a comparison check, not a design judgment.
-
-## Examples
-
-- `/complete-design`: From a `design/<slug>` branch, the agent verifies the
-  change is live, then merges and closes the thread (with your confirmation).
-
-- `/complete-design <Description>`: From `main`, the agent finds the matching
-  design-change PR and lands it.
+A fast, cheap model is sufficient to run this skill, which involves only
+mechanical tasks. There are no judgment calls that benefit from deep reasoning.
