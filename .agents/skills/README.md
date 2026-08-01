@@ -1,8 +1,10 @@
-# Agent skills for managing design docs
+# Agent skills
 
-The skills available to agents in this project are:
+The following skills are available to support the management of design docs
+via AI agents.
 
 - **[draft-design](./draft-design/):** \
+  Scaffolds a PR that will propose changes to the system design.
   Cuts a `design/<slug>` branch from `main`, prepares the affected views for
   editing, and opens a pull request in a draft state.
 
@@ -18,11 +20,7 @@ The skills available to agents in this project are:
   Compares the design docs against the real production system, and
   drafts a design change to fix any drift it finds.
 
-The **draft-design** prepares changes to the design docs in a draft PR.
-After this step, the user edits the design docs. Once the views describe real
-content, **review-design** takes the pull request out of draft. When done,
-the **complete-design** skill may be used to get an agent to check over the
-changes and land them in the `main` trunk.
+## Workflow
 
 ```mermaid
 flowchart LR
@@ -42,9 +40,10 @@ flowchart LR
   classDef anthropic fill:#fff3cd,stroke:#856404,color:#856404,stroke-width:2px,stroke-dasharray:2 3
 ```
 
-These skills handle process, not substance: how a design change is drafted,
-reviewed, and landed in `main`. For the design work itself — weighing up the
-trade-offs and settling on an architecture — use the
+The agent skills in this project are focused on the mechanics of managing the
+lifecycle of design docs.
+For help with evolving the design — weighing up the trade-offs and settling on
+architectural solutions to problems — you may instruct agents to use the
 [**design**](https://github.com/kieranpotts/skills/tree/latest/dev/skills/design)
 skill in my global skills collection.
 

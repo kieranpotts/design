@@ -25,6 +25,12 @@ architectural views.
 > We will extract billing into its own service, consuming order events off
 > the bus. Draft changes to the design.
 
+## Recommended models
+
+A mid-tier model is worth it here — the skill edits the affected views to
+describe the intended end state, which takes some architectural
+understanding, not just filling in a template.
+
 ## Examples
 
 - `/draft-design`: The agent prompts you for details, then drafts the

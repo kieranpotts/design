@@ -27,6 +27,11 @@ Or describe which design to ship:
 
 > The billing service extraction is now live in production.
 
+## Recommended models
+
+A fast or mid-tier model is enough. Verifying the production change is live
+and matches the docs is a comparison check, not a design judgment.
+
 ## Examples
 
 - `/complete-design`: From a `design/<slug>` branch, the agent verifies the

@@ -24,6 +24,13 @@ system, and drafts a change to correct it.
 > The deployment moved to multi-region last month, but the physical view
 > still shows one region.
 
+## Recommended models
+
+A mid-tier or better model is worth it here. Comparing the documented design
+against the real code, configuration, and infrastructure — and drafting the
+correction — takes more careful reasoning than the other lifecycle skills in
+this collection.
+
 ## Examples
 
 - `/reconcile-design`: The agent inspects the documentation against the code and

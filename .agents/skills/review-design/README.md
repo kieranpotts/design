@@ -24,6 +24,12 @@ Or specify the target PR:
 
 > Review #42
 
+## Recommended models
+
+A fast or mid-tier model is enough. The check is whether each touched view
+has real descriptive prose rather than a leftover marker, not a quality
+assessment.
+
 ## Notes
 
 This is a light check, not a completeness gate — wording MAY still evolve
