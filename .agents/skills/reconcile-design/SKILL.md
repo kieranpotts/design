@@ -3,7 +3,7 @@ name: reconcile-design
 description: >-
   Detect and correct drift between the design documentation on `main` and the
   real production system. Use this skill when the user says something like
-  "the design docs are out-of -date", "reconcile the design docs",
+  "the design docs are out-of-date", "reconcile the design docs",
   "check the docs against the code", or
   "the architecture has drifted from the docs".
 license: CC0-1.0

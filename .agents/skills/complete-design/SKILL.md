@@ -91,12 +91,19 @@ its branch deleted, and its discussion thread closed. -->
 
 6.  Close the discussion thread.
 
-    The thread has served its purpose. Close it via the GraphQL API:
+    The thread has served its purpose. Find the discussion linked in the
+    `Discussion thread` field, look up its node ID, and close it as resolved
+    (`gh` has no native discussion command, so use the GraphQL API):
 
     ```gh
     gh api graphql -f query='
+      query($owner:String!, $name:String!, $number:Int!) {
+        repository(owner:$owner, name:$name) { discussion(number:$number) { id } }
+      }' -F owner=<owner> -F name=<repo> -F number=<discussionNumber>
+
+    gh api graphql -f query='
       mutation($id:ID!) {
-        closeDiscussion(input:{discussionId:$id}) { discussion { url } }
+        closeDiscussion(input:{discussionId:$id, reason:RESOLVED}) { discussion { closed } }
       }' -F id=<discussionId>
     ```
 

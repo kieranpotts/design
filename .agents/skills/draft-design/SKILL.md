@@ -85,7 +85,7 @@ thread. -->
 
     ```sh
     git checkout main
-    git pull
+    git pull --rebase
     git checkout -b design/<slug>
     ```
 
