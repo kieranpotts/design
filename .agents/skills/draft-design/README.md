@@ -34,6 +34,8 @@ architectural views.
   change, from which the agent infers the slug and the affected views, and
   drafts the edits.
 
-Refine the artifacts yourself, gather feedback in the discussion thread, then
-use [`/complete-design`](../complete-design/README.md) to land the change once it is
-live in production.
+Refine the artifacts yourself, then use
+[`/review-design`](../review-design/README.md) to take the PR out of draft and
+gather feedback in the discussion thread. Once the change is live in
+production, use [`/complete-design`](../complete-design/README.md) to land
+it.

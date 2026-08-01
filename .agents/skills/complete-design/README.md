@@ -9,7 +9,8 @@ Lands a design change once the production change it describes is live.
 - Verifies the gate: the corresponding production change is live, and the
   documentation matches what actually shipped.
 
-- Marks the pull request ready for review, if still a draft.
+- Confirms the pull request is not still a draft (see
+  [`/review-design`](../review-design/README.md)).
 
 - Squash-merges the PR to `main` with a `design: <description>` message, and
   deletes the branch.

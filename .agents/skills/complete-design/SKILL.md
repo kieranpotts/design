@@ -60,11 +60,14 @@ its branch deleted, and its discussion thread closed. -->
     live" if you can check — but do not block on checks you cannot perform;
     surface what you could not verify.
 
-3.  Mark the pull request ready for review, if still a draft.
+3.  Confirm the PR is not a draft.
 
     ```sh
-    gh pr ready <number>
+    gh pr view <number> --json isDraft
     ```
+
+    If it is still a draft, stop and direct the user to
+    [`/review-design`](../review-design/SKILL.md) first.
 
 4.  Merge the pull request.
 
@@ -98,6 +101,10 @@ its branch deleted, and its discussion thread closed. -->
     ```
 
 ## Rules
+
+- You MUST NOT merge a draft PR.
+
+  Run [`/review-design`](../review-design/SKILL.md) first.
 
 - You MUST NOT land a design change ahead of production.
 

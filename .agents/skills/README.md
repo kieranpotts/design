@@ -6,6 +6,10 @@ The skills available to agents in this project are:
   Cuts a `design/<slug>` branch from `main`, prepares the affected views for
   editing, and opens a pull request in a draft state.
 
+- **[review-design](./review-design/):** \
+  Checks the affected views describe real content, and takes the pull
+  request out of draft.
+
 - **[complete-design](./complete-design/):** \
   Checks the design docs describe production as it now is, and merges the
   changes into the `main` trunk.
@@ -15,19 +19,22 @@ The skills available to agents in this project are:
   drafts a design change to fix any drift it finds.
 
 The **draft-design** prepares changes to the design docs in a draft PR.
-After this step, the user edits the design docs. When done, the
-**complete-design** skill may be used to get an agent to check over the
+After this step, the user edits the design docs. Once the views describe real
+content, **review-design** takes the pull request out of draft. When done,
+the **complete-design** skill may be used to get an agent to check over the
 changes and land them in the `main` trunk.
 
 ```mermaid
 flowchart LR
   draft["🤖<br/><b>draft-design</b>"]:::agentic
   write["🧑<br/>edit design docs"]:::anthropic
+  review["🤖<br/><b>review-design</b>"]:::agentic
   complete["🤖<br/><b>complete-design</b>"]:::agentic
   reconcile["🤖<br/><b>reconcile-design</b>"]:::agentic
 
   draft ==> write
-  write ==> complete
+  write ==> review
+  review ==> complete
   complete -.-> reconcile
 
   classDef agentic fill:#cce5ff,stroke:#004085,color:#004085,stroke-width:2px
