@@ -12,5 +12,6 @@ drafts a design change to fix any drift it finds.
 
 ## Recommended models
 
-A fast, cheap model is sufficient to run this skill, which involves only
-mechanical tasks. There are no judgment calls that benefit from deep reasoning.
+A mid-tier model is sufficient for this skill, though comparing the design
+views against a live system is analysis, not bookkeeping. Escalate to a
+stronger reasoning model for large systems or subtle drift.
