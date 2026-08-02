@@ -39,9 +39,9 @@ environment, if possible.
 
 You will achieve the following outcomes:
 
-- The PR is no longer a draft (`isDraft: false`).
+- The PR MUST no longer be a draft (`isDraft: false`).
 
-- Every view touched by the branch describes the intended end state in
+- Every view touched by the branch MUST describe the intended end state in
   prose, not a placeholder note left for the author to fill in.
 
 ## Instructions

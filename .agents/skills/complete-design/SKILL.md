@@ -34,12 +34,12 @@ You will achieve the following outcomes:
 <!-- A squash-merged pull request on `main` with a `design: <description>` message,
 its branch deleted, and its discussion thread closed. -->
 
-- The corresponding production change is confirmed live.
+- The corresponding production change MUST be confirmed live.
 
-- The PR is squash-merged into `main` with a `design: <description>` message,
-  and the branch is deleted.
+- The PR MUST be squash-merged into `main` with a `design: <description>`
+  message, and the branch MUST be deleted.
 
-- The associated discussion thread is closed.
+- The associated discussion thread MUST be closed.
 
 ## Instructions
 

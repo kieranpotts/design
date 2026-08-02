@@ -34,14 +34,15 @@ views](../../../design/) edited (or clearly marked for the author), committed
 to a draft pull request opened against `main`, with a linked discussion
 thread. -->
 
-- Branch `design/<slug>` exists and is checked out.
+- Branch `design/<slug>` MUST exist and be checked out.
 
-- The affected [views](../../../design/) are edited (or clearly marked for the
-  author), describing the intended end state.
+- The affected [views](../../../design/) MUST be edited (or clearly marked
+  for the author), describing the intended end state.
 
-- A draft pull request titled `design: <short lowercase description>` is open.
+- A draft pull request titled `design: <short lowercase description>` MUST
+  be open.
 
-- An associated discussion thread is open, linked from the PR.
+- An associated discussion thread MUST be open, linked from the PR.
 
 ## Instructions
 

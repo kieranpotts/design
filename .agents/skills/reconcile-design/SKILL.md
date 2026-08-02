@@ -56,16 +56,17 @@ You will achieve the following outcomes:
 draft pull request and linked discussion thread, correcting one coherent area
 of drift. -->
 
-- A list of drift discrepancies is reported, each naming the affected view
-  and artifact.
+- A list of drift discrepancies MUST be reported, each naming the affected
+  view and artifact.
 
-- A `design/<slug>` branch and draft pull request are drafted, correcting
-  one coherent area of drift, with the artifacts describing the current
-  production state.
+- A `design/<slug>` branch and draft pull request MUST be drafted,
+  correcting one coherent area of drift, with the artifacts describing the
+  current production state.
 
-- An associated discussion thread is open and linked.
+- An associated discussion thread MUST be open and linked.
 
-- Any significant change that bypassed the RFC process is flagged to the user.
+- Any significant change that bypassed the RFC process MUST be flagged to
+  the user.
 
 ## Instructions
 
