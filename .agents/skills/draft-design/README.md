@@ -2,12 +2,20 @@
 
 Scaffolds a PR that will propose changes to the system design.
 
-Cuts a `design/<slug>` branch from `main`, prepares the affected views for
-editing, and opens a pull request in a draft state.
+Cuts a `design/<slug>` branch from `main`, and opens a pull request in a
+draft state.
 
 ## How to invoke
 
 > Draft design
+
+> Draft a design change
+
+> New design change
+
+> Document this architecture change
+
+> Update the design docs
 
 > We will extract billing into its own service, consuming order events off
 > the bus. Draft changes to the design.

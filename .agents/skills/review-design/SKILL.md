@@ -1,11 +1,11 @@
 ---
 name: review-design
 description: >-
-  Take a design change's pull request out of draft once the affected views
-  describe real content, not just markers left for the author. Use this
-  skill when the user says something like "review this design change",
-  "this design change is ready for review", "take the design PR out of
-  draft", "mark the design change ready for review", or "review design".
+  Check that proposed design changes are ready for review, and take the PR
+  our of draft status. Use this skill when the user says something like
+  "review this design change", "this design change is ready for review",
+  "take the design PR out of draft", "mark the design change ready for review",
+  or "review design".
 license: CC0-1.0
 metadata:
   interactive: yes
@@ -14,18 +14,14 @@ metadata:
 
 # Review design
 
-Use this skill to remove a design change's pull request from its draft
-state once the affected architectural views describe real content. This is
-a light completeness check, not a final sign-off — the wording MAY still be
-refined in response to review feedback. This skill only confirms there is
-something real to review, not that the change is ready to land (that still
-requires the production change to be live — see
-[`/complete-design`](../complete-design/SKILL.md)).
+Check a proposed design change has enough substance for review, and take its
+pull request out of draft.
 
 ## Parameters
 
 Determine the following information from the surrounding context and
-environment, if possible.
+environment, if possible. If you're uncertain about the required parameters,
+prompt the user for clarification.
 
 - **Target — REQUIRED.** Infer the design change from the checked-out
   branch (`design/<slug>`). If on `main`, list open draft pull requests
@@ -37,12 +33,12 @@ environment, if possible.
 
 ## Success criteria
 
-You will achieve the following outcomes:
+- If the PR is deemed ready-for-review, it's status MUST NOT be draft
+  (`isDraft: false`).
 
-- The PR MUST no longer be a draft (`isDraft: false`).
-
-- Every view touched by the branch MUST describe the intended end state in
-  prose, not a placeholder note left for the author to fill in.
+- If the PR is deemed ready-for-review, there MUST NOT be any `TODO`
+  annotations or other placeholder text left in the
+  [design views](../../../design/).
 
 ## Instructions
 
@@ -87,6 +83,22 @@ You will achieve the following outcomes:
 - You MUST NOT edit the views' content yourself.
 
   Flag gaps to the user; do not fill them in on their behalf.
+
+- You MUST describe the end state, not a changelog.
+
+  Edits describe the architecture as it will be once shipped — not the
+  migration steps. Flag any edit written as a changelog of what's changing
+  rather than a description of what the end state is; the diff against
+  `main` already shows what is changing.
+
+- You MUST keep artifacts descriptive of architecture, not requirements or
+  decisions.
+
+  Flag any edit that reads as a requirement or an undecided decision rather
+  than a description of the architecture. Keep the artifacts descriptive
+  (what the architecture is) and decision-free (link to the RFC for the why).
+  Redirect requirement changes to the SRS and undecided significant decisions
+  to the RFC process.
 
 - You MUST NOT merge the pull request, or check that the production change
   is live.

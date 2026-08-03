@@ -17,7 +17,8 @@ Land changes to the design docs in the `main` trunk.
 ## Parameters
 
 Determine the following information from the surrounding context and
-environment, if possible.
+environment, if possible. If you're uncertain about the required parameters,
+prompt the user for clarification.
 
 - **Target — REQUIRED.** Infer the design change from the checked-out branch
   (`design/<slug>`). If on `main`, use the user's description, or list open
@@ -29,17 +30,14 @@ environment, if possible.
 
 ## Success criteria
 
-You will achieve the following outcomes:
-
-<!-- A squash-merged pull request on `main` with a `design: <description>` message,
-its branch deleted, and its discussion thread closed. -->
-
 - The corresponding production change MUST be confirmed live.
 
-- The PR MUST be squash-merged into `main` with a `design: <description>`
-  message, and the branch MUST be deleted.
+- The PR MUST be merged.
 
-- The associated discussion thread MUST be closed.
+- A single new squash commit MUST exist on `main`, with the message format
+  `design: <short lowercase description>`.
+
+- The `design/*` branch MUST no longer exist in the upstream repository.
 
 ## Instructions
 

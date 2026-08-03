@@ -38,7 +38,8 @@ production and is being caught up. -->
 ## Parameters
 
 Determine the following information from the surrounding context and
-environment, if possible.
+environment, if possible. If you're uncertain about the required parameters,
+prompt the user for clarification.
 
 - **Sources of truth — REQUIRED.** Code repositories, infrastructure-as-code,
   configuration, deployment manifests, or running-system inspection to compare
@@ -49,8 +50,6 @@ environment, if possible.
   views are checked.
 
 ## Success criteria
-
-You will achieve the following outcomes:
 
 <!-- A reported list of drift discrepancies, and a `design/<slug>` branch with a
 draft pull request and linked discussion thread, correcting one coherent area

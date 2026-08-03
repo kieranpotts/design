@@ -9,6 +9,14 @@ Run from a `design/<slug>` branch:
 
 > Complete design
 
+> Ship this design change
+
+> The change is live
+
+> Merge the design docs
+
+> Land the design change
+
 Or describe which design to ship:
 
 > The billing service extraction is now live in production.

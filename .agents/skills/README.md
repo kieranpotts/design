@@ -9,8 +9,7 @@ via AI agents.
   editing, and opens a pull request in a draft state.
 
 - **[review-design](./review-design/):** \
-  Checks the affected views describe real content, and takes the pull
-  request out of draft.
+  Checks the updated views and takes the pull request out of draft.
 
 - **[complete-design](./complete-design/):** \
   Checks the design docs describe production as it now is, and merges the

@@ -7,6 +7,14 @@ drafts a design change to fix any drift it finds.
 
 > Reconcile design
 
+> The design docs are out-of-date
+
+> Reconcile the design docs
+
+> Check the docs against the code
+
+> The architecture has drifted from the docs
+
 > The deployment moved to multi-region last month, but the physical view
 > still shows one region.
 
