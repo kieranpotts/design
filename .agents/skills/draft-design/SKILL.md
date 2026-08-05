@@ -5,10 +5,8 @@ description: >-
   architectural documentation to reflect a change to the production system, or
   says something like "draft a design change", "new design change",
   "document this architecture change", or "update the design docs".
+compatibility: requires Read, Write, Edit, Bash (git/gh)
 license: CC0-1.0
-metadata:
-  interactive: yes
-  preferred_model: ollama/PROSE_DEEP
 ---
 
 # Draft design

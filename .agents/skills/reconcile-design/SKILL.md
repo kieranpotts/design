@@ -6,10 +6,8 @@ description: >-
   "the design docs are out-of-date", "reconcile the design docs",
   "check the docs against the code", or
   "the architecture has drifted from the docs".
+compatibility: requires Read, Write, Edit, Grep, Bash (git/gh)
 license: CC0-1.0
-metadata:
-  interactive: yes
-  preferred_model: ollama/WORKFLOW_STANDARD
 ---
 
 # Reconcile design

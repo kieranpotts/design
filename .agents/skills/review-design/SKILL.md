@@ -6,10 +6,8 @@ description: >-
   "review this design change", "this design change is ready for review",
   "take the design PR out of draft", "mark the design change ready for review",
   or "review design".
+compatibility: requires Read, Bash (git/gh)
 license: CC0-1.0
-metadata:
-  interactive: yes
-  preferred_model: ollama/WORKFLOW_BASIC
 ---
 
 # Review design

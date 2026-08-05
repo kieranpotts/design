@@ -4,10 +4,8 @@ description: >-
   Land a design change in `main`. Use this skill when the user says something
   like "complete design", "ship this design change", "the change is live",
   "merge the design docs", or "land the design change".
+compatibility: requires Read, Bash (git/gh)
 license: CC0-1.0
-metadata:
-  interactive: yes
-  preferred_model: ollama/WORKFLOW_STANDARD
 ---
 
 # Complete design
