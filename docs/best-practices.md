@@ -54,8 +54,8 @@ looks first, and cross-reference from the other. Don't duplicate it.
 ## Author diagrams as text
 
 Prefer text-based diagram formats — [Mermaid](https://mermaid.js.org/),
-[PlantUML](https://plantuml.com/), [Structurizr
-DSL](https://docs.structurizr.com/dsl) — over binary image exports.
+[PlantUML](https://plantuml.com/), [Structurizr DSL](https://docs.structurizr.com/dsl)
+— over binary image exports.
 
 Text diffs cleanly, reviews like code, and lives in version control next to the
 prose it illustrates.
