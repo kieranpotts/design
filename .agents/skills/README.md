@@ -5,34 +5,38 @@ via AI agents.
 
 - **[draft-design](./draft-design/):** \
   Scaffolds a PR that will propose changes to the system design.
-  Cuts a `design/<slug>` branch from `main`, prepares the affected views for
-  editing, and opens a pull request in a draft state.
+  Cuts a `design/<slug>` branch from `main`, marks up the affected views for
+  editing, opens a pull request in a draft state, and opens the linked
+  discussion thread.
 
 - **[review-design](./review-design/):** \
-  Checks the updated views and takes the pull request out of draft.
+  Checks the updated views have real content in them, and takes the pull
+  request out of draft.
 
 - **[complete-design](./complete-design/):** \
-  Checks the design docs describe production as it now is, and merges the
-  changes into the `main` trunk.
+  Checks the design docs describe production as it now is, merges the
+  changes into the `main` trunk, and closes the discussion thread.
 
 - **[reconcile-design](./reconcile-design/):** \
-  Compares the design docs against the real production system, and
-  drafts a design change to fix any drift it finds.
+  Sits outside the draft-review-complete progression. Compares the design docs
+  on `main` against the real production system, reports any drift it finds, and
+  drafts a corrective design change that rejoins the lifecycle at review.
 
 ## Workflow
 
 ```mermaid
 flowchart LR
-  draft["🤖<br/><b>draft-design</b>"]:::agentic
+  draft["🤖🧑<br/><b>draft-design</b>"]:::anthropic
   write["🧑<br/>edit design docs"]:::anthropic
-  review["🤖<br/><b>review-design</b>"]:::agentic
-  complete["🤖<br/><b>complete-design</b>"]:::agentic
-  reconcile["🤖<br/><b>reconcile-design</b>"]:::agentic
+  review["🤖🧑<br/><b>review-design</b>"]:::anthropic
+  complete["🤖🧑<br/><b>complete-design</b>"]:::anthropic
+  reconcile["🤖🧑<br/><b>reconcile-design</b>"]:::anthropic
 
   draft ==> write
   write ==> review
   review ==> complete
   complete -.-> reconcile
+  reconcile ==> review
 
   classDef agentic fill:#cce5ff,stroke:#004085,color:#004085,stroke-width:2px
   classDef scripted fill:#e2e3e5,stroke:#4b5157,color:#383d41,stroke-width:2px
