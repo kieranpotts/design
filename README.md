@@ -28,8 +28,8 @@ than tacit and fragile.
 
 > [!NOTE]
 > See also [TS-3](https://github.com/kieranpotts/standards/tree/latest/dev/src/003),
-> a technical standard for maintaining design documentation. This repository is
-> a reference implementation for part of that standard.
+> a technical standard covering design docs, RFCs, and architecture audits.
+> This repository is its reference implementation for design docs.
 
 ## Ecosystem
 
@@ -38,22 +38,29 @@ documentation ecosystem. Each answers a different question about a software
 system.
 
 - [**📋 Software Requirements Specification (SRS)**](https://github.com/kieranpotts/specs) \
-  Captures what the system does, in business terms.
-
-- [**💬 Requests for Comments (RFC)**](https://github.com/kieranpotts/rfc) \
-  Records how significant technical decisions were made, and why.
+  Captures what the system does today, plus proposals being discussed to change
+  the requirements.
 
 - [**📐 Design Docs**](https://github.com/kieranpotts/design) (this repository) \
-  Documents what the system looks like in production.
-
-- [**🔍 Architecture Audits**](https://github.com/kieranpotts/audits) \
-  Logs historical evaluations of the as-built system's structural integrity.
+  Architectural views representing the as-is production system, plus proposals
+  to evolve the architecture to meet new requirements.
 
 - [**🗺️ Delivery Plans**](https://github.com/kieranpotts/plans) \
-  Tracks when, and in what order, the work gets done.
+  Roadmaps, milestones, and the decomposition of work into independently
+  shippable increments.
+
+- [**💬 Requests for Comments (RFC)**](https://github.com/kieranpotts/rfc) \
+  An historical record of key design and technical decisions, plus active
+  proposals and their discussion threads.
+
+- [**🔍 Architecture Audits**](https://github.com/kieranpotts/audits) \
+  Point-in-time evaluations of the structural integrity of the code and data,
+  which drive refactoring work.
 
 - [**⚠️ Risk Register**](https://github.com/kieranpotts/risks) \
-  Records the inherent security and privacy risks the system carries.
+  Security and privacy risks inherent in the system, and the implementation
+  status of mitigation strategies. Plus an archive of past threat modeling
+  workshop reports.
 
 In addition, the [**✨ Agent Skills**](https://github.com/kieranpotts/skills)
 collection offers composable agentic workflows that operate across all six
