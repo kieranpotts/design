@@ -9,6 +9,13 @@ eight views against the code, configuration, and infrastructure that actually
 run, reporting every discrepancy, and drafting a correction for the area the
 user chooses.
 
+Comparing all eight views serially would put the full source material for
+each — documentation and reality both — into one context at once. Where no
+single view was named, the agent instead fans the comparison out to one
+sub-agent per view, each returning only its flat list of discrepancies. The
+orchestrating agent's own context holds the eight discrepancy lists, not the
+eight views' worth of source material.
+
 ## Interactivity
 
 Interactive. The agent may prompt for the sources of truth to compare against —
@@ -70,7 +77,7 @@ flowchart LR
   %% Class definitions.
   classDef agentic fill:#cce5ff,stroke:#004085,color:#004085,stroke-width:2px
   classDef scripted fill:#e2e3e5,stroke:#4b5157,color:#383d41,stroke-width:2px
-  classDef anthropic fill:#fff3cd,stroke:#856404,color:#856404,stroke-width:2px,stroke-dasharray:2 3
+  classDef anthropic fill:#fff3cd,stroke:#856404,color:#856404,stroke-width:1px,stroke-dasharray:2 3
 ```
 
 ## Related skills

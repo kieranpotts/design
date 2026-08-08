@@ -8,7 +8,7 @@ description: >-
   from the docs". Do not use it to document a forward-looking change that has
   not shipped yet.
 compatibility: >-
-  requires Read, Write, Edit, Glob, Grep, Bash (git, gh)
+  requires Read, Write, Edit, Glob, Grep, Agent, Bash (git, gh)
 license: CC0-1.0
 ---
 
@@ -66,8 +66,17 @@ prompt the user for clarification.
 
 2.  Compare each view against reality.
 
-    Walk the eight [design views](../../../design/) and check each against the
-    corresponding source of truth:
+    Where the drift area was named, walk that one view yourself. Where it
+    was not — the default, checking all eight — fan the comparison out
+    instead: spawn one sub-agent per view, each given the view's documented
+    state and the sources of truth from step 1, tasked narrowly with
+    comparing the two and returning a flat list of discrepancies. Reading
+    and comparing all eight views serially in your own context is the
+    expensive part; delegating each view to its own sub-agent keeps your
+    context to the returned discrepancy lists, not the full source material
+    for all eight.
+
+    Each view compares against the corresponding source of truth as follows:
 
     - Conceptual: do the documented major parts and system landscape still
       match the system as a whole?
@@ -139,6 +148,12 @@ prompt the user for clarification.
 
   The user needs the whole picture to decide what to schedule next. Silently
   narrowing to one area hides the rest of the drift.
+
+- A sub-agent spawned in step 2 MUST only compare its one assigned view
+  against its source of truth and return discrepancies. It MUST NOT draft a
+  correction, judge priority, or decide what an RFC gap means — that
+  synthesis needs the full picture across every view, which only you have
+  once they all report back.
 
 - Corrections MUST ship through the normal review gate.
 
