@@ -29,13 +29,14 @@ prompt the user for clarification.
   user to choose:
 
   ```sh
-  gh pr list --search "design:" --json number,title,headRefName
+  gh pr list --json number,title,headRefName \
+    --jq '[.[] | select(.headRefName | startswith("design/"))]'
   ```
 
 - **Description — REQUIRED.** The short prose title of the change, in the
   present tense, full lowercase, and not terminated by a period, eg. `extract
   the billing service`. Take it from the pull request title, stripping the
-  `design: ` prefix, so the squash commit matches.
+  `create: ` or `update: ` prefix.
 
 - **Confirmation to merge — REQUIRED.** Explicit instruction from the user
   that the pull request is to be merged now. Do not infer it from the fact
@@ -48,7 +49,7 @@ prompt the user for clarification.
   merge.
 
 - A single new squash commit MUST exist on `main`, its message of the form
-  `design: <description>`.
+  `update: <description>`.
 
 - The `design/<slug>` branch MUST no longer exist in the upstream repository.
 
@@ -85,7 +86,7 @@ prompt the user for clarification.
     upstream:
 
     ```sh
-    gh pr merge <number> --squash --subject "design: <description>" --delete-branch
+    gh pr merge <number> --squash --subject "update: <description>" --delete-branch
     ```
 
 5.  Delete the branch directly, if it was not deleted automatically.
@@ -146,7 +147,7 @@ prompt the user for clarification.
   Feedback gathered in the discussion thread is resolved and the artifacts are
   stable.
 
-- You MUST squash-merge, with a `design: <description>` message.
+- You MUST squash-merge, with an `update: <description>` message.
 
   There is no number to assign and no index to update — this is living
   documentation, not an archive, so the commit is the whole record.

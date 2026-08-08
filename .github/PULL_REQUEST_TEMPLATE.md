@@ -35,7 +35,7 @@ Merge this PR when:
 - [ ] The documentation matches what actually shipped (any drift reconciled back
   in).
 - [ ] Review feedback in the discussion thread is resolved.
-- [ ] The PR is squash-merged, with subject `design: <description>`.
+- [ ] The PR is squash-merged, with subject `update: <description>`.
 - [ ] The associated discussion thread is closed.
 
 > [!IMPORTANT]

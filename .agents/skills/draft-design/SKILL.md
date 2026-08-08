@@ -44,7 +44,7 @@ prompt the user for clarification.
 - The branch `design/<slug>` MUST exist, cut from an up-to-date `main`, and
   MUST be checked out.
 
-- A pull request titled `design: <description>` MUST be open against `main`,
+- A pull request titled `create: <description>` MUST be open against `main`,
   and `gh pr view <number> --json isDraft` MUST report `true`.
 
 - A discussion thread MUST exist naming the pull request, and the pull
@@ -78,9 +78,9 @@ prompt the user for clarification.
 
     ```sh
     git add design/
-    git commit -m "design: <description>"
+    git commit -m "create: <description>"
     git push -u origin design/<slug>
-    gh pr create --draft --title "design: <description>" --fill
+    gh pr create --draft --title "create: <description>" --fill
     ```
 
     If the `gh` client is unavailable or not authenticated, fail with an error.
@@ -109,7 +109,7 @@ prompt the user for clarification.
           discussion { url }
         }
       }' -F repoId=<repoId> -F categoryId=<categoryId> \
-        -f title="design: <description>" \
+        -f title="create: <description>" \
         -f body="Discussion thread for the <description> design change (PR #<number>). Please leave all feedback here, not on the pull request."
     ```
 

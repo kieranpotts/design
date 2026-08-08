@@ -110,7 +110,7 @@ prompt the user for clarification.
     change, in [CONTRIBUTING.md](../../../CONTRIBUTING.md): cut a
     `design/<slug>` branch from `main` — a slug such as
     `reconcile-billing-topology` — edit the affected views to describe the
-    current production state, commit with a `design: <description>` message,
+    current production state, commit with an `update: <description>` message,
     open a draft pull request, and open a discussion thread cross-linked with
     it.
 

@@ -44,9 +44,9 @@ in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 5.  Ensure every artifact is referenced from its view's `README.md`.
 
-6.  Commit your changes and open a pull request as a draft, titled `design:
+6.  Commit your changes and open a pull request as a draft, titled `create:
     <description>`, where `<description>` is a short prose title, written full
-    lowercase, eg. `design: extract the billing service`. Fill out the top of
+    lowercase, eg. `create: extract the billing service`. Fill out the top of
     the PR template.
 
 7.  Open a [discussion thread](https://github.com/kieranpotts/design/discussions)
@@ -61,7 +61,7 @@ in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 10. Confirm the corresponding code and configuration are live in production.
     Squash-merge the pull request, with a message of the form
-    `design: <description>`. Delete the branch.
+    `update: <description>`. Delete the branch.
 
 11. Close the discussion thread.
 

@@ -29,7 +29,8 @@ prompt the user for clarification.
   draft pull requests and ask the user to choose:
 
   ```sh
-  gh pr list --draft --search "design:" --json number,title,headRefName
+  gh pr list --draft --json number,title,headRefName \
+    --jq '[.[] | select(.headRefName | startswith("design/"))]'
   ```
 
 ## Success criteria

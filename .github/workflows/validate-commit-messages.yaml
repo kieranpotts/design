@@ -1,11 +1,5 @@
 #
-# Validate commit message formats.
-#
-# A repository-specific variant of the shared
-# `kieranpotts/actions/validate-commit-messages` action,
-# inlined here so the set of allowed commit types can be
-# tailored to this repository: a subset of the standard
-# revision types, plus a custom prefix.
+# Validate message format of newly-pushed commits.
 #
 
 name: Validate Commit Messages
@@ -29,41 +23,5 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get log of new commit messages
-        id: log
-        run: |
-          git_log_output=$(git log --format=%s "${BASE_SHA:-$BEFORE_SHA}...${HEAD_SHA:-$GITHUB_REF}")
-
-          echo "::notice::New commit messages: $git_log_output"
-
-          {
-            echo "git_log_output<<EOF"
-            echo "$git_log_output"
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-        env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          BEFORE_SHA: "${{ github.event.before }}"
-        shell: bash
-
       - name: Validate new commit messages
-        run: |
-          # Allowed commit types:
-          #   Standard (subset of TS-9) : chore, fix, maintenance, refactor, revert, style
-          #   Custom (this repository)  : design
-          types="chore|fix|maintenance|refactor|revert|style|design"
-          re="^($types): [a-z0-9].*$"
-
-          echo "$GIT_LOG_OUTPUT" | while read -r line; do
-            [ -z "$line" ] && continue
-            echo "Validating commit message: '$line'"
-            if [[ ! $line =~ $re ]]; then
-              echo "::error::Invalid commit message: '$line'"
-              echo "Expected '<type>: <description>', where <type> is one of: ${types//|/, }"
-              exit 1
-            fi
-          done
-        env:
-          GIT_LOG_OUTPUT: "${{ steps.log.outputs.git_log_output }}"
-        shell: bash
+        uses: kieranpotts/actions/validate-commit-messages@latest/dev

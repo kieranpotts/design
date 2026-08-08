@@ -8,7 +8,7 @@
 # design artifacts.
 #
 
-title: "design: [type a brief description]"
+title: "create: [type a brief description]"
 body:
   - type: input
     id: pr
