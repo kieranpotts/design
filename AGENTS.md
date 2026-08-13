@@ -1,4 +1,4 @@
-# [Project Name] – Design Docs
+# [Project Name] – design docs
 
 The capitalized words REQUIRED, MUST, MUST NOT, RECOMMENDED, SHOULD,
 SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
@@ -14,21 +14,21 @@ or run.
 
 ## Project structure
 
-- **`design/`:** The architectural artifacts, organized into eight views that
+- `design/`. The architectural artifacts, organized into eight views that
   are extended from the 4+1 architectural view model (and draw on C4 and
   Arc42). Six views form a ladder from most abstract to most concrete. The
-  other two – `scenarios` and `concepts` – cut across all the other views. Each
-  view is a directory with a `README.md` entry point.
+  other two – `scenarios` and `concepts` – cut across all the other views.
+  Each view is a directory with a `README.md` entry point.
 
-  - **`conceptual/`**, **`logical/`**, **`development/`**, **`process/`**,
-    **`physical/`**, and **`technical/`** are the six ladder views, from most
+  - `conceptual/`, `logical/`, `development/`, `process/`,
+    `physical/`, and `technical/` are the six ladder views, from most
     abstract to most concrete.
 
-  - **`scenarios/`** and **`concepts/`** are the two cross-cutting views.
+  - `scenarios/` and `concepts/` are the two cross-cutting views.
 
-  - **`glossary.md`** captures architecture- and technical-specific terms.
+  - `glossary.md` captures architecture- and technical-specific terms.
 
-- **`docs/`:** General guidelines for humans on maintaining architectural
+- `docs/`. General guidelines for humans on maintaining architectural
   documentation.
 
 ## Workflow
@@ -49,7 +49,7 @@ your memory of a prior state of the rules.
 
 ## Skills
 
-The **`.agents/skills/`** directory provides on-demand skills for maintaining
+The `.agents/skills/` directory provides on-demand skills for maintaining
 the design documentation. See the [README](./.agents/skills/README.md) for
 descriptions of the available skills and their triggers.
 
