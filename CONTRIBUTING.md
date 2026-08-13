@@ -12,7 +12,7 @@ architectural documentation.
 The design documentation is maintained by the technical teams. Anyone with write
 access to this repository may propose changes to it.
 
-See also [TS-3](https://github.com/kieranpotts/standards/tree/latest/dev/src/003)
+See also [TS-3](https://kieranpotts.com/standards/003)
 for the technical standard that underpins this process.
 
 ****

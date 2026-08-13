@@ -27,7 +27,7 @@ sync with production, is what makes that knowledge explicit and durable rather
 than tacit and fragile.
 
 > [!NOTE]
-> See also [TS-3](https://github.com/kieranpotts/standards/tree/latest/dev/src/003),
+> See also [TS-3](https://kieranpotts.com/standards/003),
 > a technical standard covering design docs, RFCs, and architecture audits.
 > This repository is its reference implementation for design docs.
 
