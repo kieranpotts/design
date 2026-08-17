@@ -70,7 +70,7 @@ container build.
   repositories, per RFC 0002 ("GitHub as the remote forge").
 - **Trunk-based branching**, per RFC 0003 ("trunk-based branching"), is the
   branching model used across all Acme repositories; it materially shapes how
-  frequently images are built and deployed from `main`.
+  frequently images are built and deployed from `latest/main`.
 
 ### Links to technical decision log
 

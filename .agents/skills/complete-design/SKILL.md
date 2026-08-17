@@ -1,11 +1,11 @@
 ---
 name: complete-design
 description: >-
-  Land a design change in the `main` trunk, once the corresponding production
-  change is live. Use when the user says something like "complete design",
-  "ship this design change", "the change is live", "merge the design docs", or
-  "land the design change". Do not use it to take a pull request out of draft,
-  or to merge documentation for a change that has not yet shipped.
+  Land a design change in the `latest/main` trunk, once the corresponding
+  production change is live. Use when the user says something like "complete
+  design", "ship this design change", "the change is live", "merge the design
+  docs", or "land the design change". Do not use it to take a pull request out
+  of draft, or to merge documentation for a change that has not yet shipped.
 compatibility: >-
   requires Read, Bash (git, gh)
 license: CC0-1.0
@@ -13,9 +13,9 @@ license: CC0-1.0
 
 # Complete design
 
-Merge a design change into the `main` trunk, and close the discussion thread
-that carried its review. Merge only once the corresponding production change is
-live and the user has explicitly told you to go ahead.
+Merge a design change into the `latest/main` trunk, and close the discussion
+thread that carried its review. Merge only once the corresponding production
+change is live and the user has explicitly told you to go ahead.
 
 ## Parameters
 
@@ -24,13 +24,13 @@ environment, if possible. If you're uncertain about the required parameters,
 prompt the user for clarification.
 
 - **Target — REQUIRED.** The design change to land. Infer it from the
-  checked-out branch (`design/<slug>`). If `main` is checked out, use the
-  user's description, or list the open design-change pull requests and ask the
-  user to choose:
+  checked-out branch (`latest/design/<slug>`). If `latest/main` is checked out,
+  use the user's description, or list the open design-change pull requests and
+  ask the user to choose:
 
   ```sh
   gh pr list --json number,title,headRefName \
-    --jq '[.[] | select(.headRefName | startswith("design/"))]'
+    --jq '[.[] | select(.headRefName | startswith("latest/design/"))]'
   ```
 
 - **Description — REQUIRED.** The short prose title of the change, in the
@@ -48,10 +48,10 @@ prompt the user for clarification.
   anything you could not verify MUST have been surfaced to the user before the
   merge.
 
-- A single new squash commit MUST exist on `main`, its message of the form
+- A single new squash commit MUST exist on `latest/main`, its message of the form
   `update: <description>`.
 
-- The `design/<slug>` branch MUST no longer exist in the upstream repository.
+- The `latest/design/<slug>` branch MUST no longer exist in the upstream repository.
 
 - The discussion thread MUST be closed as resolved.
 
@@ -92,7 +92,7 @@ prompt the user for clarification.
 5.  Delete the branch directly, if it was not deleted automatically.
 
     ```sh
-    git push origin --delete design/<slug>
+    git push origin --delete latest/design/<slug>
     ```
 
 6.  Close the discussion thread as resolved.
@@ -120,9 +120,9 @@ prompt the user for clarification.
 
 - You MUST NOT land a design change ahead of production.
 
-  This is the one rule the whole repository depends on. The artifacts on `main`
-  are the authoritative record of the architecture as it exists right now, so
-  merging early makes them a lie.
+  This is the one rule the whole repository depends on. The artifacts on
+  `latest/main` are the authoritative record of the architecture as it exists
+  right now, so merging early makes them a lie.
 
 - The production change MUST be live to count.
 
@@ -159,7 +159,7 @@ prompt the user for clarification.
 
 ## Edge cases
 
-- The pull request has merge conflicts with `main`.
+- The pull request has merge conflicts with `latest/main`.
 
   Another design change landed first. Stop and report it. Resolving the
   conflict is an edit to the artifacts, which belongs on the branch and back

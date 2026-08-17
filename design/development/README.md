@@ -99,8 +99,8 @@ individual service.
 | `notification-worker` | Docker image (`acme/notification-worker`) | Amazon ECR |
 | `domain-kit` | npm package | GitHub Packages (private) |
 
-Each repository builds and pushes its image on merge to `main`, tagged with
-the commit SHA; the [physical view](../physical/) describes how those images
+Each repository builds and pushes its image on merge to `latest/main`, tagged
+with the commit SHA; the [physical view](../physical/) describes how those images
 are deployed. Branching and merge conventions follow RFC 0003 (trunk-based
 branching), and all repositories are hosted on GitHub per RFC 0002.
 

@@ -15,10 +15,11 @@ that exists, not the requirements it satisfies (those live in the
 rationale for the choices behind it (that lives in the
 [Requests for Comments](https://github.com/kieranpotts/rfc) archive).
 
-This is living documentation. The artifacts on the `main` trunk reflect the
-current state of the production system. A change to the architecture is merged
-into `main` _at the same time_ as the corresponding code and configuration are
-shipped to production, so the documentation never drifts from reality.
+This is living documentation. The artifacts on the `latest/main` trunk reflect
+the current state of the production system. A change to the architecture is
+merged into `latest/main` _at the same time_ as the corresponding code and
+configuration are shipped to production, so the documentation never drifts
+from reality.
 
 Design docs are central to architectural knowledge management (AKM) – the
 practice of capturing, organizing, sharing, and preserving the knowledge that

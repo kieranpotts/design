@@ -34,9 +34,9 @@ or run.
 ## Workflow
 
 This is living documentation. Design docs do not transition through a state
-machine. There are no per-document lifecycle states – the artifacts on `main`
-are simply the truth about the current architecture, kept honest by binding
-changes to production.
+machine. There are no per-document lifecycle states – the artifacts on
+`latest/main` are simply the truth about the current architecture, kept honest
+by binding changes to production.
 
 See [CONTRIBUTING.md > Workflow](./CONTRIBUTING.md#workflow) for the
 step-by-step process for introducing a design change.

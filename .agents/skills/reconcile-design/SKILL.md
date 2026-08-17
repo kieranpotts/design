@@ -1,7 +1,7 @@
 ---
 name: reconcile-design
 description: >-
-  Detect drift between the design documentation on `main` and the real
+  Detect drift between the design documentation on `latest/main` and the real
   production system, and draft a corrective design change. Use when the user
   says something like "the design docs are out-of-date", "reconcile the design
   docs", "check the docs against the code", or "the architecture has drifted
@@ -14,10 +14,10 @@ license: CC0-1.0
 
 # Reconcile design
 
-Find and correct drift — places where the design documentation on `main` no
-longer matches the real production system, because a change shipped without the
-documentation being updated. Compare the artifacts against reality, report what
-you find, then draft a corrective change for the gaps the user picks.
+Find and correct drift — places where the design documentation on `latest/main`
+no longer matches the real production system, because a change shipped without
+the documentation being updated. Compare the artifacts against reality, report
+what you find, then draft a corrective change for the gaps the user picks.
 
 ## Parameters
 
@@ -41,9 +41,9 @@ prompt the user for clarification.
   naming the affected view and artifact, what the documentation says, and what
   production actually does.
 
-- A `design/<slug>` branch MUST exist carrying corrections for one coherent
-  area of drift, with the affected artifacts describing the current production
-  state in the present tense.
+- A `latest/design/<slug>` branch MUST exist carrying corrections for one
+  coherent area of drift, with the affected artifacts describing the current
+  production state in the present tense.
 
 - A draft pull request and a linked discussion thread MUST be open for that
   branch, following the repository's documented workflow for a design change.
@@ -51,10 +51,10 @@ prompt the user for clarification.
 - Any architecturally significant change that reached production without an
   RFC MUST have been flagged to the user.
 
-- Every correction MUST have been committed on the `design/<slug>` branch, and
-  you MUST NOT have committed anything directly to `main`. A reconciliation is
-  still a reviewed change, even though production is already ahead of the
-  documentation.
+- Every correction MUST have been committed on the `latest/design/<slug>` branch,
+  and you MUST NOT have committed anything directly to `latest/main`. A
+  reconciliation is still a reviewed change, even though production is already
+  ahead of the documentation.
 
 ## Instructions
 
@@ -108,7 +108,7 @@ prompt the user for clarification.
 
     Follow the repository's documented workflow for introducing a design
     change, in [CONTRIBUTING.md](../../../CONTRIBUTING.md): cut a
-    `design/<slug>` branch from `main` — a slug such as
+    `latest/design/<slug>` branch from `latest/main` — a slug such as
     `reconcile-billing-topology` — edit the affected views to describe the
     current production state, commit with an `update: <description>` message,
     open a draft pull request, and open a discussion thread cross-linked with
@@ -160,7 +160,7 @@ prompt the user for clarification.
   Because the production change is already live, the constraint that blocks
   landing documentation ahead of production is already satisfied — but the
   correction is still reviewed and merged through a pull request, never
-  committed directly to `main`.
+  committed directly to `latest/main`.
 
 ## Edge cases
 

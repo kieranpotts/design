@@ -16,7 +16,7 @@ makes no edits of its own.
 
 ## How to invoke
 
-Run from a `design/<slug>` branch:
+Run from a `latest/design/<slug>` branch:
 
 > Review design
 
@@ -51,7 +51,7 @@ only once.
   exactly what this skill checks have since been replaced.
 
 - [**complete-design**](../complete-design/) \
-  Merges the pull request into `main`, once review is settled and the
+  Merges the pull request into `latest/main`, once review is settled and the
   corresponding production change is live.
 
 - [**reconcile-design**](../reconcile-design/) \

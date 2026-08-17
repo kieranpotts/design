@@ -5,8 +5,8 @@ via AI agents.
 
 - **[draft-design](./draft-design/):** \
   Scaffolds a PR that will propose changes to the system design.
-  Cuts a `design/<slug>` branch from `main`, marks up the affected views for
-  editing, opens a pull request in a draft state, and opens the linked
+  Cuts a `latest/design/<slug>` branch from `latest/main`, marks up the affected
+  views for editing, opens a pull request in a draft state, and opens the linked
   discussion thread.
 
 - **[review-design](./review-design/):** \
@@ -15,12 +15,13 @@ via AI agents.
 
 - **[complete-design](./complete-design/):** \
   Checks the design docs describe production as it now is, merges the
-  changes into the `main` trunk, and closes the discussion thread.
+  changes into the `latest/main` trunk, and closes the discussion thread.
 
 - **[reconcile-design](./reconcile-design/):** \
   Sits outside the draft-review-complete progression. Compares the design docs
-  on `main` against the real production system, reports any drift it finds, and
-  drafts a corrective design change that rejoins the lifecycle at review.
+  on `latest/main` against the real production system, reports any drift it
+  finds, and drafts a corrective design change that rejoins the lifecycle at
+  review.
 
 ## Workflow
 

@@ -41,11 +41,11 @@ prompt the user for clarification.
 
 ## Success criteria
 
-- The branch `design/<slug>` MUST exist, cut from an up-to-date `main`, and
-  MUST be checked out.
+- The branch `latest/design/<slug>` MUST exist, cut from an up-to-date
+  `latest/main`, and MUST be checked out.
 
-- A pull request titled `create: <description>` MUST be open against `main`,
-  and `gh pr view <number> --json isDraft` MUST report `true`.
+- A pull request titled `create: <description>` MUST be open against
+  `latest/main`, and `gh pr view <number> --json isDraft` MUST report `true`.
 
 - A discussion thread MUST exist naming the pull request, and the pull
   request's body MUST link back to that thread.
@@ -65,9 +65,9 @@ prompt the user for clarification.
 2.  Create the branch. Rebase so the history stays linear.
 
     ```sh
-    git checkout main
+    git checkout latest/main
     git pull --rebase
-    git checkout -b design/<slug>
+    git checkout -b latest/design/<slug>
     ```
 
 3.  Identify the [views](../../../design/) the change is likely to affect, and
@@ -79,7 +79,7 @@ prompt the user for clarification.
     ```sh
     git add design/
     git commit -m "create: <description>"
-    git push -u origin design/<slug>
+    git push -u origin latest/design/<slug>
     gh pr create --draft --title "create: <description>" --fill
     ```
 
@@ -133,10 +133,10 @@ prompt the user for clarification.
   each other at the merge gate. Where the user describes several independent
   changes, recommend a branch each.
 
-- You MUST branch from `main`, and pull first if local `main` is behind the
-  remote.
+- You MUST branch from `latest/main`, and pull first if local `latest/main` is
+  behind the remote.
 
-  The artifacts on `main` are the authoritative record of the production
+  The artifacts on `latest/main` are the authoritative record of the production
   architecture, so it is the only sound starting point.
 
 - You MUST open the pull request in its draft state.

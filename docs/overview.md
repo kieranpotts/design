@@ -18,12 +18,13 @@ document, maintained under the same version control workflow, and deeply
 integrated into the change management process.
 
 This keeps the design docs bound to production. The [design
-artifacts](../design/) on `main` describe the architecture as it runs for real
-users right now. A change to those artifacts is not merged to `main` until the
-corresponding change in code and configuration is itself live in production.
+artifacts](../design/) on `latest/main` describe the architecture as it runs for
+real users right now. A change to those artifacts is not merged to `latest/main`
+until the corresponding change in code and configuration is itself live in
+production.
 
-Old architecture is simply edited away from `main` as the production system
-changes. The history of the architecture lives in the Git log.
+Old architecture is simply edited away from `latest/main` as the production
+system changes. The history of the architecture lives in the Git log.
 
 The payoff is a single, trustworthy answer to "what does our architecture look
 like?" New engineers, operators, reviewers, and auditors can read it and rely on

@@ -25,19 +25,19 @@ environment, if possible. If you're uncertain about the required parameters,
 prompt the user for clarification.
 
 - **Target — REQUIRED.** The design change to check. Infer it from the
-  checked-out branch (`design/<slug>`). If `main` is checked out, list the open
-  draft pull requests and ask the user to choose:
+  checked-out branch (`latest/design/<slug>`). If `latest/main` is checked out,
+  list the open draft pull requests and ask the user to choose:
 
   ```sh
   gh pr list --draft --json number,title,headRefName \
-    --jq '[.[] | select(.headRefName | startswith("design/"))]'
+    --jq '[.[] | select(.headRefName | startswith("latest/design/"))]'
   ```
 
 ## Success criteria
 
 - Every design view touched by the branch MUST have been checked against the
-  diff with `main`, and any view still holding only a `TODO:` marker or other
-  placeholder MUST have been reported to the user by name.
+  diff with `latest/main`, and any view still holding only a `TODO:` marker
+  or other placeholder MUST have been reported to the user by name.
 
 - The pull request MUST have been taken out of draft — `gh pr view <number>
   --json isDraft` reporting `false` — if and only if no touched view was left
@@ -55,11 +55,11 @@ prompt the user for clarification.
 
 2.  Do a light completeness check.
 
-    Diff the branch against `main` to find every edited file under
+    Diff the branch against `latest/main` to find every edited file under
     [`design/`](../../../design/):
 
     ```sh
-    git diff --name-only main...HEAD -- design/
+    git diff --name-only latest/main...HEAD -- design/
     ```
 
     For each, confirm the edit is descriptive prose about the intended
@@ -101,7 +101,7 @@ prompt the user for clarification.
   of the end state.
 
   The artifacts describe the architecture as it will be once the change has
-  shipped. The diff against `main` already shows what is changing.
+  shipped. The diff against `latest/main` already shows what is changing.
 
 - You MUST flag any edit that reads as a requirement or as an unsettled
   decision.

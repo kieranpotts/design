@@ -10,7 +10,7 @@ name: Apply GitHub Settings as Code
 on:
   push:
     branches:
-      - main
+      - latest/main
     paths:
       - .github/settings.yml
   workflow_dispatch:

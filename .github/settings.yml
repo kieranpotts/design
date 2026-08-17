@@ -45,7 +45,7 @@ repository:
   has_downloads: false
 
   # The default branch.
-  default_branch: main
+  default_branch: latest/main
 
   # Allow PRs to be squash-merged.
   allow_squash_merge: true
@@ -94,7 +94,7 @@ repository:
 
 # Configure branch and classic protection rules.
 branches:
-  - name: main
+  - name: latest/main
     protection: null
 
 # GitHub's newer branch/tag/push protection rules.

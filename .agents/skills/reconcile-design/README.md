@@ -1,13 +1,13 @@
 # Reconcile design
 
-Compares the design docs on `main` against the real production system, and
-drafts a design change to fix any drift it finds.
+Compares the design docs on `latest/main` against the real production system,
+and drafts a design change to fix any drift it finds.
 
-The documentation's entire value rests on one promise: that `main` describes
-production. Drift breaks that promise. This skill restores it, by walking the
-eight views against the code, configuration, and infrastructure that actually
-run, reporting every discrepancy, and drafting a correction for the area the
-user chooses.
+The documentation's entire value rests on one promise: that `latest/main`
+describes production. Drift breaks that promise. This skill restores it, by
+walking the eight views against the code, configuration, and infrastructure
+that actually run, reporting every discrepancy, and drafting a correction for
+the area the user chooses.
 
 Comparing all eight views serially would put the full source material for
 each — documentation and reality both — into one context at once. Where no
@@ -92,7 +92,7 @@ flowchart LR
   as it would any other design change.
 
 - [**complete-design**](../complete-design/) \
-  Merges the corrective pull request into `main`.
+  Merges the corrective pull request into `latest/main`.
 
 ## References
 

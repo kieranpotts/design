@@ -31,9 +31,9 @@ in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
     decision, make that decision first, through the
     [RFC process](https://github.com/kieranpotts/rfc).
 
-2.  Branch off `main` using the convention `design/<slug>`, where `<slug>` is a
-    short, hyphen-delimited description of the change, eg.
-    `design/extract-billing-service`.
+2.  Branch off `latest/main` using the convention `latest/design/<slug>`, where
+    `<slug>` is a short, hyphen-delimited description of the change, eg.
+    `latest/design/extract-billing-service`.
 
 3.  Edit the artifacts in the [`design/`](./design/) directory. Modify all
     appropriate architectural views to describe the architecture as it will be
@@ -69,8 +69,8 @@ in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 - All artifacts MUST be written in American English.
 
-- The `main` trunk MUST be treated as the default branch. The artifacts in
-  [`design/`](./design/) on `main` are the authoritative record of the
+- The `latest/main` trunk MUST be treated as the default branch. The artifacts in
+  [`design/`](./design/) on `latest/main` are the authoritative record of the
   production architecture as it exists right now.
 
 - The documentation MUST be descriptive and decision-free. State what the
@@ -81,7 +81,7 @@ in [IETF RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
   any significant decision behind a change.
 
 - A change's pull request MUST NOT be merged until the corresponding code and
-  configuration are live in production, so `main` stays current with
+  configuration are live in production, so `latest/main` stays current with
   production.
 
 - The edits in a PR MUST describe the intended final state of the architecture,

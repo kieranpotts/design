@@ -1,7 +1,7 @@
 # Complete design
 
 Checks that the design docs describe production as it now is, then merges the
-change into the `main` trunk.
+change into the `latest/main` trunk.
 
 Squash-merges the pull request, deletes the branch, and closes the discussion
 thread that carried the review. The gate it enforces is the one the whole
@@ -16,7 +16,7 @@ the production architecture.
 
 ## How to invoke
 
-Run from a `design/<slug>` branch:
+Run from a `latest/design/<slug>` branch:
 
 > Complete design
 
@@ -36,7 +36,7 @@ Or describe which design change to land:
 
 A mid-tier model. The merge itself is mechanical, but confirming that the
 documentation matches what actually shipped is a judgment call, and getting it
-wrong puts a false description on `main`.
+wrong puts a false description on `latest/main`.
 
 ## Suggested workflows
 

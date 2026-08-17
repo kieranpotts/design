@@ -39,6 +39,6 @@ Merge this PR when:
 - [ ] The associated discussion thread is closed.
 
 > [!IMPORTANT]
-> The `main` trunk represents the as-is state of the production system. Do NOT
+> The `latest/main` trunk represents the as-is state of the production system. Do NOT
 > merge this PR before the architecture it describes is actually live in
 > production.

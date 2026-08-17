@@ -7,8 +7,8 @@ Practical guidance for writing and maintaining the design documentation.
 A design change's edits SHOULD describe the architecture as it will be once the
 change has shipped. They SHOULD NOT narrate the migration steps to get there.
 
-The diff against `main` already shows what is changing. The prose SHOULD read as
-a description of the destination, so that when the change ships the
+The diff against `latest/main` already shows what is changing. The prose SHOULD
+read as a description of the destination, so that when the change ships the
 documentation is simply true.
 
 How a change is rolled out — sequencing, dual-running, cutover — is an
@@ -73,8 +73,8 @@ and let the code speak for the fine detail.
 
 ## Keep the documentation honest
 
-The documentation's entire value rests on one promise: that `main` describes
-production. Protect it.
+The documentation's entire value rests on one promise: that `latest/main`
+describes production. Protect it.
 
 Do not merge a design change until the change is actually live.
 
@@ -82,7 +82,7 @@ When implementation reveals the real architecture differs from what was drafted,
 reconcile the difference back into the artifacts before merging. Never ship a
 description you know to be wrong.
 
-When you notice `main` has drifted from reality (a change shipped without
+When you notice `latest/main` has drifted from reality (a change shipped without
 updating the docs), open a design change to correct it.
 
 A description that is _mostly_ true is one nobody can trust.

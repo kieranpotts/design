@@ -2,10 +2,11 @@
 
 Scaffolds a pull request that will propose changes to the system design.
 
-Cuts a `design/<slug>` branch from `main`, writes `TODO:` markers into the
-design views the change will touch, opens a pull request in a draft state, and
-opens the linked discussion thread where review feedback is gathered. It does
-not write the description of the new architecture — that is the author's job.
+Cuts a `latest/design/<slug>` branch from `latest/main`, writes `TODO:` markers
+into the design views the change will touch, opens a pull request in a draft
+state, and opens the linked discussion thread where review feedback is gathered.
+It does not write the description of the new architecture — that is the author's
+job.
 
 ## Interactivity
 
@@ -52,12 +53,13 @@ documentation — that is drift, and is corrected by reconciliation instead.
   marked-up views have been filled in with real content.
 
 - [**complete-design**](../complete-design/) \
-  Merges the pull request into `main`, once review is settled and the
+  Merges the pull request into `latest/main`, once review is settled and the
   corresponding production change is live.
 
 - [**reconcile-design**](../reconcile-design/) \
-  Sits outside this lifecycle. It compares `main` against the real production
-  system and drafts a corrective design change when the two have diverged.
+  Sits outside this lifecycle. It compares `latest/main` against the real
+  production system and drafts a corrective design change when the two have
+  diverged.
 
 ## References
 

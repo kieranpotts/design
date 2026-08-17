@@ -5,8 +5,9 @@ the system _looks like_ as-is.
 
 These artifacts always reflect the system's current state in production. A
 change to the architecture is introduced through a [design-change pull
-request](../CONTRIBUTING.md) and merged into `main` only once the changes are
-live in production. It means the design docs don't drift from reality.
+request](../CONTRIBUTING.md) and merged into `latest/main` only once the
+changes are live in production. It means the design docs don't drift from
+reality.
 
 The design docs are descriptive. They state what the architecture _is_, in the
 present tense. They do not record the requirements the system satisfies — those
