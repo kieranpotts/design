@@ -14,3 +14,6 @@ General guidance for getting the most out of architectural design documentation.
 
 - [**Contributing**](../CONTRIBUTING.md) \
   The mechanics of the design-change workflow.
+
+- [**🛠️ Development tools and methods**](./development/) \
+  Maintaining this repository itself, including its GitHub configuration.
